@@ -150,5 +150,7 @@ reports/live_backend_20260924_01/ 下：
 ## 2026-10-15：GitHub 首次上传准备
 
 - 目标账号 D-Cathy，准备 cascade-routing 首次 Git 提交；保留原 LICENSE 和上游 README 署名。排除 data/（约14GB）、凭据、缓存、运行账本、报告备份及本次上传准备报告。
-- GitHub 连接器已确认账号，但不支持创建仓库；SSH 已认证为 D-Cathy。目标 D-Cathy/cascade-routing 的 ls-remote 退出128（Repository not found），需要先创建空仓库。当前未上传成功。
+- GitHub 连接器已确认账号，但不支持创建仓库；SSH 已认证为 D-Cathy。目标 D-Cathy/cascade-routing 的 ls-remote 退出128（Repository not found），需要先创建空仓库。首次准备时尚未上传；用户创建仓库后已成功推送 main（代码提交 9098b87）。
 - 本轮仅版本管理准备，pytest运行0项、模型调用0次。命令与限制见 reports/github_upload_20261015_01/STATUS.md。
+
+- 上传完成续记：用户确认已创建仓库后，`git push -u origin main` 退出0，main已跟踪origin/main；仓库 https://github.com/D-Cathy/cascade-routing 。本轮未运行测试或模型调用。
