@@ -1,0 +1,10 @@
+108:                  max_retries=20,
+125:             max_retries (int, optional): The maximum number of retries. Defaults to 20.
+147:         self.max_retries = max_retries
+166:             self.api_model = ChatOpenAI(model=self.model, max_retries=self.max_retries, 
+173:             self.api_model = ChatOpenAI(model=self.model, max_retries=self.max_retries, 
+306:             times = [0] * len(results)
+413:             for _ in range(self.max_retries):
+415:                     result = await func([query])
+444:             for i in range(self.max_retries):
+452:             if n_retries == self.max_retries:

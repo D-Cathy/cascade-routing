@@ -1,0 +1,4 @@
+2026-10-12 20:02:02.105 | INFO     | selection.cascade_router:fit:229 - Actual Final Lambdas: [0, 0, 0]
+2026-10-12 20:02:02.105 | INFO     | selection.cascade_router:fit:230 - Actual Final Cost: 4.0
+2026-10-12 20:02:02.105 | INFO     | selection.cascade_router:fit:231 - Actual Final Quality: 0.9300000000000002
+{"output": "reports/framework_reading_20261012_01/offline_demo", "requests_per_policy": 6, "policies": 5, "risk_guarantee": false}

@@ -1,0 +1,12 @@
+{
+  "request_traces": 240,
+  "simulated_backend_attempts": 360,
+  "call_reasons": {
+    "cached_text_simulated_resources": 329,
+    "link_interrupted": 31
+  },
+  "audit": "All traces: unique/upward attempts, no call quality labels, component conservation passed",
+  "new_tests": 11,
+  "full_suite_tests": 103,
+  "real_model_calls": 0
+}

@@ -1,0 +1,21 @@
+{
+  "checks": {
+    "source_sha256": true,
+    "all_17_sections_in_pdf": true,
+    "all_navigation_resolves": true,
+    "unique_ids": true,
+    "offline_no_scripts": true,
+    "no_placeholder_leak": true,
+    "experiment_ids_present": true,
+    "work_orders_present": true,
+    "tracker_all_todo": true,
+    "partition_arithmetic": true,
+    "replay_budget_arithmetic": true,
+    "pdf_is_generated": true
+  },
+  "passed": 12,
+  "total": 12,
+  "repository_tests_run": 0,
+  "experiments_run": 0,
+  "model_calls": 0
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "command": "PYTHONPATH=src python -m pytest -q tests/test_routerbench_adapter.py",
+    "exit_code": 0,
+    "result": "11 passed in 2.23s"
+  },
+  {
+    "command": "PYTHONPATH=src python -m selection.routerbench_adapter --source data/routerbench_0shot.csv --output data/routerbench_dev20_20261014",
+    "exit_code": 0,
+    "result": "20 tasks, 60 calls, 60 labels; validated; resource replay not ready"
+  },
+  {
+    "command": "PYTHONPATH=src python -m selection.routerbench_adapter --output data/routerbench_dev20_20261014 --validate-only",
+    "exit_code": 0,
+    "result": "validated"
+  },
+  {
+    "command": "PYTHONPATH=src python -m pytest -q --junitxml=reports/routerbench_step1_20261014_01/tests.xml",
+    "exit_code": 0,
+    "result": "92 passed in 4.81s; loopback socket permission enabled"
+  }
+]

@@ -1,0 +1,5 @@
+COMMAND: PYTHONPATH=src python -m pytest -q
+..............................................                           [100%]
+46 passed in 1.86s
+
+EXIT_STATUS=0

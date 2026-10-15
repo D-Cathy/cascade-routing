@@ -1,0 +1,17 @@
+{
+  "checks": {
+    "source_sha256_matches": true,
+    "all_12_original_chapters": true,
+    "unique_heading_ids": true,
+    "internal_anchors_resolve": true,
+    "local_links_resolve": true,
+    "no_raw_tex_or_placeholders": true,
+    "no_scripts_or_external_assets": true,
+    "pdf_includes_expanded_gamma_example": true,
+    "pdf_includes_final_chapter": true
+  },
+  "passed": 9,
+  "total": 9,
+  "software_tests_run": 0,
+  "model_calls": 0
+}

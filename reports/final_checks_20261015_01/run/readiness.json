@@ -1,0 +1,27 @@
+{
+  "status": "engineering_checks_completed_formal_experiment_not_ready",
+  "task_counts": {
+    "development": 20,
+    "D_Q": 0,
+    "D_G": 0,
+    "D_V": 0,
+    "D_C": 0,
+    "D_T": 0,
+    "unassigned": 0
+  },
+  "real_model_calls": 0,
+  "risk_guarantee": false,
+  "formal_experiment_complete": false,
+  "input_sha256": {
+    "tasks.v2.jsonl": "eae4af8a2f716c54edfe030573bc562866eb2854e55860cc6f82b216907c27c9"
+  },
+  "blocking_items": [
+    "formal source independence and five-way dataset freeze",
+    "paper encoder and service validity labels / trained service classifier",
+    "formal donor-to-current-task mapping and calibrated dynamics support",
+    "complete paper frontier implementation and strong reference baselines",
+    "frozen candidate policies, audited independent calibration and held-out tests",
+    "E1–E6 results, ablations and domain validation"
+  ],
+  "synthetic_demo_note": "20 artificial units, zero failures; not actual D_C data or a real risk claim"
+}

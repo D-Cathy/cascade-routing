@@ -1,0 +1,35 @@
+[
+  {
+    "command": "python cascade-routing/reports/framework_visual_20261012_01/build_reader.py",
+    "exit_code": 0,
+    "runs": 2
+  },
+  {
+    "command": "google-chrome --headless --no-sandbox --disable-gpu --disable-dev-shm-usage --no-pdf-header-footer --print-to-pdf=/home/guoqiuyuan/LLMresearch/cascade-routing/reports/framework_visual_20261012_01/FRAMEWORK_GUIDE.pdf file:///home/guoqiuyuan/LLMresearch/cascade-routing/reports/framework_visual_20261012_01/FRAMEWORK_GUIDE.html",
+    "exit_code": 133,
+    "note": "Default sandbox: socket operation denied; export retried with permitted local Chrome execution."
+  },
+  {
+    "command": "google-chrome --headless --no-sandbox --disable-gpu --disable-dev-shm-usage --user-data-dir=/tmp/cascade-reader-chrome --no-pdf-header-footer --print-to-pdf=/home/guoqiuyuan/LLMresearch/cascade-routing/reports/framework_visual_20261012_01/FRAMEWORK_GUIDE.pdf file:///home/guoqiuyuan/LLMresearch/cascade-routing/reports/framework_visual_20261012_01/FRAMEWORK_GUIDE.html",
+    "exit_code": 0
+  },
+  {
+    "command": "google-chrome --headless --no-sandbox --disable-gpu --disable-dev-shm-usage --user-data-dir=/tmp/cascade-reader-chrome --no-pdf-header-footer --print-to-pdf=/home/guoqiuyuan/LLMresearch/cascade-routing/reports/framework_visual_20261012_01/FRAMEWORK_GUIDE.pdf --screenshot=/home/guoqiuyuan/LLMresearch/cascade-routing/reports/framework_visual_20261012_01/reader_preview.png --window-size=1440,1100 file:///home/guoqiuyuan/LLMresearch/cascade-routing/reports/framework_visual_20261012_01/FRAMEWORK_GUIDE.html",
+    "exit_code": 0
+  },
+  {
+    "command": "pdftotext -layout cascade-routing/reports/framework_visual_20261012_01/FRAMEWORK_GUIDE.pdf cascade-routing/reports/framework_visual_20261012_01/pdf_text_check.txt",
+    "exit_code": 0
+  },
+  {
+    "command": "pdfinfo cascade-routing/reports/framework_visual_20261012_01/FRAMEWORK_GUIDE.pdf",
+    "exit_code": 0,
+    "pages": 18
+  },
+  {
+    "command": "python cascade-routing/reports/framework_visual_20261012_01/verify_reader.py",
+    "exit_code": 0,
+    "document_checks_passed": 9,
+    "document_checks_total": 9
+  }
+]

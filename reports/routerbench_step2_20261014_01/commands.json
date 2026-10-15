@@ -1,0 +1,22 @@
+[
+  {
+    "command": "PYTHONPATH=src python -m pytest -q tests/test_resource_simulation.py",
+    "exit_code": 0,
+    "result": "11 passed in 1.75s"
+  },
+  {
+    "command": "PYTHONPATH=src python -m selection.simulation_replay --config configs/routerbench_simulation.json --output reports/routerbench_step2_20261014_01/run",
+    "exit_code": 0,
+    "result": "20 tasks, 3 regimes, 4 policies, 240 traces, 0 model calls"
+  },
+  {
+    "command": "PYTHONPATH=src python -m selection.simulation_replay --config configs/routerbench_simulation.json --validate-only",
+    "exit_code": 0,
+    "result": "valid=true; resource_source=simulated"
+  },
+  {
+    "command": "PYTHONPATH=src python -m pytest -q --junitxml=reports/routerbench_step2_20261014_01/tests.xml",
+    "exit_code": 0,
+    "result": "103 passed in 4.83s; loopback socket permission enabled"
+  }
+]

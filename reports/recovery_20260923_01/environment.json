@@ -1,0 +1,15 @@
+{
+  "host": "GPU8",
+  "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:19:41) [GCC 14.3.0]",
+  "executable": "/home/guoqiuyuan/miniconda3/bin/python",
+  "versions": {
+    "numpy": "2.5.1",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "pytest": "9.1.1",
+    "hyperopt": "0.3.0",
+    "torch": "2.13.0",
+    "transformers": "5.13.0",
+    "openai": null
+  }
+}

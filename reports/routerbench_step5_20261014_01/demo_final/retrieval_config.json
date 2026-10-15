@@ -1,0 +1,25 @@
+{
+  "kappa": 1.0,
+  "min_groups": 5,
+  "max_groups": 20,
+  "max_distance": 10.0,
+  "threshold_source": "synthetic_engineering_constant_not_D_V",
+  "base_scale": [
+    1e-06,
+    1e-06,
+    1e-06,
+    1e-06,
+    1e-06,
+    1e-06,
+    0.02291287847477944,
+    1e-06,
+    1e-06
+  ],
+  "gain_scale": [
+    1e-06,
+    0.09759480592560418,
+    1e-06
+  ],
+  "kernel": "engineering_Gaussian",
+  "seed": 20261014
+}

@@ -1,0 +1,5 @@
+COMMAND: PYTHONPATH=src /home/guoqiuyuan/miniconda3/bin/python -m selection.single_task validate --mock --task /home/guoqiuyuan/LLMresearch/cascade-routing/examples/single_task/mock_task.json --deployment /home/guoqiuyuan/LLMresearch/cascade-routing/reports/live_backend_20260924_01/mock_deployment.json
+Validated locally; no model calls made
+
+EXIT_STATUS=0
+EXPECTED_EXIT_STATUS=0

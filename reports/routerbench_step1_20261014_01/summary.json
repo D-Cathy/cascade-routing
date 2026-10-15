@@ -1,0 +1,13 @@
+{
+  "tasks": 20,
+  "splits": {
+    "dev_fit": 15,
+    "dev_eval": 5
+  },
+  "source_groups": 8,
+  "new_tests_passed": 11,
+  "full_suite_passed": 92,
+  "model_calls": 0,
+  "resource_simulation_implemented": false,
+  "formal_M0_complete": false
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "file": "pyproject.toml",
+    "changed": true,
+    "before_sha256": "8069297bd2495ddef312c51384c293a2d942bb94ce4fc47cfbc01e31a369ac09",
+    "after_sha256": "0b4ece864d4ad55e457b6aed7c494b6d804d7b0e999d89267b4d88fc14f7e8f8"
+  },
+  {
+    "file": "HANDOFF.md",
+    "changed": true,
+    "before_sha256": "abe3e00271883010aa364a72955a24929c13f6c43115af4b0e8a50f61dcb6350",
+    "after_sha256": "4badf9fe33fab18a249d23ae1a8cfe42005a4199b2a554687a7cdd484de3806c"
+  },
+  {
+    "file": "README.md",
+    "changed": true,
+    "before_sha256": "dd1f153e4b9efb803f730f880389bf5791e296fe6cd76424154630c621df23bc",
+    "after_sha256": "55203b6719ed93decba9dcca56c6cb9058e0cbb9bc14d9e19eca99ee09642004"
+  },
+  {
+    "file": "tests/test_unified_runtime.py",
+    "changed": true,
+    "before_sha256": "105a0cab2dae76044992a166134545113c2e159238f66fcedc4dfe0587648ec7",
+    "after_sha256": "6479d5a11975c4c2abb25d71337926e538121b491d65b8e3cb13b36518ecd66a"
+  },
+  {
+    "file": "src/selection/metrics.py",
+    "changed": true,
+    "before_sha256": "99561a9a1afa6e5cefd9868100c785afd3745c45c6775f7f6a4b81f0200c356f",
+    "after_sha256": "9b00422a608e91943192e576400cdcce854a2dfda365bc5ab6312e237db436f5"
+  },
+  {
+    "file": "src/selection/__init__.py",
+    "changed": false,
+    "before_sha256": "531fcd779c9df1021bac0255ba3c40e5854f4bb0e9b604068fc67a48abbb147e",
+    "after_sha256": "531fcd779c9df1021bac0255ba3c40e5854f4bb0e9b604068fc67a48abbb147e"
+  },
+  {
+    "file": "src/selection/executor.py",
+    "changed": true,
+    "before_sha256": "1f39a84a61b69c9358777db6e169f7e7595a639017f4c6355d345023ef9963de",
+    "after_sha256": "7895139bcb54863f684b25107a965c187087d1cd8eeee8518e6f57280a7871a6"
+  },
+  {
+    "file": "src/selection/policies.py",
+    "changed": true,
+    "before_sha256": "8eb0904be521817a94ff62ad253ff0c48fe317e10860e8db5ce56d3c787946bc",
+    "after_sha256": "c723d8bf0edc522a9552b6d006f6ceecf292daec1b498e09459a66f40c2325d8"
+  },
+  {
+    "file": "src/selection/schema.py",
+    "changed": true,
+    "before_sha256": "d38e8d5eb8762855b923467cb0f952a6aa05cc31b458dba2c958d42317fcb780",
+    "after_sha256": "5f38ed7677d4716acf602161bc3fdf7844e61ca2f95c26c2b28a3979d6b41df0"
+  }
+]

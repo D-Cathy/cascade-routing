@@ -1,0 +1,99 @@
+Independent ARIS HTML render audit
+UTC: 2026-10-12T12:36:54.226266+00:00
+Verdict: PASS; blocking issues: 0; warnings: 0
+Review independence: same-family; acceptance status: provisional
+
+Scope and files
+Read source Markdown, generated HTML, and build_reader.py directly. The review was independent of the author conversation and narrowly assessed render fidelity, HTML structure, escaping safety, and provenance. Research truth and upstream experimental evidence were not reassessed. No source files, generator, HTML, or project HANDOFF were changed; only the requested review artifacts were written. Project instructions and render-html SKILL.md were read.
+
+Version boundaries
+The author regenerated HTML once while the audit was starting to default the added gamma tutorial details element to open. All reported comparisons use the final post-regeneration snapshot below. SHA256 values were checked again immediately before writing this report and remained unchanged.
+Source SHA256: 36f287287c0ce73759c0d223377d8257a1b56b52652a25346836ebca37131532
+HTML SHA256: 166e97b108bef1af86203ac19daaf3d38c4dc1850b459ba8095a09f8e274b3a9
+Generator SHA256: 33a342bc9f15e7bcbba538148b21a8d59863a2bb78843fe98d299641cacf44d0
+
+Fidelity evidence
+A separate stdlib HTMLParser and Markdown block scanner, implemented in /tmp/framework_render_audit.py, compared all 106 source blocks with all 106 corresponding HTML report blocks, in order. Result: 0 mismatches. The scanner did not import or execute the production renderer or generator. Paragraph and list comparisons removed Markdown formatting and normalized whitespace; code comparisons preserved exact text and indentation. Formula equivalence was also checked manually against the three source display expressions.
+Preserved: 1 h1, 12 h2, 11 h3; 64 paragraphs; 5 tables with header-inclusive dimensions 11x3, 6x3, 4x4, 11x2, 6x2; 6 non-Mermaid code fences; ordered lists of 7 and 9 items and an unordered list of 3 items; 3 display-math blocks; all 24 inline-math spans.
+The Mermaid diagram was intentionally redrawn with CSS. Manual mapping found all original node roles represented: task/service requirements, replay loading and source grouping, dev_fit, UnifiedExecutor, ObservableState, decide/CascadeRouter, CALL/ACCEPT/FAIL, call guards, OfflineModel/LiveModel, resource/result recording, return to decision, final-answer fixation, independent quality/validity labels, terminal evaluation, and trace/summary output.
+Added introduction, symbol guide, hypothetical expectation example, worked trace, and open gamma explanation were treated as authorized educational additions. Python source line suffix removal was expected. All local file links resolve; all TOC fragment links resolve; IDs are unique.
+
+Structure and safety
+HTMLParser found 0 mismatched end tags and 0 unclosed elements. Table rows/cells, code fences, lists, and source heading levels remain intact. The added details element has a summary and open state. Source contains no routed blockquote callouts, so callouts are not applicable.
+The only style element is the expected generator-owned head stylesheet. Found 0 script, iframe, form, input, object, embed, link, and base elements; 0 event-handler attributes; 0 javascript/vbscript/data URL attributes. No unexpected source HTML, private-use characters, MATHSLOT/FLOWDIAGRAMSLOT markers, or unresolved template placeholders were found. Source SHA256 agrees with both metadata and visible header; source path and generation timestamp are present in both contexts.
+
+Executed verification
+python /tmp/framework_render_audit.py: exit 0; 106 block comparisons, 0 mismatches; 0 parser/safety/link/placeholder defects.
+Final hash assertions and review artifact serialization: exit 0.
+No repository tests or live models were run for this document-only audit. This audit did not independently run a browser or PDF renderer; browser/PDF validation is outside this saved review's evidence. The author separately reported such checks, which were not used to substitute for the source/HTML comparison.
+
+Machine evidence
+{
+  "source_sha256": "36f287287c0ce73759c0d223377d8257a1b56b52652a25346836ebca37131532",
+  "html_sha256": "166e97b108bef1af86203ac19daaf3d38c4dc1850b459ba8095a09f8e274b3a9",
+  "generator_sha256": "33a342bc9f15e7bcbba538148b21a8d59863a2bb78843fe98d299641cacf44d0",
+  "meta_source_sha256": "36f287287c0ce73759c0d223377d8257a1b56b52652a25346836ebca37131532",
+  "meta_source_path": "/home/guoqiuyuan/LLMresearch/cascade-routing/reports/framework_reading_20261012_01/FRAMEWORK_GUIDE.md",
+  "visible_hash_present": true,
+  "source_block_count": 106,
+  "html_report_block_count": 106,
+  "source_types": {
+    "h1": 1,
+    "p": 64,
+    "h2": 12,
+    "table": 5,
+    "h3": 11,
+    "math": 3,
+    "pre": 6,
+    "ol": 2,
+    "ul": 1,
+    "flow": 1
+  },
+  "source_table_shapes": [
+    [
+      11,
+      3
+    ],
+    [
+      6,
+      3
+    ],
+    [
+      4,
+      4
+    ],
+    [
+      11,
+      2
+    ],
+    [
+      6,
+      2
+    ]
+  ],
+  "source_list_sizes": [
+    7,
+    3,
+    9
+  ],
+  "mismatches": [],
+  "html_parse_errors": [],
+  "unclosed_stack": [],
+  "unsafe_attributes": [],
+  "active_tag_counts": {
+    "script": 0,
+    "style": 1,
+    "iframe": 0,
+    "form": 0,
+    "input": 0,
+    "object": 0,
+    "embed": 0,
+    "link": 0,
+    "base": 0
+  },
+  "template_marker_matches": [],
+  "duplicate_ids": [],
+  "broken_links": [],
+  "inline_math_count_source": 24,
+  "inline_math_count_report": 24
+}

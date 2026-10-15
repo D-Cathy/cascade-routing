@@ -1,0 +1,27 @@
+[
+  {
+    "command": "PYTHONPATH=src python -m pytest -q tests/test_v5_splits.py",
+    "exit_code": 0,
+    "result": "12 passed in 1.57s"
+  },
+  {
+    "command": "PYTHONPATH=src python -m selection.v5.prepare --legacy data/routerbench_dev20_20261014 --output data/routerbench_v5_contract_20261014",
+    "exit_code": 0,
+    "result": "20 tasks all development; 8 components; formal_ready=false"
+  },
+  {
+    "command": "PYTHONPATH=src python -m selection.v5.prepare --output data/routerbench_v5_contract_20261014 --validate-only",
+    "exit_code": 0,
+    "result": "validated"
+  },
+  {
+    "command": "PYTHONPATH=src python -m selection.v5.audit_csv --sources data/routerbench_0shot.csv data/routerbench_5shot.csv --output reports/routerbench_step3_20261014_01/csv_inventory.json",
+    "exit_code": 0,
+    "result": "36497 shared IDs; 9665 shared normalized prompt hashes"
+  },
+  {
+    "command": "PYTHONPATH=src python -m pytest -q --junitxml=reports/routerbench_step3_20261014_01/tests.xml",
+    "exit_code": 0,
+    "result": "115 passed in 7.24s; loopback HTTP test permission enabled"
+  }
+]

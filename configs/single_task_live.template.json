@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "mode": "live",
+  "attempt_ledger": "../.runtime/live_single_attempts.sqlite3",
+  "cost_scope": "provider_token_fee_only",
+  "cost_unit": "USD",
+  "models": {
+    "ship": {
+      "model_id": null,
+      "model_version": null,
+      "endpoint": null,
+      "api_key_env": null,
+      "timeout_s": 1,
+      "max_tokens": 512,
+      "temperature": 0,
+      "seed": 20260924,
+      "pricing": null,
+      "validation": "json_fields",
+      "required_fields": [
+        "action",
+        "condition",
+        "deadline"
+      ]
+    },
+    "shore": {
+      "model_id": null,
+      "model_version": null,
+      "endpoint": null,
+      "api_key_env": null,
+      "timeout_s": 1,
+      "max_tokens": 512,
+      "temperature": 0,
+      "seed": 20260924,
+      "pricing": null,
+      "validation": "json_fields",
+      "required_fields": [
+        "action",
+        "condition",
+        "deadline"
+      ]
+    },
+    "cloud": {
+      "model_id": null,
+      "model_version": null,
+      "endpoint": null,
+      "api_key_env": null,
+      "timeout_s": 1,
+      "max_tokens": 512,
+      "temperature": 0,
+      "seed": 20260924,
+      "pricing": null,
+      "validation": "json_fields",
+      "required_fields": [
+        "action",
+        "condition",
+        "deadline"
+      ]
+    }
+  },
+  "authorization": {
+    "approved": false,
+    "max_model_attempts": 3,
+    "fee_limit": null,
+    "note": null
+  }
+}

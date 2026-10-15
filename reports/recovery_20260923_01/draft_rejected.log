@@ -1,0 +1,22 @@
+COMMAND: PYTHONPATH=src /home/guoqiuyuan/miniconda3/bin/python -m selection.replay --config configs/development_replay.template.json --validate-only
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/guoqiuyuan/LLMresearch/cascade-routing/src/selection/replay.py", line 136, in <module>
+    if __name__=="__main__":main()
+                            ~~~~^^
+  File "/home/guoqiuyuan/LLMresearch/cascade-routing/src/selection/replay.py", line 131, in main
+    cfg,data=load_config(args.config)
+             ~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/guoqiuyuan/LLMresearch/cascade-routing/src/selection/replay.py", line 32, in load_config
+    data=load_dataset(*(path.parent/cfg[k] for k in ["tasks","calls","labels"]),list(cfg["models"]))
+  File "/home/guoqiuyuan/LLMresearch/cascade-routing/src/selection/replay_data.py", line 45, in load_dataset
+    strings(t,["task_id","source_group_id","question"])
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/guoqiuyuan/LLMresearch/cascade-routing/src/selection/replay_data.py", line 30, in strings
+    if not isinstance(record[name],str) or not record[name].strip():raise ValueError(f"Missing string: {name}")
+                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Missing string: source_group_id
+
+EXIT_STATUS=1
+EXPECTED_EXIT_STATUS=1

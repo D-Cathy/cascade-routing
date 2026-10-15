@@ -1,0 +1,99 @@
+[
+  {
+    "name": "tests",
+    "command": [
+      "/home/guoqiuyuan/miniconda3/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "--junitxml=/home/guoqiuyuan/LLMresearch/cascade-routing/reports/live_backend_20260924_01/tests.xml"
+    ],
+    "exit_status": 0,
+    "expected": 0
+  },
+  {
+    "name": "validate_mock",
+    "command": [
+      "/home/guoqiuyuan/miniconda3/bin/python",
+      "-m",
+      "selection.single_task",
+      "validate",
+      "--mock",
+      "--task",
+      "/home/guoqiuyuan/LLMresearch/cascade-routing/examples/single_task/mock_task.json",
+      "--deployment",
+      "/home/guoqiuyuan/LLMresearch/cascade-routing/reports/live_backend_20260924_01/mock_deployment.json"
+    ],
+    "exit_status": 0,
+    "expected": 0
+  },
+  {
+    "name": "collect_mock",
+    "command": [
+      "/home/guoqiuyuan/miniconda3/bin/python",
+      "-m",
+      "selection.single_task",
+      "collect",
+      "--mock",
+      "--task",
+      "/home/guoqiuyuan/LLMresearch/cascade-routing/examples/single_task/mock_task.json",
+      "--deployment",
+      "/home/guoqiuyuan/LLMresearch/cascade-routing/reports/live_backend_20260924_01/mock_deployment.json",
+      "--output",
+      "/home/guoqiuyuan/LLMresearch/cascade-routing/reports/live_backend_20260924_01/mock_collection"
+    ],
+    "exit_status": 0,
+    "expected": 0
+  },
+  {
+    "name": "duplicate_rejected",
+    "command": [
+      "/home/guoqiuyuan/miniconda3/bin/python",
+      "-m",
+      "selection.single_task",
+      "collect",
+      "--mock",
+      "--task",
+      "/home/guoqiuyuan/LLMresearch/cascade-routing/examples/single_task/mock_task.json",
+      "--deployment",
+      "/home/guoqiuyuan/LLMresearch/cascade-routing/reports/live_backend_20260924_01/mock_deployment.json",
+      "--output",
+      "/home/guoqiuyuan/LLMresearch/cascade-routing/reports/live_backend_20260924_01/forbidden_duplicate"
+    ],
+    "exit_status": 1,
+    "expected": 1
+  },
+  {
+    "name": "live_draft_rejected",
+    "command": [
+      "/home/guoqiuyuan/miniconda3/bin/python",
+      "-m",
+      "selection.single_task",
+      "validate",
+      "--live",
+      "--task",
+      "templates/development/single_task.draft.json",
+      "--deployment",
+      "configs/single_task_live.template.json"
+    ],
+    "exit_status": 1,
+    "expected": 1
+  },
+  {
+    "name": "evaluate_mock",
+    "command": [
+      "/home/guoqiuyuan/miniconda3/bin/python",
+      "-m",
+      "selection.single_task",
+      "evaluate",
+      "--collection",
+      "/home/guoqiuyuan/LLMresearch/cascade-routing/reports/live_backend_20260924_01/mock_collection",
+      "--cards",
+      "/home/guoqiuyuan/LLMresearch/cascade-routing/reports/live_backend_20260924_01/synthetic_scoring_cards.jsonl",
+      "--output",
+      "/home/guoqiuyuan/LLMresearch/cascade-routing/reports/live_backend_20260924_01/mock_evaluation"
+    ],
+    "exit_status": 0,
+    "expected": 0
+  }
+]

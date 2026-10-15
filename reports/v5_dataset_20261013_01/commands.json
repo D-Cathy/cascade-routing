@@ -1,0 +1,38 @@
+{
+  "commands": [
+    {
+      "command": "python cascade-routing/scripts/v5_data/fetch_sources.py --list cascade-routing/reports/v5_dataset_20261013_01/metadata_urls.json",
+      "exit_code": 0,
+      "result": "11 metadata/card files downloaded; outbound access authorized"
+    },
+    {
+      "command": "python -u cascade-routing/scripts/v5_data/fetch_sources.py --list cascade-routing/reports/v5_dataset_20261013_01/source_urls.json",
+      "exit_code": 0,
+      "result": "Initial sequential and subsequent 4-worker download batches both completed. Some URLs failed; batch exit code is not complete-download evidence. See download_manifest.jsonl."
+    },
+    {
+      "command": "kill -TERM 2677016",
+      "exit_code": 1,
+      "result": "No such process; did not terminate downloader. Both download sessions subsequently completed."
+    },
+    {
+      "command": "python cascade-routing/scripts/v5_data/build_dataset.py",
+      "exit_code": 0,
+      "result": "1600 candidate tasks, 20 v1 development tasks, no model calls"
+    },
+    {
+      "command": "python cascade-routing/scripts/v5_data/audit_dataset.py",
+      "exit_code": 0,
+      "result": "11 audit checks passed; 1600 tasks audited; 20 accepted by existing v1 validator; 15 PolarFront files verified"
+    }
+  ],
+  "software_pytest_count": 0,
+  "model_calls": 0,
+  "paid_calls": 0,
+  "limitations": [
+    "No human review",
+    "No formal dataset split",
+    "Some raw source downloads incomplete",
+    "No simulation experiment run"
+  ]
+}

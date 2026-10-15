@@ -1,0 +1,66 @@
+{
+  "scope": "pedagogical synthetic example, not experiment or fitted baseline",
+  "rows": [
+    {
+      "step": 0,
+      "answers": [
+        null,
+        null,
+        null
+      ],
+      "predicted_quality": [
+        0.7,
+        0.85,
+        0.9
+      ],
+      "cost": [
+        0.1,
+        0.4,
+        1.0
+      ],
+      "next_model": "ship",
+      "selected_answer_model": null
+    },
+    {
+      "step": 1,
+      "answers": [
+        "ship: synthetic response",
+        null,
+        null
+      ],
+      "predicted_quality": [
+        0.4,
+        0.85,
+        0.9
+      ],
+      "cost": [
+        0.1,
+        0.4,
+        1.0
+      ],
+      "next_model": "shore",
+      "selected_answer_model": "ship"
+    },
+    {
+      "step": 2,
+      "answers": [
+        "ship: synthetic response",
+        "shore: synthetic response",
+        null
+      ],
+      "predicted_quality": [
+        0.4,
+        0.86,
+        0.9
+      ],
+      "cost": [
+        0.1,
+        0.4,
+        1.0
+      ],
+      "next_model": null,
+      "selected_answer_model": "shore"
+    }
+  ],
+  "final_model": "shore"
+}

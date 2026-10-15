@@ -1,0 +1,34 @@
+[
+  {
+    "command": "python cascade-routing/reports/v5_implementation_plan_20261013_01/build_pdf.py",
+    "exit_code": 0
+  },
+  {
+    "command": "google-chrome --headless --no-sandbox --disable-gpu --disable-dev-shm-usage --user-data-dir=/tmp/v5-plan-chrome --no-pdf-header-footer --print-to-pdf=/home/guoqiuyuan/LLMresearch/cascade-routing/reports/v5_implementation_plan_20261013_01/V5_IMPLEMENTATION_PLAN.pdf --screenshot=/home/guoqiuyuan/LLMresearch/cascade-routing/reports/v5_implementation_plan_20261013_01/preview.png --window-size=1440,1100 file:///home/guoqiuyuan/LLMresearch/cascade-routing/reports/v5_implementation_plan_20261013_01/V5_IMPLEMENTATION_PLAN.html",
+    "exit_code": 0,
+    "execution": "permitted local browser"
+  },
+  {
+    "command": "pdfinfo cascade-routing/reports/v5_implementation_plan_20261013_01/V5_IMPLEMENTATION_PLAN.pdf",
+    "exit_code": 0,
+    "pages": 16
+  },
+  {
+    "command": "pdftotext -layout cascade-routing/reports/v5_implementation_plan_20261013_01/V5_IMPLEMENTATION_PLAN.pdf cascade-routing/reports/v5_implementation_plan_20261013_01/pdf_text.txt",
+    "exit_code": 0
+  },
+  {
+    "command": "pdftoppm -f 4 -l 4 -scale-to 1400 -png -singlefile cascade-routing/reports/v5_implementation_plan_20261013_01/V5_IMPLEMENTATION_PLAN.pdf /tmp/v5-plan-page4",
+    "exit_code": 0
+  },
+  {
+    "command": "pdftoppm -f 5 -l 5 -scale-to 1400 -png -singlefile cascade-routing/reports/v5_implementation_plan_20261013_01/V5_IMPLEMENTATION_PLAN.pdf /tmp/v5-plan-page5",
+    "exit_code": 0
+  },
+  {
+    "command": "python cascade-routing/reports/v5_implementation_plan_20261013_01/verify_document.py",
+    "exit_code": 0,
+    "passed": 12,
+    "total": 12
+  }
+]

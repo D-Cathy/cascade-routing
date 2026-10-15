@@ -1,0 +1,50 @@
+[
+  {
+    "file": "AGENTS.md",
+    "changed": true,
+    "before_sha256": "8c648f4a2cc28afc671ec96eedc49765ca59e3c0e1666da91695d18b9e8ad693",
+    "after_sha256": "db58259d7e9edb8e586df78b4dd2fbb7a8f090461d246d69cfaa4ec1058c0877"
+  },
+  {
+    "file": "HANDOFF.md",
+    "changed": true,
+    "before_sha256": "4badf9fe33fab18a249d23ae1a8cfe42005a4199b2a554687a7cdd484de3806c",
+    "after_sha256": "83749f28abae5f7963fe32f6ac41c2990947b54673e7eb85e2ef0684659e529c"
+  },
+  {
+    "file": "README.md",
+    "changed": true,
+    "before_sha256": "55203b6719ed93decba9dcca56c6cb9058e0cbb9bc14d9e19eca99ee09642004",
+    "after_sha256": "13d1ed85ca46cda54f9635e1dcf33a898b8f1c4e5ee516e3bf3aa181a33fa20b"
+  },
+  {
+    "file": "src/selection/replay_data.py",
+    "changed": true,
+    "before_sha256": "457aab614f16729bc5b7bc4c1ff61ac4b7b68851063416edef033a3bcec3090f",
+    "after_sha256": "48739e3c0a2e0541d9aa5be91d7823c8f25b139d2f3349e028d4b39665c98d42"
+  },
+  {
+    "file": "src/selection/metrics.py",
+    "changed": true,
+    "before_sha256": "9b00422a608e91943192e576400cdcce854a2dfda365bc5ab6312e237db436f5",
+    "after_sha256": "e6c49c95fa6ecfe8ec7b14e1ad06dd389f21e36db6c1ca5d0d5848e7807049e4"
+  },
+  {
+    "file": "src/selection/executor.py",
+    "changed": true,
+    "before_sha256": "7895139bcb54863f684b25107a965c187087d1cd8eeee8518e6f57280a7871a6",
+    "after_sha256": "1931fae74892c23bec5c1dcd40e03723fda9719956c2084370f0598b47db8fa3"
+  },
+  {
+    "file": "src/selection/schema.py",
+    "changed": true,
+    "before_sha256": "5f38ed7677d4716acf602161bc3fdf7844e61ca2f95c26c2b28a3979d6b41df0",
+    "after_sha256": "6caf64f2042efd9d90defc2c34f568da28dde52fef775652b678378943ff043e"
+  },
+  {
+    "file": "templates/development/README.md",
+    "changed": true,
+    "before_sha256": "d20f575936c38f3b188a17fec5a45dc4e0b254fce6373b0bbe1e804ca915bf32",
+    "after_sha256": "65bbf7e46b5027b3206081561eaa17b8facecf2707e2b75901c35717fa416a60"
+  }
+]

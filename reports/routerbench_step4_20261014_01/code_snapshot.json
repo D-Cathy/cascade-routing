@@ -1,0 +1,12 @@
+{
+  "cascade-routing/src/selection/v5/selector.py": "a0705a0bbd439d87f58e3c8dac39cd2f1e8b426c2a04ccf57551813fb1e43b9a",
+  "cascade-routing/src/selection/v5/train_proxy.py": "071b9812e977d74c695f1fbe8ff43f65e9839239f0922fd4da805c7bd5ed86ea",
+  "cascade-routing/src/selection/v5/__init__.py": "f2dce2cb4a203499e7a5f7cb6352eb5f505b58f43899ab4f3dd504de8de0e65c",
+  "cascade-routing/src/selection/v5/prepare.py": "952201a2118c4e3f0cc0a6b9479cea66c73d69a065ca41e83c6104acf7b71095",
+  "cascade-routing/src/selection/v5/features.py": "c9273818105bd0ece96af85edd0ed7e343ff63fd5f3d4acf9739ec961ecae200",
+  "cascade-routing/src/selection/v5/splits.py": "d541dc40765fe21910c6b845afce998524dc26314183e11f06edbf5b7ce8cd5e",
+  "cascade-routing/src/selection/v5/audit_csv.py": "b481764218387d43505c616b2dd1699b0b4eb427dde19794bb33d41f4916bb7f",
+  "cascade-routing/src/selection/v5/scorers.py": "74f8a5e6c9b94ef2678494f8784ab8b1ac57c2062830754d36b3362dc6af0002",
+  "cascade-routing/src/selection/v5/data_contract.py": "f60a1baa5918a99fe0953be13a5b86233df87396cff77115ae9742dfbc0e6cdb",
+  "cascade-routing/src/selection/simulation_replay.py": "7c4fe773ad98f5bfefd77db9f006b0ffa4e472a5d3c386740b076551cc5ad16e"
+}

@@ -1,0 +1,7 @@
+COMMAND: PYTHONPATH=src /home/guoqiuyuan/miniconda3/bin/python -m pytest -q --junitxml=/home/guoqiuyuan/LLMresearch/cascade-routing/reports/live_backend_20260924_01/tests.xml
+........................................................................ [ 88%]
+.........                                                                [100%]
+81 passed in 4.59s
+
+EXIT_STATUS=0
+EXPECTED_EXIT_STATUS=0

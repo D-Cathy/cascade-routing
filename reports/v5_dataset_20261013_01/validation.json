@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "checks_passed": 11,
+  "checks": [
+    "1600 unique tasks / five balanced categories",
+    "reference one-to-one alignment",
+    "4800 unique missing labels",
+    "no formal split or verified-human claim",
+    "public task boundary excludes evaluation fields",
+    "source groups never cross reserved/unassigned boundary",
+    "20 tasks accepted by existing strict v1 validator",
+    "all relatives of development examples reserved",
+    "1600 references checked against evidence computations",
+    "saved file SHA256 matches",
+    "downloaded PolarFront files match upstream size/checksum"
+  ],
+  "tasks_audited": 1600,
+  "dev_tasks_validated": 20,
+  "polarfront_files_verified": 15,
+  "model_calls": 0,
+  "human_review_completed": false
+}

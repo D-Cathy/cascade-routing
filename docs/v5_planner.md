@@ -1,0 +1,42 @@
+# 第6步：规划器核心与执行连接
+
+2026-10-15继续完成此前未收尾的工程修改。上一轮14项规划器测试和手算演示已通过，但全量回归因自动审批服务用量限制未启动，本轮已重新运行。工程接口接通不等于完整论文复现。
+
+## 实现
+
+- planner.py：最多三档严格向上动作、四维剩余价值、相同摘要状态共享续行、根节点Pareto过滤、可选网格、预测失败阈值和超时回退。
+- planner_policy.py：把可见状态转成规划输入，每轮只执行首动作；实际返回后重新评分、选择答案、规划。不能把benchmark代理概率当service_pass_probability。
+- JointLibraryProvider：显式query_builder和outcome_mapper接口，按联合样本生成场景；供体ID不传给映射器，映射不支持则拒绝该动作。没有默认“移植供体预测质量”的快捷路径。
+- demo_planner_runtime.py：20条合成任务，经UnifiedExecutor进行反馈闭环；实际控制耗时以measured模式记录且仅计费一次，模型调用耗时是明确的模拟值。
+
+质量损失、未来时间、未来费用、预测失败概率四维均最小化。累计费用不被终止向量的零未来费用清空。已有调用（包括失败）禁止重试或向下升级；根节点可直接调用岸/云。相同状态键不包含供体身份，精确资源使用float.hex，不按网格粗暴合并真实状态。
+
+手算树中，船端1秒/0.01后岸端再1秒/0.01可达预测质量1、概率1；直达云端1秒/0.5只能达到质量0.8、概率0.95。规划初始选择船端，反馈后选择岸端，再接受答案。20条执行器演示均按此路径运行；40次模拟调用、真实模型调用0。
+
+## 仍未完成的论文部分
+
+内部穷举一致续行策略、只在根做Pareto/网格，尚未完整复现逐场景前沿压缩和全部排序细节。状态是简化摘要，不含完整任务/答案特征。供体到当前任务的学习映射、正式服务概率分类器、残差缓冲、完整文献强基线和真实数据实验仍缺失。
+
+当前库桥接允许显式注入映射器，但没有可用于正式实验的已训练映射器；不能据此声称第5步与第6步的正式算法已全部连通。RouterBench现有评分器的服务达标概率为空，规划适配器不会偷偷用其benchmark概率替代。
+
+规划器默认50ms是合作式检查，不能中断阻塞provider；演示设置1秒以稳定验证。实际控制耗时已入执行账本，但未来规划开销尚未加入预测场景；不证明硬实时或实际风险保证。二十条任务及评分/场景全为合成夹具，非独立测试成绩。
+
+## 运行验证
+
+```bash
+cd /home/guoqiuyuan/LLMresearch/cascade-routing
+
+# 规划器与适配器：19 passed
+PYTHONPATH=src python -m pytest -q tests/test_v5_planner.py tests/test_v5_planner_policy.py
+
+# 20条执行器闭环，输出目录必须尚不存在
+PYTHONPATH=src python -m selection.v5.demo_planner_runtime \
+  --output reports/planner_runtime_mycheck
+
+# 全量回归，既有HTTP测试需允许本机端口
+PYTHONPATH=src python -m pytest -q
+```
+
+预期演示输出tasks=20、simulated_calls=40、real_model_calls=0，动作序列ship→shore→ACCEPT。结果中traces.jsonl为执行轨迹，plans.json为每轮预测计划，manifest.json记录数据性质和哈希。
+
+记录入口：根目录PROGRESS.md/PROGRESS.html、HANDOFF.md。本轮报告在reports/routerbench_step6_20261015_01；旧手算演示在routerbench_step6_20261014_01。下一阶段应先补齐正式映射/评分器与基线，再进入正式校准，不能直接宣称八步均完成。

@@ -1,0 +1,17 @@
+{
+  "method": "GET",
+  "endpoint": "http://127.0.0.1:11434/v1/models",
+  "generation_requests": 0,
+  "http_status": 200,
+  "model_ids": [
+    "qwen2.5:3b",
+    "artifish/llama3.2-uncensored:latest",
+    "hopephoto/Qwen3-4B-Instruct-2507_q8:latest",
+    "deepseek-r1:14b",
+    "deepseek-r1:latest",
+    "qwen3:14b",
+    "qwen3:8b",
+    "llama3.1:8b",
+    "qwen3:4b"
+  ]
+}

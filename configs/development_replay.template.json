@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "seed": 20260923,
+  "tasks": "../templates/development/tasks.draft.jsonl",
+  "calls": "../templates/development/calls.draft.jsonl",
+  "labels": "../templates/development/labels.draft.jsonl",
+  "models": {
+    "ship": "ship",
+    "shore": "shore",
+    "cloud": "cloud"
+  },
+  "policies": [
+    "fixed_ship",
+    "fixed_shore",
+    "fixed_cloud",
+    "fixed_cascade_fallback",
+    "cascade_router_devmean"
+  ],
+  "decision_timing": "simulated",
+  "decision_overhead_s": 0.01,
+  "decision_cost": 0.0,
+  "cascade_max_expected_cost": 4.0,
+  "purpose": "engineering_validation_only"
+}

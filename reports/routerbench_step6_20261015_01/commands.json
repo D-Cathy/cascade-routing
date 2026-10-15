@@ -1,0 +1,22 @@
+[
+  {
+    "command": "PYTHONPATH=src python -m pytest -q tests/test_v5_planner.py tests/test_v5_planner_policy.py",
+    "exit_code": 0,
+    "result": "19 passed in 2.41s"
+  },
+  {
+    "command": "PYTHONPATH=src python -m selection.v5.demo_planner_runtime --output reports/routerbench_step6_20261015_01/runtime",
+    "exit_code": 0,
+    "result": "20 synthetic requests, 40 simulated calls; real calls 0"
+  },
+  {
+    "command": "PYTHONPATH=src python -m pytest -q --junitxml=reports/routerbench_step6_20261015_01/tests.xml",
+    "exit_code": 0,
+    "result": {
+      "tests": 157,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  }
+]

@@ -1,0 +1,3 @@
+{"schema_version": 1, "task_id": "mock-single-20260924", "model_name": "ship", "quality": null, "valid": null, "label_source": "missing", "rubric_version": "paper-development-draft-v1"}
+{"schema_version": 1, "task_id": "mock-single-20260924", "model_name": "shore", "quality": null, "valid": null, "label_source": "missing", "rubric_version": "paper-development-draft-v1"}
+{"schema_version": 1, "task_id": "mock-single-20260924", "model_name": "cloud", "quality": null, "valid": null, "label_source": "missing", "rubric_version": "paper-development-draft-v1"}

@@ -1,0 +1,17 @@
+{
+  "answer-001": {
+    "task_id": "mock-single-20260924",
+    "model_name": "shore",
+    "status": "SUCCESS"
+  },
+  "answer-002": {
+    "task_id": "mock-single-20260924",
+    "model_name": "cloud",
+    "status": "SUCCESS"
+  },
+  "answer-003": {
+    "task_id": "mock-single-20260924",
+    "model_name": "ship",
+    "status": "SUCCESS"
+  }
+}

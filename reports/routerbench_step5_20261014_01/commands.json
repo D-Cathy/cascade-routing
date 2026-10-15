@@ -1,0 +1,22 @@
+[
+  {
+    "command": "PYTHONPATH=src python -m pytest -q tests/test_v5_transitions.py",
+    "exit_code": 0,
+    "result": "12 passed in 1.95s"
+  },
+  {
+    "command": "PYTHONPATH=src python -m selection.v5.demo_transition --output reports/routerbench_step5_20261014_01/demo",
+    "exit_code": 0,
+    "result": "initial synthetic demo; 12 groups, 8 fit/4 query"
+  },
+  {
+    "command": "PYTHONPATH=src python -m selection.v5.demo_transition --output reports/routerbench_step5_20261014_01/demo_final",
+    "exit_code": 0,
+    "result": "final demo including retrieval config; 4 negative targets, 4 supported queries"
+  },
+  {
+    "command": "PYTHONPATH=src python -m pytest -q --junitxml=reports/routerbench_step5_20261014_01/tests.xml",
+    "exit_code": 0,
+    "result": "138 passed in 5.37s; local HTTP permission enabled"
+  }
+]

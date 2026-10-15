@@ -1,0 +1,22 @@
+{
+  "candidates": {
+    "fixture_policy": {
+      "n": 20,
+      "known_failures": 0,
+      "unknown": 0,
+      "upper_reference_bound": 0.13910834066826522,
+      "passes_reference_bound": false
+    }
+  },
+  "H": 1,
+  "alpha": 0.1,
+  "delta": 0.05,
+  "risk_guarantee": false,
+  "selected_policy": null,
+  "limitations": [
+    "source group uniqueness is not verified statistical independence",
+    "hashes detect changed artifacts but are not signed proof of pre-outcome freezing",
+    "input failures must come from audited full-request evaluation; labels/resources not rederived here",
+    "reference pass does not authorize deployment or replace formal applicability review"
+  ]
+}

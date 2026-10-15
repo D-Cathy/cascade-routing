@@ -1,0 +1,70 @@
+[
+  {
+    "argv": [
+      "python",
+      "-m",
+      "pytest",
+      "-q",
+      "--junitxml=reports/framework_reading_20261012_01/tests.xml"
+    ],
+    "environment_overrides": {
+      "PYTHONPATH": "src"
+    },
+    "exit_code": 1,
+    "elapsed_s": 4.458753940998577,
+    "log": "tests.log"
+  },
+  {
+    "argv": [
+      "python",
+      "-m",
+      "selection.replay",
+      "--config",
+      "configs/small_replay.json",
+      "--validate-only"
+    ],
+    "environment_overrides": {
+      "PYTHONPATH": "src"
+    },
+    "exit_code": 0,
+    "elapsed_s": 1.7306002750410698,
+    "log": "validate.log"
+  },
+  {
+    "argv": [
+      "python",
+      "-m",
+      "selection.replay",
+      "--config",
+      "configs/small_replay.json",
+      "--output",
+      "reports/framework_reading_20261012_01/offline_demo"
+    ],
+    "environment_overrides": {
+      "PYTHONPATH": "src"
+    },
+    "exit_code": 0,
+    "elapsed_s": 1.780400894000195,
+    "log": "offline_demo.log"
+  },
+  {
+    "command": "curl -L --fail --max-time 45 https://raw.githubusercontent.com/mlresearch/v267/main/assets/dekoninck25a/dekoninck25a.pdf -o reports/framework_reading_20261012_01/cascade_routing_icml2025.pdf",
+    "initial_sandbox_curl_exit_code": 7,
+    "elevated_exit_code": 0,
+    "scope": "Official paper download only"
+  },
+  {
+    "command": "pdftotext -layout reports/framework_reading_20261012_01/cascade_routing_icml2025.pdf reports/framework_reading_20261012_01/cascade_routing_icml2025.txt",
+    "exit_code": 0
+  },
+  {
+    "command": "PYTHONPATH=src python -m pytest -q --junitxml=reports/framework_reading_20261012_01/tests_full.xml > reports/framework_reading_20261012_01/tests_full.log 2>&1",
+    "exit_code": 0,
+    "scope": "Allowed loopback socket for local fake HTTP fixtures; no real model generation"
+  },
+  {
+    "command": "PYTHONPATH=src python reports/framework_reading_20261012_01/trace_native_router.py",
+    "exit_code": 0,
+    "scope": "Pedagogical synthetic predictions, no actual model calls"
+  }
+]

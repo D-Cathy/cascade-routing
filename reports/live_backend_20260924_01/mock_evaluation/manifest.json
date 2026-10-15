@@ -1,0 +1,7 @@
+{
+  "collection_manifest_sha256": "151b9b13cc53c69c731ec05c04fe9a711b45d917baecb936206fc1adf766a7df",
+  "annotation_sha256": "c1a956bf2e9702be3fe4f4c7d9e19b74c8b773236b45a81d9597e51b50b0c4c3",
+  "real_model_calls_executed_by_evaluation": false,
+  "risk_guarantee": false,
+  "unevaluated_roles": []
+}

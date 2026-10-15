@@ -1,0 +1,58 @@
+[
+  {
+    "name": "final_tests",
+    "command": [
+      "/home/guoqiuyuan/miniconda3/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "--junitxml=/home/guoqiuyuan/LLMresearch/cascade-routing/reports/recovery_20260923_01/final_tests.xml"
+    ],
+    "exit_status": 0,
+    "expected_exit_status": 0,
+    "log": "final_tests.log"
+  },
+  {
+    "name": "validate",
+    "command": [
+      "/home/guoqiuyuan/miniconda3/bin/python",
+      "-m",
+      "selection.replay",
+      "--config",
+      "configs/small_replay.json",
+      "--validate-only"
+    ],
+    "exit_status": 0,
+    "expected_exit_status": 0,
+    "log": "validate.log"
+  },
+  {
+    "name": "draft_rejected",
+    "command": [
+      "/home/guoqiuyuan/miniconda3/bin/python",
+      "-m",
+      "selection.replay",
+      "--config",
+      "configs/development_replay.template.json",
+      "--validate-only"
+    ],
+    "exit_status": 1,
+    "expected_exit_status": 1,
+    "log": "draft_rejected.log"
+  },
+  {
+    "name": "final_replay",
+    "command": [
+      "/home/guoqiuyuan/miniconda3/bin/python",
+      "-m",
+      "selection.replay",
+      "--config",
+      "configs/small_replay.json",
+      "--output",
+      "reports/recovery_20260923_01/final_synthetic_run"
+    ],
+    "exit_status": 0,
+    "expected_exit_status": 0,
+    "log": "final_replay.log"
+  }
+]

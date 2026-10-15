@@ -1,0 +1,162 @@
+{
+  "endpoint": "http://127.0.0.1:11434/api/tags",
+  "method": "GET",
+  "purpose": "read-only installed-model metadata; no generation request",
+  "generation_requests": 0,
+  "http_status": 200,
+  "models": [
+    {
+      "name": "qwen2.5:3b",
+      "model": "qwen2.5:3b",
+      "modified_at": "2026-06-11T18:26:52.003892894+08:00",
+      "size": 1929912432,
+      "digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen2",
+        "families": [
+          "qwen2"
+        ],
+        "parameter_size": "3.1B",
+        "quantization_level": "Q4_K_M"
+      }
+    },
+    {
+      "name": "artifish/llama3.2-uncensored:latest",
+      "model": "artifish/llama3.2-uncensored:latest",
+      "modified_at": "2025-10-01T17:05:56.554172028+08:00",
+      "size": 2241006824,
+      "digest": "c73bea26e00483b58ba59729b74bfc1647971dafa1fe66c890d845ae63e2c34e",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "llama",
+        "families": [
+          "llama"
+        ],
+        "parameter_size": "3.6B",
+        "quantization_level": "Q4_K_M"
+      }
+    },
+    {
+      "name": "hopephoto/Qwen3-4B-Instruct-2507_q8:latest",
+      "model": "hopephoto/Qwen3-4B-Instruct-2507_q8:latest",
+      "modified_at": "2025-09-26T00:47:29.223230474+08:00",
+      "size": 4280405697,
+      "digest": "3181243d1181408a9e40d0b7b316c5007bd3ab87909990f2c69269d278166535",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen3",
+        "families": [
+          "qwen3"
+        ],
+        "parameter_size": "4.0B",
+        "quantization_level": "Q8_0"
+      }
+    },
+    {
+      "name": "deepseek-r1:14b",
+      "model": "deepseek-r1:14b",
+      "modified_at": "2025-09-05T16:06:57.043729251+08:00",
+      "size": 8988112209,
+      "digest": "c333b7232bdb521236694ffbb5f5a6b11cc45d98e9142c73123b670fca400b09",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen2",
+        "families": [
+          "qwen2"
+        ],
+        "parameter_size": "14.8B",
+        "quantization_level": "Q4_K_M"
+      }
+    },
+    {
+      "name": "deepseek-r1:latest",
+      "model": "deepseek-r1:latest",
+      "modified_at": "2025-09-05T16:01:53.093997133+08:00",
+      "size": 5225376047,
+      "digest": "6995872bfe4c521a67b32da386cd21d5c6e819b6e0d62f79f64ec83be99f5763",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen3",
+        "families": [
+          "qwen3"
+        ],
+        "parameter_size": "8.2B",
+        "quantization_level": "Q4_K_M"
+      }
+    },
+    {
+      "name": "qwen3:14b",
+      "model": "qwen3:14b",
+      "modified_at": "2025-09-05T16:01:37.427695068+08:00",
+      "size": 9276198565,
+      "digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen3",
+        "families": [
+          "qwen3"
+        ],
+        "parameter_size": "14.8B",
+        "quantization_level": "Q4_K_M"
+      }
+    },
+    {
+      "name": "qwen3:8b",
+      "model": "qwen3:8b",
+      "modified_at": "2025-08-20T15:09:11.163450142+08:00",
+      "size": 5225388164,
+      "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen3",
+        "families": [
+          "qwen3"
+        ],
+        "parameter_size": "8.2B",
+        "quantization_level": "Q4_K_M"
+      }
+    },
+    {
+      "name": "llama3.1:8b",
+      "model": "llama3.1:8b",
+      "modified_at": "2025-07-31T23:12:11.558978596+08:00",
+      "size": 4920753328,
+      "digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "llama",
+        "families": [
+          "llama"
+        ],
+        "parameter_size": "8.0B",
+        "quantization_level": "Q4_K_M"
+      }
+    },
+    {
+      "name": "qwen3:4b",
+      "model": "qwen3:4b",
+      "modified_at": "2025-07-28T18:13:10.603577814+08:00",
+      "size": 2620788260,
+      "digest": "2bfd38a7daaf4b1037efe517ccb73d1a3bbd4822cf89f1a82be1569050a114e0",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen3",
+        "families": [
+          "qwen3"
+        ],
+        "parameter_size": "4.0B",
+        "quantization_level": "Q4_K_M"
+      }
+    }
+  ]
+}

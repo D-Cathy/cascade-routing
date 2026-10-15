@@ -1,0 +1,5 @@
+COMMAND: PYTHONPATH=src /home/guoqiuyuan/miniconda3/bin/python -m selection.replay --config configs/small_replay.json --validate-only
+{"valid": true, "tasks": 10, "calls": 30, "labels": 30}
+
+EXIT_STATUS=0
+EXPECTED_EXIT_STATUS=0

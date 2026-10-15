@@ -1,0 +1,206 @@
+[
+  {
+    "path": "data/routerbench_0shot.csv",
+    "type": "file"
+  },
+  {
+    "path": "data/results",
+    "type": "directory"
+  },
+  {
+    "path": "data/swebench",
+    "type": "directory"
+  },
+  {
+    "path": "data/classification",
+    "type": "directory"
+  },
+  {
+    "path": "data/routerbench_5shot.csv",
+    "type": "file"
+  },
+  {
+    "path": "data/free_form",
+    "type": "directory"
+  },
+  {
+    "path": "data/code_math",
+    "type": "directory"
+  },
+  {
+    "csv_columns": [
+      "sample_id",
+      "prompt",
+      "eval_name",
+      "WizardLM/WizardLM-13B-V1.2",
+      "claude-instant-v1",
+      "claude-v1",
+      "claude-v2",
+      "gpt-3.5-turbo-1106",
+      "gpt-4-1106-preview",
+      "meta/code-llama-instruct-34b-chat",
+      "meta/llama-2-70b-chat",
+      "mistralai/mistral-7b-chat",
+      "mistralai/mixtral-8x7b-chat",
+      "zero-one-ai/Yi-34B-Chat",
+      "gpt-3.5-turbo-1106|model_response",
+      "claude-instant-v1|model_response",
+      "claude-v1|model_response",
+      "claude-v2|model_response",
+      "gpt-4-1106-preview|model_response",
+      "meta/llama-2-70b-chat|model_response",
+      "mistralai/mixtral-8x7b-chat|model_response",
+      "zero-one-ai/Yi-34B-Chat|model_response",
+      "WizardLM/WizardLM-13B-V1.2|model_response",
+      "meta/code-llama-instruct-34b-chat|model_response",
+      "mistralai/mistral-7b-chat|model_response",
+      "gpt-3.5-turbo-1106|total_cost",
+      "claude-instant-v1|total_cost",
+      "claude-v1|total_cost",
+      "claude-v2|total_cost",
+      "gpt-4-1106-preview|total_cost",
+      "meta/llama-2-70b-chat|total_cost",
+      "mistralai/mixtral-8x7b-chat|total_cost",
+      "zero-one-ai/Yi-34B-Chat|total_cost",
+      "WizardLM/WizardLM-13B-V1.2|total_cost",
+      "meta/code-llama-instruct-34b-chat|total_cost",
+      "mistralai/mistral-7b-chat|total_cost",
+      "oracle_model_to_route_to"
+    ],
+    "first_row_field_lengths": {
+      "sample_id": 31,
+      "prompt": 107,
+      "eval_name": 25,
+      "WizardLM/WizardLM-13B-V1.2": 3,
+      "claude-instant-v1": 3,
+      "claude-v1": 3,
+      "claude-v2": 3,
+      "gpt-3.5-turbo-1106": 3,
+      "gpt-4-1106-preview": 3,
+      "meta/code-llama-instruct-34b-chat": 3,
+      "meta/llama-2-70b-chat": 3,
+      "mistralai/mistral-7b-chat": 3,
+      "mistralai/mixtral-8x7b-chat": 3,
+      "zero-one-ai/Yi-34B-Chat": 3,
+      "gpt-3.5-turbo-1106|model_response": 187,
+      "claude-instant-v1|model_response": 7,
+      "claude-v1|model_response": 152,
+      "claude-v2|model_response": 216,
+      "gpt-4-1106-preview|model_response": 288,
+      "meta/llama-2-70b-chat|model_response": 560,
+      "mistralai/mixtral-8x7b-chat|model_response": 644,
+      "zero-one-ai/Yi-34B-Chat|model_response": 194,
+      "WizardLM/WizardLM-13B-V1.2|model_response": 231,
+      "meta/code-llama-instruct-34b-chat|model_response": 629,
+      "mistralai/mistral-7b-chat|model_response": 566,
+      "gpt-3.5-turbo-1106|total_cost": 8,
+      "claude-instant-v1|total_cost": 8,
+      "claude-v1|total_cost": 21,
+      "claude-v2|total_cost": 8,
+      "gpt-4-1106-preview|total_cost": 7,
+      "meta/llama-2-70b-chat|total_cost": 22,
+      "mistralai/mixtral-8x7b-chat|total_cost": 9,
+      "zero-one-ai/Yi-34B-Chat|total_cost": 22,
+      "WizardLM/WizardLM-13B-V1.2|total_cost": 22,
+      "meta/code-llama-instruct-34b-chat|total_cost": 22,
+      "mistralai/mistral-7b-chat|total_cost": 21,
+      "oracle_model_to_route_to": 16
+    }
+  },
+  {
+    "sample": "data/free_form/gsm8k/train/qualities.json",
+    "type": "dict",
+    "keys": [
+      "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo",
+      "meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo",
+      "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
+      "google/gemma-2-9b-it",
+      "google/gemma-2-27b-it",
+      "google/gemma-2b-it",
+      "mistralai/Mistral-7B-Instruct-v0.3",
+      "mistralai/Mixtral-8x22B-Instruct-v0.1",
+      "mistralai/Mixtral-8x7B-Instruct-v0.1",
+      "Qwen/Qwen2.5-0.5B-Instruct",
+      "Qwen/Qwen2.5-1.5B-Instruct",
+      "Qwen/Qwen2.5-3B-Instruct",
+      "Qwen/Qwen2.5-7B-Instruct-Turbo",
+      "Qwen/Qwen2.5-72B-Instruct-Turbo",
+      "microsoft/Phi-3.5-mini-instruct"
+    ]
+  },
+  {
+    "sample": "data/free_form/gsm8k/train/queries.json",
+    "type": "dict",
+    "keys": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ]
+  },
+  {
+    "sample": "data/classification/mixeval/train/qualities.json",
+    "type": "dict",
+    "keys": [
+      "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo",
+      "meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo",
+      "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
+      "google/gemma-2-9b-it",
+      "google/gemma-2-27b-it",
+      "google/gemma-2b-it",
+      "mistralai/Mistral-7B-Instruct-v0.3",
+      "mistralai/Mixtral-8x22B-Instruct-v0.1",
+      "mistralai/Mixtral-8x7B-Instruct-v0.1",
+      "Qwen/Qwen2.5-0.5B-Instruct",
+      "Qwen/Qwen2.5-1.5B-Instruct",
+      "Qwen/Qwen2.5-3B-Instruct",
+      "Qwen/Qwen2.5-7B-Instruct-Turbo",
+      "Qwen/Qwen2.5-72B-Instruct-Turbo",
+      "microsoft/Phi-3.5-mini-instruct"
+    ]
+  },
+  {
+    "sample": "data/classification/mixeval/train/queries.json",
+    "type": "dict",
+    "keys": [
+      "0"
+    ]
+  },
+  {
+    "sample": "data/code_math/minerva/qualities.json",
+    "type": "dict",
+    "keys": [
+      "Qwen2.5-Coder-1.5B-Ins",
+      "Qwen2.5-Coder-7B-Ins",
+      "Qwen2.5-Math-1.5B-Ins",
+      "Qwen2.5-Math-7B-Ins"
+    ]
+  },
+  {
+    "sample": "data/code_math/minerva/queries.json",
+    "type": "dict",
+    "keys": [
+      "0",
+      "1",
+      "2"
+    ]
+  },
+  {
+    "sample": "data/swebench/train/qualities.json",
+    "type": "dict",
+    "keys": [
+      "20240402_sweagent_claude3opus",
+      "20240728_sweagent_gpt4o",
+      "20240620_sweagent_claude3.5sonnet",
+      "20240402_sweagent_gpt4"
+    ]
+  },
+  {
+    "sample": "data/swebench/train/queries.json",
+    "type": "dict",
+    "keys": [
+      "0",
+      "1"
+    ]
+  }
+]

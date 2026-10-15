@@ -1,0 +1,28 @@
+{
+  "credential_presence_only": {
+    "OPENAI_API_KEY": false,
+    "TOGETHER_API_KEY": false,
+    "ANTHROPIC_API_KEY": false,
+    "GOOGLE_API_KEY": false
+  },
+  "cache_model_directory_names": [],
+  "network_probe_performed": false,
+  "api_calls": 0,
+  "gpu_query": [
+    "NVIDIA GeForce RTX 4090, 24564 MiB",
+    "NVIDIA GeForce RTX 4090, 24564 MiB",
+    "NVIDIA GeForce RTX 4090, 24564 MiB",
+    "NVIDIA GeForce RTX 4090, 24564 MiB",
+    "NVIDIA GeForce RTX 4090, 24564 MiB",
+    "NVIDIA GeForce RTX 4090, 24564 MiB",
+    "NVIDIA GeForce RTX 4090, 24564 MiB",
+    "NVIDIA GeForce RTX 4090, 24564 MiB"
+  ],
+  "optional_imports": {
+    "APIQuery": false,
+    "CascadeRouter": true,
+    "ClassificationQualityComputer": false,
+    "OpenFormQualityComputer": false,
+    "CodeMathQualityComputer": false
+  }
+}

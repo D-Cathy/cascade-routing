@@ -1,0 +1,114 @@
+[
+  {
+    "url": "https://archive.ics.uci.edu/static/public/316/condition+based+maintenance+of+naval+propulsion+plants.zip",
+    "relative": "raw/uci_nav_propulsion.zip"
+  },
+  {
+    "url": "https://huggingface.co/datasets/bonalor/synthetic_maritime_radio_communication/resolve/main/scenarios.jsonl",
+    "relative": "raw/martts_scenarios.jsonl"
+  },
+  {
+    "url": "https://www.ndbc.noaa.gov/data/historical/stdmet/41001h2023.txt.gz",
+    "relative": "raw/ndbc_41001_2023.txt.gz"
+  },
+  {
+    "url": "https://www.ndbc.noaa.gov/data/historical/stdmet/41002h2023.txt.gz",
+    "relative": "raw/ndbc_41002_2023.txt.gz"
+  },
+  {
+    "url": "https://zenodo.org/records/10364615/files/scanmar-17-05-2021.csv?download=1",
+    "relative": "raw/polarfront/scanmar-17-05-2021.csv"
+  },
+  {
+    "url": "https://zenodo.org/records/10364615/files/pos-15-05-2021.log?download=1",
+    "relative": "raw/polarfront/pos-15-05-2021.log"
+  },
+  {
+    "url": "https://zenodo.org/records/10364615/files/refpos-17-05-2021.csv?download=1",
+    "relative": "raw/polarfront/refpos-17-05-2021.csv"
+  },
+  {
+    "url": "https://zenodo.org/records/10364615/files/pos-21-05-2021.log?download=1",
+    "relative": "raw/polarfront/pos-21-05-2021.log"
+  },
+  {
+    "url": "https://zenodo.org/records/10364615/files/pos-14-05-2021.log?download=1",
+    "relative": "raw/polarfront/pos-14-05-2021.log"
+  },
+  {
+    "url": "https://zenodo.org/records/10364615/files/pos-17-05-2021.log?download=1",
+    "relative": "raw/polarfront/pos-17-05-2021.log"
+  },
+  {
+    "url": "https://zenodo.org/records/10364615/files/ref-16-05-2021.csv?download=1",
+    "relative": "raw/polarfront/ref-16-05-2021.csv"
+  },
+  {
+    "url": "https://zenodo.org/records/10364615/files/pos-16-05-2021.log?download=1",
+    "relative": "raw/polarfront/pos-16-05-2021.log"
+  },
+  {
+    "url": "https://zenodo.org/records/10364615/files/ref-19-05-2021.csv?download=1",
+    "relative": "raw/polarfront/ref-19-05-2021.csv"
+  },
+  {
+    "url": "https://zenodo.org/records/10364615/files/scanmar-20-05-2021.csv?download=1",
+    "relative": "raw/polarfront/scanmar-20-05-2021.csv"
+  },
+  {
+    "url": "https://zenodo.org/records/10364615/files/ref-18-05-2021.csv?download=1",
+    "relative": "raw/polarfront/ref-18-05-2021.csv"
+  },
+  {
+    "url": "https://zenodo.org/records/10364615/files/refpos-20-05-2021.csv?download=1",
+    "relative": "raw/polarfront/refpos-20-05-2021.csv"
+  },
+  {
+    "url": "https://zenodo.org/records/10364615/files/scanmar-19-05-2021.csv?download=1",
+    "relative": "raw/polarfront/scanmar-19-05-2021.csv"
+  },
+  {
+    "url": "https://zenodo.org/records/10364615/files/scanmar-18-05-2021.csv?download=1",
+    "relative": "raw/polarfront/scanmar-18-05-2021.csv"
+  },
+  {
+    "url": "https://zenodo.org/records/10364615/files/pos-20-05-2021.log?download=1",
+    "relative": "raw/polarfront/pos-20-05-2021.log"
+  },
+  {
+    "url": "https://zenodo.org/records/10364615/files/ref-20-05-2021.csv?download=1",
+    "relative": "raw/polarfront/ref-20-05-2021.csv"
+  },
+  {
+    "url": "https://zenodo.org/records/10364615/files/pos-18-05-2021.log?download=1",
+    "relative": "raw/polarfront/pos-18-05-2021.log"
+  },
+  {
+    "url": "https://zenodo.org/records/10364615/files/ref-17-05-2021.csv?download=1",
+    "relative": "raw/polarfront/ref-17-05-2021.csv"
+  },
+  {
+    "url": "https://zenodo.org/records/10364615/files/pos-19-05-2021.log?download=1",
+    "relative": "raw/polarfront/pos-19-05-2021.log"
+  },
+  {
+    "url": "https://zenodo.org/records/10364615/files/refpos-16-05-2021.csv?download=1",
+    "relative": "raw/polarfront/refpos-16-05-2021.csv"
+  },
+  {
+    "url": "https://zenodo.org/records/10364615/files/refpos-18-05-2021.csv?download=1",
+    "relative": "raw/polarfront/refpos-18-05-2021.csv"
+  },
+  {
+    "url": "https://zenodo.org/records/10364615/files/refpos-19-05-2021.csv?download=1",
+    "relative": "raw/polarfront/refpos-19-05-2021.csv"
+  },
+  {
+    "url": "https://zenodo.org/records/10364615/files/Scanmar-setup.txt?download=1",
+    "relative": "raw/polarfront/Scanmar-setup.txt"
+  },
+  {
+    "url": "https://www.ndbc.noaa.gov/faq/measdes.shtml",
+    "relative": "raw/ndbc_measurements.html"
+  }
+]

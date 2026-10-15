@@ -1,0 +1,9 @@
+COMMAND: PYTHONPATH=src python -c "import selection.api"
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import selection.api
+  File "/home/guoqiuyuan/LLMresearch/cascade-routing/src/selection/api.py", line 4, in <module>
+    from langchain_openai import ChatOpenAI
+ModuleNotFoundError: No module named 'langchain_openai'
+
+EXIT_STATUS=1

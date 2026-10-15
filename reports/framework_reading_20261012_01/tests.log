@@ -1,0 +1,355 @@
+.............EEEEEEE.................................................... [ 88%]
+.........                                                                [100%]
+==================================== ERRORS ====================================
+_____ ERROR at setup of test_actual_http_worker_one_post_only[/ok-SUCCESS] _____
+
+    @pytest.fixture
+    def local_server():
+        class Handler(BaseHTTPRequestHandler):
+            def do_POST(self):
+                self.server.count+=1
+                self.server.payloads.append(json.loads(self.rfile.read(int(self.headers["Content-Length"]))))
+                if self.path=="/disconnect":self.connection.close();return
+                if self.path=="/slow":time.sleep(.3)
+                status={"/error":500,"/limited":429,"/redirect":307}.get(self.path,200)
+                body={"choices":[{"message":{"content":'{"action":"a","condition":"c","deadline":"d"}'}}],"usage":{"prompt_tokens":10,"completion_tokens":5}}
+                if self.path in {"/error","/limited"}:body={"error":"DO_NOT_LOG_FAKE_SECRET","usage":{"prompt_tokens":10,"completion_tokens":5}}
+                raw=b"not JSON" if self.path=="/badjson" else json.dumps(body).encode()
+                try:
+                    self.send_response(status)
+                    if self.path=="/redirect":self.send_header("Location","/target")
+                    self.send_header("Content-Length",str(len(raw)));self.end_headers();self.wfile.write(raw)
+                except (BrokenPipeError,ConnectionResetError):pass
+            def log_message(self,*a):pass
+>       server=ThreadingHTTPServer(("127.0.0.1",0),Handler);server.count=0;server.payloads=[];server.daemon_threads=True
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_live_backend.py:110: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../miniconda3/lib/python3.13/socketserver.py:453: in __init__
+    self.socket = socket.socket(self.address_family,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <socket.socket fd=-1, family=0, type=0, proto=0>
+family = <AddressFamily.AF_INET: 2>, type = <SocketKind.SOCK_STREAM: 1>
+proto = 0, fileno = None
+
+    def __init__(self, family=-1, type=-1, proto=-1, fileno=None):
+        # For user code address family and type values are IntEnum members, but
+        # for the underlying _socket.socket they're just integers. The
+        # constructor of _socket.socket converts the given argument to an
+        # integer automatically.
+        if fileno is None:
+            if family == -1:
+                family = AF_INET
+            if type == -1:
+                type = SOCK_STREAM
+            if proto == -1:
+                proto = 0
+>       _socket.socket.__init__(self, family, type, proto, fileno)
+E       PermissionError: [Errno 1] Operation not permitted
+
+../../miniconda3/lib/python3.13/socket.py:233: PermissionError
+____ ERROR at setup of test_actual_http_worker_one_post_only[/error-FAILED] ____
+
+    @pytest.fixture
+    def local_server():
+        class Handler(BaseHTTPRequestHandler):
+            def do_POST(self):
+                self.server.count+=1
+                self.server.payloads.append(json.loads(self.rfile.read(int(self.headers["Content-Length"]))))
+                if self.path=="/disconnect":self.connection.close();return
+                if self.path=="/slow":time.sleep(.3)
+                status={"/error":500,"/limited":429,"/redirect":307}.get(self.path,200)
+                body={"choices":[{"message":{"content":'{"action":"a","condition":"c","deadline":"d"}'}}],"usage":{"prompt_tokens":10,"completion_tokens":5}}
+                if self.path in {"/error","/limited"}:body={"error":"DO_NOT_LOG_FAKE_SECRET","usage":{"prompt_tokens":10,"completion_tokens":5}}
+                raw=b"not JSON" if self.path=="/badjson" else json.dumps(body).encode()
+                try:
+                    self.send_response(status)
+                    if self.path=="/redirect":self.send_header("Location","/target")
+                    self.send_header("Content-Length",str(len(raw)));self.end_headers();self.wfile.write(raw)
+                except (BrokenPipeError,ConnectionResetError):pass
+            def log_message(self,*a):pass
+>       server=ThreadingHTTPServer(("127.0.0.1",0),Handler);server.count=0;server.payloads=[];server.daemon_threads=True
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_live_backend.py:110: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../miniconda3/lib/python3.13/socketserver.py:453: in __init__
+    self.socket = socket.socket(self.address_family,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <socket.socket fd=-1, family=0, type=0, proto=0>
+family = <AddressFamily.AF_INET: 2>, type = <SocketKind.SOCK_STREAM: 1>
+proto = 0, fileno = None
+
+    def __init__(self, family=-1, type=-1, proto=-1, fileno=None):
+        # For user code address family and type values are IntEnum members, but
+        # for the underlying _socket.socket they're just integers. The
+        # constructor of _socket.socket converts the given argument to an
+        # integer automatically.
+        if fileno is None:
+            if family == -1:
+                family = AF_INET
+            if type == -1:
+                type = SOCK_STREAM
+            if proto == -1:
+                proto = 0
+>       _socket.socket.__init__(self, family, type, proto, fileno)
+E       PermissionError: [Errno 1] Operation not permitted
+
+../../miniconda3/lib/python3.13/socket.py:233: PermissionError
+___ ERROR at setup of test_actual_http_worker_one_post_only[/limited-FAILED] ___
+
+    @pytest.fixture
+    def local_server():
+        class Handler(BaseHTTPRequestHandler):
+            def do_POST(self):
+                self.server.count+=1
+                self.server.payloads.append(json.loads(self.rfile.read(int(self.headers["Content-Length"]))))
+                if self.path=="/disconnect":self.connection.close();return
+                if self.path=="/slow":time.sleep(.3)
+                status={"/error":500,"/limited":429,"/redirect":307}.get(self.path,200)
+                body={"choices":[{"message":{"content":'{"action":"a","condition":"c","deadline":"d"}'}}],"usage":{"prompt_tokens":10,"completion_tokens":5}}
+                if self.path in {"/error","/limited"}:body={"error":"DO_NOT_LOG_FAKE_SECRET","usage":{"prompt_tokens":10,"completion_tokens":5}}
+                raw=b"not JSON" if self.path=="/badjson" else json.dumps(body).encode()
+                try:
+                    self.send_response(status)
+                    if self.path=="/redirect":self.send_header("Location","/target")
+                    self.send_header("Content-Length",str(len(raw)));self.end_headers();self.wfile.write(raw)
+                except (BrokenPipeError,ConnectionResetError):pass
+            def log_message(self,*a):pass
+>       server=ThreadingHTTPServer(("127.0.0.1",0),Handler);server.count=0;server.payloads=[];server.daemon_threads=True
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_live_backend.py:110: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../miniconda3/lib/python3.13/socketserver.py:453: in __init__
+    self.socket = socket.socket(self.address_family,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <socket.socket fd=-1, family=0, type=0, proto=0>
+family = <AddressFamily.AF_INET: 2>, type = <SocketKind.SOCK_STREAM: 1>
+proto = 0, fileno = None
+
+    def __init__(self, family=-1, type=-1, proto=-1, fileno=None):
+        # For user code address family and type values are IntEnum members, but
+        # for the underlying _socket.socket they're just integers. The
+        # constructor of _socket.socket converts the given argument to an
+        # integer automatically.
+        if fileno is None:
+            if family == -1:
+                family = AF_INET
+            if type == -1:
+                type = SOCK_STREAM
+            if proto == -1:
+                proto = 0
+>       _socket.socket.__init__(self, family, type, proto, fileno)
+E       PermissionError: [Errno 1] Operation not permitted
+
+../../miniconda3/lib/python3.13/socket.py:233: PermissionError
+__ ERROR at setup of test_actual_http_worker_one_post_only[/redirect-FAILED] ___
+
+    @pytest.fixture
+    def local_server():
+        class Handler(BaseHTTPRequestHandler):
+            def do_POST(self):
+                self.server.count+=1
+                self.server.payloads.append(json.loads(self.rfile.read(int(self.headers["Content-Length"]))))
+                if self.path=="/disconnect":self.connection.close();return
+                if self.path=="/slow":time.sleep(.3)
+                status={"/error":500,"/limited":429,"/redirect":307}.get(self.path,200)
+                body={"choices":[{"message":{"content":'{"action":"a","condition":"c","deadline":"d"}'}}],"usage":{"prompt_tokens":10,"completion_tokens":5}}
+                if self.path in {"/error","/limited"}:body={"error":"DO_NOT_LOG_FAKE_SECRET","usage":{"prompt_tokens":10,"completion_tokens":5}}
+                raw=b"not JSON" if self.path=="/badjson" else json.dumps(body).encode()
+                try:
+                    self.send_response(status)
+                    if self.path=="/redirect":self.send_header("Location","/target")
+                    self.send_header("Content-Length",str(len(raw)));self.end_headers();self.wfile.write(raw)
+                except (BrokenPipeError,ConnectionResetError):pass
+            def log_message(self,*a):pass
+>       server=ThreadingHTTPServer(("127.0.0.1",0),Handler);server.count=0;server.payloads=[];server.daemon_threads=True
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_live_backend.py:110: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../miniconda3/lib/python3.13/socketserver.py:453: in __init__
+    self.socket = socket.socket(self.address_family,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <socket.socket fd=-1, family=0, type=0, proto=0>
+family = <AddressFamily.AF_INET: 2>, type = <SocketKind.SOCK_STREAM: 1>
+proto = 0, fileno = None
+
+    def __init__(self, family=-1, type=-1, proto=-1, fileno=None):
+        # For user code address family and type values are IntEnum members, but
+        # for the underlying _socket.socket they're just integers. The
+        # constructor of _socket.socket converts the given argument to an
+        # integer automatically.
+        if fileno is None:
+            if family == -1:
+                family = AF_INET
+            if type == -1:
+                type = SOCK_STREAM
+            if proto == -1:
+                proto = 0
+>       _socket.socket.__init__(self, family, type, proto, fileno)
+E       PermissionError: [Errno 1] Operation not permitted
+
+../../miniconda3/lib/python3.13/socket.py:233: PermissionError
+_ ERROR at setup of test_actual_http_worker_one_post_only[/disconnect-FAILED] __
+
+    @pytest.fixture
+    def local_server():
+        class Handler(BaseHTTPRequestHandler):
+            def do_POST(self):
+                self.server.count+=1
+                self.server.payloads.append(json.loads(self.rfile.read(int(self.headers["Content-Length"]))))
+                if self.path=="/disconnect":self.connection.close();return
+                if self.path=="/slow":time.sleep(.3)
+                status={"/error":500,"/limited":429,"/redirect":307}.get(self.path,200)
+                body={"choices":[{"message":{"content":'{"action":"a","condition":"c","deadline":"d"}'}}],"usage":{"prompt_tokens":10,"completion_tokens":5}}
+                if self.path in {"/error","/limited"}:body={"error":"DO_NOT_LOG_FAKE_SECRET","usage":{"prompt_tokens":10,"completion_tokens":5}}
+                raw=b"not JSON" if self.path=="/badjson" else json.dumps(body).encode()
+                try:
+                    self.send_response(status)
+                    if self.path=="/redirect":self.send_header("Location","/target")
+                    self.send_header("Content-Length",str(len(raw)));self.end_headers();self.wfile.write(raw)
+                except (BrokenPipeError,ConnectionResetError):pass
+            def log_message(self,*a):pass
+>       server=ThreadingHTTPServer(("127.0.0.1",0),Handler);server.count=0;server.payloads=[];server.daemon_threads=True
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_live_backend.py:110: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../miniconda3/lib/python3.13/socketserver.py:453: in __init__
+    self.socket = socket.socket(self.address_family,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <socket.socket fd=-1, family=0, type=0, proto=0>
+family = <AddressFamily.AF_INET: 2>, type = <SocketKind.SOCK_STREAM: 1>
+proto = 0, fileno = None
+
+    def __init__(self, family=-1, type=-1, proto=-1, fileno=None):
+        # For user code address family and type values are IntEnum members, but
+        # for the underlying _socket.socket they're just integers. The
+        # constructor of _socket.socket converts the given argument to an
+        # integer automatically.
+        if fileno is None:
+            if family == -1:
+                family = AF_INET
+            if type == -1:
+                type = SOCK_STREAM
+            if proto == -1:
+                proto = 0
+>       _socket.socket.__init__(self, family, type, proto, fileno)
+E       PermissionError: [Errno 1] Operation not permitted
+
+../../miniconda3/lib/python3.13/socket.py:233: PermissionError
+__ ERROR at setup of test_actual_http_worker_one_post_only[/badjson-INVALID] ___
+
+    @pytest.fixture
+    def local_server():
+        class Handler(BaseHTTPRequestHandler):
+            def do_POST(self):
+                self.server.count+=1
+                self.server.payloads.append(json.loads(self.rfile.read(int(self.headers["Content-Length"]))))
+                if self.path=="/disconnect":self.connection.close();return
+                if self.path=="/slow":time.sleep(.3)
+                status={"/error":500,"/limited":429,"/redirect":307}.get(self.path,200)
+                body={"choices":[{"message":{"content":'{"action":"a","condition":"c","deadline":"d"}'}}],"usage":{"prompt_tokens":10,"completion_tokens":5}}
+                if self.path in {"/error","/limited"}:body={"error":"DO_NOT_LOG_FAKE_SECRET","usage":{"prompt_tokens":10,"completion_tokens":5}}
+                raw=b"not JSON" if self.path=="/badjson" else json.dumps(body).encode()
+                try:
+                    self.send_response(status)
+                    if self.path=="/redirect":self.send_header("Location","/target")
+                    self.send_header("Content-Length",str(len(raw)));self.end_headers();self.wfile.write(raw)
+                except (BrokenPipeError,ConnectionResetError):pass
+            def log_message(self,*a):pass
+>       server=ThreadingHTTPServer(("127.0.0.1",0),Handler);server.count=0;server.payloads=[];server.daemon_threads=True
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_live_backend.py:110: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../miniconda3/lib/python3.13/socketserver.py:453: in __init__
+    self.socket = socket.socket(self.address_family,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <socket.socket fd=-1, family=0, type=0, proto=0>
+family = <AddressFamily.AF_INET: 2>, type = <SocketKind.SOCK_STREAM: 1>
+proto = 0, fileno = None
+
+    def __init__(self, family=-1, type=-1, proto=-1, fileno=None):
+        # For user code address family and type values are IntEnum members, but
+        # for the underlying _socket.socket they're just integers. The
+        # constructor of _socket.socket converts the given argument to an
+        # integer automatically.
+        if fileno is None:
+            if family == -1:
+                family = AF_INET
+            if type == -1:
+                type = SOCK_STREAM
+            if proto == -1:
+                proto = 0
+>       _socket.socket.__init__(self, family, type, proto, fileno)
+E       PermissionError: [Errno 1] Operation not permitted
+
+../../miniconda3/lib/python3.13/socket.py:233: PermissionError
+____ ERROR at setup of test_actual_worker_timeout_no_background_local_retry ____
+
+    @pytest.fixture
+    def local_server():
+        class Handler(BaseHTTPRequestHandler):
+            def do_POST(self):
+                self.server.count+=1
+                self.server.payloads.append(json.loads(self.rfile.read(int(self.headers["Content-Length"]))))
+                if self.path=="/disconnect":self.connection.close();return
+                if self.path=="/slow":time.sleep(.3)
+                status={"/error":500,"/limited":429,"/redirect":307}.get(self.path,200)
+                body={"choices":[{"message":{"content":'{"action":"a","condition":"c","deadline":"d"}'}}],"usage":{"prompt_tokens":10,"completion_tokens":5}}
+                if self.path in {"/error","/limited"}:body={"error":"DO_NOT_LOG_FAKE_SECRET","usage":{"prompt_tokens":10,"completion_tokens":5}}
+                raw=b"not JSON" if self.path=="/badjson" else json.dumps(body).encode()
+                try:
+                    self.send_response(status)
+                    if self.path=="/redirect":self.send_header("Location","/target")
+                    self.send_header("Content-Length",str(len(raw)));self.end_headers();self.wfile.write(raw)
+                except (BrokenPipeError,ConnectionResetError):pass
+            def log_message(self,*a):pass
+>       server=ThreadingHTTPServer(("127.0.0.1",0),Handler);server.count=0;server.payloads=[];server.daemon_threads=True
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_live_backend.py:110: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../miniconda3/lib/python3.13/socketserver.py:453: in __init__
+    self.socket = socket.socket(self.address_family,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <socket.socket fd=-1, family=0, type=0, proto=0>
+family = <AddressFamily.AF_INET: 2>, type = <SocketKind.SOCK_STREAM: 1>
+proto = 0, fileno = None
+
+    def __init__(self, family=-1, type=-1, proto=-1, fileno=None):
+        # For user code address family and type values are IntEnum members, but
+        # for the underlying _socket.socket they're just integers. The
+        # constructor of _socket.socket converts the given argument to an
+        # integer automatically.
+        if fileno is None:
+            if family == -1:
+                family = AF_INET
+            if type == -1:
+                type = SOCK_STREAM
+            if proto == -1:
+                proto = 0
+>       _socket.socket.__init__(self, family, type, proto, fileno)
+E       PermissionError: [Errno 1] Operation not permitted
+
+../../miniconda3/lib/python3.13/socket.py:233: PermissionError
+=========================== short test summary info ============================
+ERROR tests/test_live_backend.py::test_actual_http_worker_one_post_only[/ok-SUCCESS]
+ERROR tests/test_live_backend.py::test_actual_http_worker_one_post_only[/error-FAILED]
+ERROR tests/test_live_backend.py::test_actual_http_worker_one_post_only[/limited-FAILED]
+ERROR tests/test_live_backend.py::test_actual_http_worker_one_post_only[/redirect-FAILED]
+ERROR tests/test_live_backend.py::test_actual_http_worker_one_post_only[/disconnect-FAILED]
+ERROR tests/test_live_backend.py::test_actual_http_worker_one_post_only[/badjson-INVALID]
+ERROR tests/test_live_backend.py::test_actual_worker_timeout_no_background_local_retry
+74 passed, 7 errors in 3.78s

@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "mode": "mock",
+  "attempt_ledger": "/home/guoqiuyuan/LLMresearch/cascade-routing/reports/live_backend_20260924_01/mock_attempts.sqlite3",
+  "cost_scope": "provider_token_fee_only",
+  "cost_unit": "mock_fee_unit",
+  "models": {
+    "ship": {
+      "model_id": "ship-mock",
+      "model_version": "mock-v1",
+      "endpoint": null,
+      "api_key_env": null,
+      "timeout_s": 1,
+      "max_tokens": 512,
+      "temperature": 0,
+      "seed": 20260924,
+      "pricing": {
+        "input_per_million": 1,
+        "output_per_million": 2,
+        "currency": "mock_fee_unit",
+        "source": "synthetic pricing assumption",
+        "usage_is_complete": true
+      },
+      "validation": "json_fields",
+      "required_fields": [
+        "action",
+        "condition",
+        "deadline"
+      ],
+      "scenario": "success"
+    },
+    "shore": {
+      "model_id": "shore-mock",
+      "model_version": "mock-v1",
+      "endpoint": null,
+      "api_key_env": null,
+      "timeout_s": 1,
+      "max_tokens": 512,
+      "temperature": 0,
+      "seed": 20260924,
+      "pricing": {
+        "input_per_million": 1,
+        "output_per_million": 2,
+        "currency": "mock_fee_unit",
+        "source": "synthetic pricing assumption",
+        "usage_is_complete": true
+      },
+      "validation": "json_fields",
+      "required_fields": [
+        "action",
+        "condition",
+        "deadline"
+      ],
+      "scenario": "success"
+    },
+    "cloud": {
+      "model_id": "cloud-mock",
+      "model_version": "mock-v1",
+      "endpoint": null,
+      "api_key_env": null,
+      "timeout_s": 1,
+      "max_tokens": 512,
+      "temperature": 0,
+      "seed": 20260924,
+      "pricing": {
+        "input_per_million": 1,
+        "output_per_million": 2,
+        "currency": "mock_fee_unit",
+        "source": "synthetic pricing assumption",
+        "usage_is_complete": true
+      },
+      "validation": "json_fields",
+      "required_fields": [
+        "action",
+        "condition",
+        "deadline"
+      ],
+      "scenario": "success"
+    }
+  },
+  "authorization": {
+    "approved": false,
+    "max_model_attempts": 3,
+    "fee_limit": 1,
+    "note": "mock only; no paid authorization"
+  }
+}

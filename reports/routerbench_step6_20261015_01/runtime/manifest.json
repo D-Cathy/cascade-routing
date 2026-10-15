@@ -1,0 +1,24 @@
+{
+  "mode": "synthetic_planner_executor_integration",
+  "tasks": 20,
+  "simulated_calls": 40,
+  "real_model_calls": 0,
+  "action_sequence": [
+    "ship",
+    "shore",
+    "ACCEPT"
+  ],
+  "control_time": "measured_and_charged_once",
+  "formal_v5_complete": false,
+  "risk_guarantee": false,
+  "limitations": [
+    "fixture transition/scorer, no learned current-task donor mapping",
+    "root-only compression, not all paper baseline methods",
+    "future control overhead not modeled; actual control time charged",
+    "1-second demo planning allowance, production budget not validated"
+  ],
+  "output_sha256": {
+    "plans.json": "97b298e83337835a649a8d9e68258365da02c23cddb31933dc1406649997e054",
+    "traces.jsonl": "686624a3baa2f86091589a96586aedd65e4fe8617f9e93da2abc6e6de32bb081"
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "config": {
+    "schema_version": 1,
+    "seed": 20260923,
+    "tasks": "../data/small_replay/tasks.jsonl",
+    "calls": "../data/small_replay/calls.jsonl",
+    "labels": "../data/small_replay/labels.jsonl",
+    "models": {
+      "ship": "ship",
+      "shore": "shore",
+      "cloud": "cloud"
+    },
+    "policies": [
+      "fixed_ship",
+      "fixed_shore",
+      "fixed_cloud",
+      "fixed_cascade_fallback",
+      "cascade_router_devmean"
+    ],
+    "decision_timing": "simulated",
+    "decision_overhead_s": 0.01,
+    "decision_cost": 0.0,
+    "cascade_max_expected_cost": 4.0,
+    "purpose": "engineering_validation_only"
+  },
+  "input_sha256": {
+    "/home/guoqiuyuan/LLMresearch/cascade-routing/configs/small_replay.json": "e0882ef4a9868ba964434b87f43f371c08d9505c8756520aad1d327040286664",
+    "/home/guoqiuyuan/LLMresearch/cascade-routing/configs/../data/small_replay/tasks.jsonl": "3e7d49d1b5f7b6258668a79797a8b8a223ef18597df7523dc7f11765fd820a44",
+    "/home/guoqiuyuan/LLMresearch/cascade-routing/configs/../data/small_replay/calls.jsonl": "a2ebbbeb4a4bed27c8ff1d8e061e85e395cf21695d34bf298a202ef64c3d0687",
+    "/home/guoqiuyuan/LLMresearch/cascade-routing/configs/../data/small_replay/labels.jsonl": "70bb754edb43ca3ed7062ac0aed785cfb61630b6a9f7e82b82b755a79a294507"
+  },
+  "code_sha256": {
+    "__init__.py": "531fcd779c9df1021bac0255ba3c40e5854f4bb0e9b604068fc67a48abbb147e",
+    "api.py": "251e4aca389e6904ec52c94b58425df588e1223b3e6863b8c8020f85ac960d3f",
+    "base_algorithm.py": "a763a34a487a33cb9e0073dd71856a6b04502018d58c5d6012344111c7749856",
+    "base_computer.py": "595f4b4c150db8a1616b202f2f2d158e43ef7a85decf5b7051fdc96476bf0398",
+    "baseline_cascader.py": "96936602d83bd2fb375195b62016a0ee05f577387a300db0045b504267bb057f",
+    "cascade_adapter.py": "32cf7230806760a4bc624e55a0945d9ff127f2cef6700011ced96619550ab5c1",
+    "cascade_router.py": "70b1ee5371b0b5cce010c38ef61a9b6d85739483696efc0c2d72e43b0a02b33b",
+    "classification.py": "95509da8afbee6d328b420989a66b366663399a570099d8f9d0902db2529a061",
+    "code_math.py": "0c7cfedd2ddf09a422a2563e82d00d4e9342b4f6580b6b34b5857276bbd2dbfd",
+    "completion_llms.py": "39336752eeb291f74a4c3d9ef7fc70c04a407415324aa608eedd74ca7fc1b553",
+    "cost_computer.py": "7b7f9ffd34874fa4b1828d97db3af84389743f66219314afd4fc35972a17c284",
+    "executor.py": "7895139bcb54863f684b25107a965c187087d1cd8eeee8518e6f57280a7871a6",
+    "lambda_strategy.py": "e8f42fbad99dfb916d52b6c40cd5fcae9f18a05faa305b6b3c11435ffbf989c6",
+    "metrics.py": "9b00422a608e91943192e576400cdcce854a2dfda365bc5ab6312e237db436f5",
+    "open_form.py": "e920f941b92e398f477c6470ae4374d0a4579dff24f4a93876f9ab4c8fc2a079",
+    "policies.py": "c723d8bf0edc522a9552b6d006f6ceecf292daec1b498e09459a66f40c2325d8",
+    "quality_computer.py": "5ddf72916981e9862ab174adaa82920bc90d29f525eb334e375c7b12866e75a6",
+    "replay.py": "bc92374110c3fe753e1ebae1d52009b846809abc83ba9da97c01feeda63252a5",
+    "replay_data.py": "457aab614f16729bc5b7bc4c1ff61ac4b7b68851063416edef033a3bcec3090f",
+    "router.py": "ec647494ab343f951335c34898b0f617fcaf4960a5987bdb415fee80beebef97",
+    "schema.py": "5f38ed7677d4716acf602161bc3fdf7844e61ca2f95c26c2b28a3979d6b41df0",
+    "statistics.py": "582ce4474b5a956b93ea70f80477f925f831da581bb141e7e2911ab8bb03f9b5",
+    "swebench.py": "91fa71976a31ff7cb9d27a61fefdd37cca5161e9cc5f4a6e132898cef19bc15d",
+    "utils.py": "c1ceb521717d0addc7cf6f01bd05bca39a3c11aef98def7987b67c3dc264bdb1"
+  },
+  "host": "GPU8",
+  "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:19:41) [GCC 14.3.0]",
+  "seed": 20260923,
+  "risk_guarantee": false,
+  "fit_task_ids": [
+    "synthetic-00",
+    "synthetic-01",
+    "synthetic-02",
+    "synthetic-03"
+  ],
+  "eval_task_ids": [
+    "synthetic-04",
+    "synthetic-05",
+    "synthetic-06",
+    "synthetic-07",
+    "synthetic-08",
+    "synthetic-09"
+  ],
+  "fit_groups": [
+    "synthetic-group-00",
+    "synthetic-group-01",
+    "synthetic-group-02",
+    "synthetic-group-03"
+  ],
+  "eval_groups": [
+    "synthetic-group-04",
+    "synthetic-group-05",
+    "synthetic-group-06",
+    "synthetic-group-07",
+    "synthetic-group-08",
+    "synthetic-group-09"
+  ],
+  "policy_counts": {
+    "fixed_ship": 6,
+    "fixed_shore": 6,
+    "fixed_cloud": 6,
+    "fixed_cascade_fallback": 6,
+    "cascade_router_devmean": 6
+  },
+  "original_cascade_predict_calls": 6,
+  "limitations": [
+    "engineering validation only; no real experiment or calibration",
+    "fixed cascade uses latest-valid fallback and exhausts its order, not the paper threshold baseline",
+    "CascadeRouter uses original core with development-mean predictors; original estimator reproduction incomplete",
+    "serial static replay; no time-indexed network or live cancellation",
+    "decision cost/overhead are configured simulated values unless timing explicitly measured"
+  ],
+  "not_implemented": [
+    "paper_fixed_threshold_with_trained_scorer",
+    "paper_original_estimator_adaptation",
+    "rule_router",
+    "learned_single_router",
+    "greedy_upgrade",
+    "full_planner",
+    "independent_calibration",
+    "live_no_retry_backend"
+  ],
+  "cascade_fit": {
+    "quality_means": [
+      0.55,
+      0.78,
+      0.93
+    ],
+    "cost_means": [
+      1.0,
+      2.0,
+      3.0
+    ],
+    "lambdas": [
+      0,
+      0,
+      0
+    ],
+    "gamma": 0.3333333333333333,
+    "tuning": "none; fixed zero lambdas, fit gamma on dev_fit only"
+  }
+}

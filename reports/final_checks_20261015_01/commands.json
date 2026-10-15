@@ -1,0 +1,23 @@
+[
+  {
+    "command": "PYTHONPATH=src python -m pytest -q tests/test_v5_calibration.py",
+    "exit_code": 0,
+    "passed": 12,
+    "seconds": 1.64
+  },
+  {
+    "command": "PYTHONPATH=src python -m selection.v5.final_checks --dataset data/routerbench_v5_contract_20261014 --output reports/final_checks_20261015_01/run",
+    "exit_code": 0
+  },
+  {
+    "command": "PYTHONPATH=src python -m pytest -q --junitxml=reports/final_checks_20261015_01/tests.xml",
+    "exit_code": 0,
+    "passed": 169,
+    "seconds": 5.81,
+    "permission": "escalated for existing loopback HTTP tests"
+  },
+  {
+    "command": "Python stdlib document update and scripts/render_progress.py render function",
+    "exit_code": 0
+  }
+]

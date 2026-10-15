@@ -1,0 +1,122 @@
+[
+  {
+    "policy_id": "fixture_policy",
+    "unit_id": "synthetic-0",
+    "split": "D_C",
+    "service_failure": false
+  },
+  {
+    "policy_id": "fixture_policy",
+    "unit_id": "synthetic-1",
+    "split": "D_C",
+    "service_failure": false
+  },
+  {
+    "policy_id": "fixture_policy",
+    "unit_id": "synthetic-2",
+    "split": "D_C",
+    "service_failure": false
+  },
+  {
+    "policy_id": "fixture_policy",
+    "unit_id": "synthetic-3",
+    "split": "D_C",
+    "service_failure": false
+  },
+  {
+    "policy_id": "fixture_policy",
+    "unit_id": "synthetic-4",
+    "split": "D_C",
+    "service_failure": false
+  },
+  {
+    "policy_id": "fixture_policy",
+    "unit_id": "synthetic-5",
+    "split": "D_C",
+    "service_failure": false
+  },
+  {
+    "policy_id": "fixture_policy",
+    "unit_id": "synthetic-6",
+    "split": "D_C",
+    "service_failure": false
+  },
+  {
+    "policy_id": "fixture_policy",
+    "unit_id": "synthetic-7",
+    "split": "D_C",
+    "service_failure": false
+  },
+  {
+    "policy_id": "fixture_policy",
+    "unit_id": "synthetic-8",
+    "split": "D_C",
+    "service_failure": false
+  },
+  {
+    "policy_id": "fixture_policy",
+    "unit_id": "synthetic-9",
+    "split": "D_C",
+    "service_failure": false
+  },
+  {
+    "policy_id": "fixture_policy",
+    "unit_id": "synthetic-10",
+    "split": "D_C",
+    "service_failure": false
+  },
+  {
+    "policy_id": "fixture_policy",
+    "unit_id": "synthetic-11",
+    "split": "D_C",
+    "service_failure": false
+  },
+  {
+    "policy_id": "fixture_policy",
+    "unit_id": "synthetic-12",
+    "split": "D_C",
+    "service_failure": false
+  },
+  {
+    "policy_id": "fixture_policy",
+    "unit_id": "synthetic-13",
+    "split": "D_C",
+    "service_failure": false
+  },
+  {
+    "policy_id": "fixture_policy",
+    "unit_id": "synthetic-14",
+    "split": "D_C",
+    "service_failure": false
+  },
+  {
+    "policy_id": "fixture_policy",
+    "unit_id": "synthetic-15",
+    "split": "D_C",
+    "service_failure": false
+  },
+  {
+    "policy_id": "fixture_policy",
+    "unit_id": "synthetic-16",
+    "split": "D_C",
+    "service_failure": false
+  },
+  {
+    "policy_id": "fixture_policy",
+    "unit_id": "synthetic-17",
+    "split": "D_C",
+    "service_failure": false
+  },
+  {
+    "policy_id": "fixture_policy",
+    "unit_id": "synthetic-18",
+    "split": "D_C",
+    "service_failure": false
+  },
+  {
+    "policy_id": "fixture_policy",
+    "unit_id": "synthetic-19",
+    "split": "D_C",
+    "service_failure": false
+  }
+]

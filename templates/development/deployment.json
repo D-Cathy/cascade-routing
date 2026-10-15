@@ -1,0 +1,59 @@
+{
+  "status": "DRAFT_NOT_READY",
+  "ship": {
+    "suggested_model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "local_path_or_endpoint": null,
+    "revision_or_sha256": null,
+    "quantization": null,
+    "framework_version": null,
+    "device": null
+  },
+  "shore": {
+    "suggested_model": "Qwen/Qwen2.5-7B-Instruct",
+    "local_path_or_endpoint": null,
+    "revision_or_sha256": null,
+    "quantization": null,
+    "framework_version": null,
+    "device": null,
+    "concurrency": null
+  },
+  "cloud": {
+    "provider": null,
+    "endpoint": null,
+    "model": null,
+    "version": null,
+    "credential_environment_name_only": null,
+    "collection_date": null,
+    "rates_and_currency": null
+  },
+  "generation": {
+    "max_output_tokens": 512,
+    "temperature": 0,
+    "seed": 20260923,
+    "retry_count": 0,
+    "chat_template_versions": null,
+    "determinism_limitations": null,
+    "warmup_protocol": null
+  },
+  "cost_accounting": {
+    "fee_weight": 0.5,
+    "transfer_weight": 0.5,
+    "energy_weight": 0,
+    "fee_reference_F0": null,
+    "transfer_reference_V0": null,
+    "reference_fit_split": "development fitting only for pilot; formal training only later",
+    "control_cost_model": null
+  },
+  "environment": {
+    "role_simulation_or_actual_deployment": null,
+    "link_trace_source": null,
+    "sampling_interval_s": null,
+    "queue_protocol": null,
+    "independent_vs_sequential_timing": null
+  },
+  "authorization": {
+    "paid_calls_approved": false,
+    "pilot_call_limit": null,
+    "pilot_fee_limit": null
+  }
+}

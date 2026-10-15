@@ -1,0 +1,13 @@
+[
+ {"url":"https://archive.ics.uci.edu/api/dataset?id=316","relative":"raw/uci_metadata.json"},
+ {"url":"https://huggingface.co/api/datasets/viviwang/MARINER/tree/main?recursive=true","relative":"raw/mariner_tree.json"},
+ {"url":"https://huggingface.co/datasets/viviwang/MARINER/raw/main/README.md","relative":"raw/mariner_README.md"},
+ {"url":"https://huggingface.co/api/datasets/bonalor/synthetic_maritime_radio_communication/tree/main?recursive=true","relative":"raw/martts_tree.json"},
+ {"url":"https://huggingface.co/datasets/bonalor/synthetic_maritime_radio_communication/raw/main/README.md","relative":"raw/martts_README.md"},
+ {"url":"https://api.github.com/repos/Tomeratia/SeaAlert/git/trees/main?recursive=1","relative":"raw/seaalert_tree.json"},
+ {"url":"https://huggingface.co/datasets/zjunlp/OceanBenchmark/raw/main/README.md","relative":"raw/oceanbenchmark_README.md"},
+ {"url":"https://huggingface.co/datasets/illuin-conteb/maritime-qa/raw/main/README.md","relative":"raw/maritimeqa_README.md"},
+ {"url":"https://zenodo.org/api/records/10364615","relative":"raw/polarfront_metadata.json"},
+ {"url":"https://zenodo.org/api/records/19857425","relative":"raw/enginefault_metadata.json"},
+ {"url":"https://www.weather.gov/disclaimer","relative":"raw/noaa_disclaimer.html"}
+]

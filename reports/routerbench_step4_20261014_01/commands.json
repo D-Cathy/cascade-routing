@@ -1,0 +1,22 @@
+[
+  {
+    "command": "PYTHONPATH=src python -m pytest -q tests/test_v5_scorers.py",
+    "exit_code": 0,
+    "result": "11 passed in 2.76s"
+  },
+  {
+    "command": "PYTHONPATH=src python -m selection.v5.train_proxy --dataset data/routerbench_dev20_20261014 --output reports/routerbench_step4_20261014_01/scorer",
+    "exit_code": 0,
+    "result": "15 fit tasks/45 answers; 5 eval tasks/15 answers; MAE 0.473246"
+  },
+  {
+    "command": "PYTHONPATH=src python -m selection.simulation_replay --config configs/routerbench_simulation.json --scorer reports/routerbench_step4_20261014_01/scorer --output reports/routerbench_step4_20261014_01/run",
+    "exit_code": 0,
+    "result": "300 traces; 5 policies; no real model calls"
+  },
+  {
+    "command": "PYTHONPATH=src python -m pytest -q --junitxml=reports/routerbench_step4_20261014_01/tests.xml",
+    "exit_code": 0,
+    "result": "126 passed in 5.73s; local HTTP test permission enabled"
+  }
+]

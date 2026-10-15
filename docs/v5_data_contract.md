@@ -1,0 +1,86 @@
+# 第3步：v5任务契约、来源审计与划分工具
+
+本轮完成工程工具并通过测试；正式实验数据尚未冻结。原v1任务/回放不变，新增 `selection.v5` 子包。v2是任务与分区契约，不是新采集/资源记录格式：当前私有缓存仍明确使用v1，后续采集和训练需通过适配器连接。
+
+## 数据边界
+
+v2任务只允许 schema_version=2、task_id、source_group_id、source_id、source_sample_id、template_family、category、question、evidence、allowed_models、split、provenance。未知字段被拒绝，不能把quality、reference、answer或未来资源放进任务。
+
+controller_input仅返回任务ID、来源组ID、问题、固定证据、允许模型，返回深拷贝。training_tasks按score/dynamics/tuning阶段分别只返回D_Q/D_G/D_V任务，不允许把D_C/D_T作为训练阶段。这是软件接口约定，不是操作系统权限隔离；未来训练器还必须按任务ID限定标签读取，冻结产物并记录哈希。本轮没有实现人工审批、加密或文件权限沙箱。
+
+来源组与模板标识必须由可信元数据提供，不能用这个工具认证来源真实性。source_id应标识共同数据来源，如0-shot/5-shot都用routerbench，source_sample_id保留共同原题ID。template_family为source_id作用域内的稳定家族名；缺失时用null，不凭空推断。
+
+## 审计与分组
+
+分组关系：共同source_group_id、共同(source_id, source_sample_id)、共同来源内模板家族、规范化问题+证据完全重复、字符5-gram Jaccard相似度至少0.9。使用传递闭包合并，A关联B、B关联C时三者必须留在同一组。
+
+文本先做NFKC、大小写和空白归一化；近重复比较穷举候选对，仅用长度界做安全剪枝。为避免意外大规模二次计算，入口最多2000条，超限明确报错。它覆盖字面近重复，不保证发现跨语言或语义改写；公共长指令也可能导致过度合并，需人工检查audit.json中的边。没有声称完成全库语义去重。
+
+已有分区会被锁定；两个已分到不同集合的关联任务会报错。unassigned关联到已锁定development任务时也归development。组不可为了凑数量拆开。
+
+## 划分含义
+
+| 分区 | 论文目标任务数 | 用途 |
+|---|---:|---|
+| development | 100 | 独立开发，不进入正式校准/测试 |
+| D_Q | 400 | 评分器训练 |
+| D_G | 200 | 收益及动态库 |
+| D_V | 200 | 调参 |
+| D_C | 400 | 独立风险校准 |
+| D_T | 300 | 最终测试 |
+
+分配器先尊重锁定组，按组大小和固定种子确定顺序，再依各分区剩余目标比例分配完整组。输出实际数量、与目标差额、分类别分布。它是可复现的草案启发式，不保证全局最优、精确配额或五类各300的平衡。即使数量恰好吻合，也不会自动把formal_ready设为true；还需来源独立性、类别覆盖、人工评分、采集协议及冻结审核。
+
+source_group_id在产物中更新为合并组件ID；原关系和任务成员保存在audit.json。新增候选会影响组件ID/分配，所以应建立新版本，不能在已经冻结的数据上增补后沿用原校准结论。相同输入、种子和阈值的成员分区确定，输入行顺序不影响分配。
+
+## 本轮真实数据结果
+
+已迁移 `data/routerbench_dev20_20261014` 到 `data/routerbench_v5_contract_20261014`。这20条在第1/2步已经用于开发，全部锁定development，不能再次分成D_C/D_T。五个正式分区当前均为0，这是预期保护，不是划分器失效。六路分配及配额不满足时的行为由独立合成单元测试验证，没有把合成样例冒充论文数据。
+
+两个完整CSV也完成了只读ID/完全重复审计：0-shot与5-shot共享36497个sample_id，规范化prompt哈希交集为9665。不能把这两个文件直接当独立训练/测试集。全库审计只针对ID/完全重复，没有对两库全部记录运行字符近重复或语义审查。
+
+0-shot有36497行，无重复ID，规范化prompt重复额外记录16条；5-shot有36511行，重复ID额外记录14条，规范化prompt重复额外记录14条。当前只报告，不擅自删除或选择重复记录；正式接入5-shot前需核查同ID记录的一致性及处理规则。
+
+产物目录：
+
+- tasks.v2.jsonl：迁移后20条任务。
+- controller_inputs.jsonl：控制器白名单输入，不含分数/答案。
+- private/calls.jsonl、private/labels.jsonl：原缓存原样保留，v1格式；不能当v2任务读取。
+- audit.json：组件、关联原因、目标/实际数量、类别分布、未完成项。
+- manifest.json：输入/输出SHA256、版本、种子、限制；不是数字签名。
+
+## 运行验证
+
+```bash
+cd /home/guoqiuyuan/LLMresearch/cascade-routing
+
+# 验证已生成的契约和关联分组
+PYTHONPATH=src python -m selection.v5.prepare \
+  --output data/routerbench_v5_contract_20261014 --validate-only
+
+# 本轮新增测试，预期12 passed
+PYTHONPATH=src python -m pytest -q tests/test_v5_splits.py
+
+# 全量回归，本轮115 passed（已有HTTP测试需要本机端口）
+PYTHONPATH=src python -m pytest -q
+
+# 重新迁移到一个新目录，不覆盖已生成版本
+PYTHONPATH=src python -m selection.v5.prepare \
+  --legacy data/routerbench_dev20_20261014 \
+  --output data/routerbench_v5_contract_mycheck
+
+# 对符合v2字段的候选任务生成六路草案
+# 已开发任务必须标development；只有未用任务可以标unassigned
+PYTHONPATH=src python -m selection.v5.prepare \
+  --tasks path/to/candidate_tasks.v2.jsonl \
+  --output data/v5_split_draft_new
+
+# 两个原CSV只读重复审计，输出文件必须尚不存在
+PYTHONPATH=src python -m selection.v5.audit_csv \
+  --sources data/routerbench_0shot.csv data/routerbench_5shot.csv \
+  --output reports/routerbench_csv_audit_mycheck.json
+```
+
+验证当前20条产物预期status=validated、tasks=20、development=20、D_Q/D_G/D_V/D_C/D_T=0、formal_ready=false。
+
+下一步：先从未用于开发的候选及其来源关联中扩充训练池，补完分组审查，随后实现评分器。不能直接用当前20条训练出正式评分器，也不能为凑400个校准样本拆开重复来源。本轮模型调用0、训练0、正式实验0。

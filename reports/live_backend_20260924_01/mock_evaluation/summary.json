@@ -1,0 +1,50 @@
+{
+  "ship": {
+    "n_requests": 1,
+    "known_failures": 0,
+    "unknown_outcomes": 0,
+    "service_failure_rate": 0.0,
+    "failure_rate_lower": 0.0,
+    "failure_rate_upper": 0.0,
+    "mean_quality": 1.0,
+    "mean_cost": 2e-05,
+    "mean_time": 0.03511967486701906,
+    "valid_answer_rate": 1.0,
+    "quality_observed_count": 1,
+    "cost_observed_count": 1,
+    "time_observed_count": 1,
+    "risk_guarantee": false
+  },
+  "shore": {
+    "n_requests": 1,
+    "known_failures": 0,
+    "unknown_outcomes": 0,
+    "service_failure_rate": 0.0,
+    "failure_rate_lower": 0.0,
+    "failure_rate_upper": 0.0,
+    "mean_quality": 1.0,
+    "mean_cost": 2e-05,
+    "mean_time": 0.04785711388103664,
+    "valid_answer_rate": 1.0,
+    "quality_observed_count": 1,
+    "cost_observed_count": 1,
+    "time_observed_count": 1,
+    "risk_guarantee": false
+  },
+  "cloud": {
+    "n_requests": 1,
+    "known_failures": 0,
+    "unknown_outcomes": 0,
+    "service_failure_rate": 0.0,
+    "failure_rate_lower": 0.0,
+    "failure_rate_upper": 0.0,
+    "mean_quality": 1.0,
+    "mean_cost": 2e-05,
+    "mean_time": 0.03836159594357014,
+    "valid_answer_rate": 1.0,
+    "quality_observed_count": 1,
+    "cost_observed_count": 1,
+    "time_observed_count": 1,
+    "risk_guarantee": false
+  }
+}

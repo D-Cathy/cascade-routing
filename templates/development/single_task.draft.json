@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "task_id": "dev-single-001",
+  "source_group_id": null,
+  "source": "real_development",
+  "split": "dev_eval",
+  "question": null,
+  "evidence": null,
+  "allowed_models": [
+    "ship",
+    "shore",
+    "cloud"
+  ],
+  "service": {
+    "quality_threshold": 0.8,
+    "deadline_s": null,
+    "budget": null,
+    "cost_unit": "USD",
+    "risk_target": 0.1
+  },
+  "environment": {},
+  "metadata": {
+    "source_material": null,
+    "source_date": null,
+    "task_category": null,
+    "output_requirements": null,
+    "hard_constraints": null,
+    "near_duplicate_group": null
+  }
+}

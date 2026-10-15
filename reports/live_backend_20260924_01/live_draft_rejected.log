@@ -1,0 +1,23 @@
+COMMAND: PYTHONPATH=src /home/guoqiuyuan/miniconda3/bin/python -m selection.single_task validate --live --task templates/development/single_task.draft.json --deployment configs/single_task_live.template.json
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/guoqiuyuan/LLMresearch/cascade-routing/src/selection/single_task.py", line 198, in <module>
+    if __name__=="__main__":main()
+                            ~~~~^^
+  File "/home/guoqiuyuan/LLMresearch/cascade-routing/src/selection/single_task.py", line 193, in main
+    load_inputs(args.task,args.deployment,args.mock);print("Validated locally; no model calls made")
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/guoqiuyuan/LLMresearch/cascade-routing/src/selection/single_task.py", line 32, in load_inputs
+    task=json.loads(Path(task_path).read_text());validate_tasks([task],NAMES)
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/guoqiuyuan/LLMresearch/cascade-routing/src/selection/replay_data.py", line 44, in validate_tasks
+    strings(t,["task_id","source_group_id","question"])
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/guoqiuyuan/LLMresearch/cascade-routing/src/selection/replay_data.py", line 30, in strings
+    if not isinstance(record[name],str) or not record[name].strip():raise ValueError(f"Missing string: {name}")
+                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Missing string: source_group_id
+
+EXIT_STATUS=1
+EXPECTED_EXIT_STATUS=1

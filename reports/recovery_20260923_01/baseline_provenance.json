@@ -1,0 +1,9 @@
+{
+  "upstream_commit": "unknown_no_git",
+  "untouched_this_turn": {
+    "src/selection/cascade_router.py": "70b1ee5371b0b5cce010c38ef61a9b6d85739483696efc0c2d72e43b0a02b33b",
+    "src/selection/baseline_cascader.py": "96936602d83bd2fb375195b62016a0ee05f577387a300db0045b504267bb057f",
+    "src/selection/__init__.py": "531fcd779c9df1021bac0255ba3c40e5854f4bb0e9b604068fc67a48abbb147e"
+  },
+  "paper_sha256": "c4eca7f4758ef72260639ed40048a1c41554e201d12a2b8f9fedc4cbff9e1216"
+}

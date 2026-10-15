@@ -1,0 +1,356 @@
+{
+  "python": "/home/guoqiuyuan/miniconda3/bin/python",
+  "version": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:19:41) [GCC 14.3.0]",
+  "module_discovery": {
+    "langchain_openai": false,
+    "langchain_anthropic": false,
+    "langchain_together": false,
+    "langchain_google_genai": false,
+    "langchain_core": false,
+    "langchain_huggingface": false,
+    "openai": false,
+    "torch": true,
+    "transformers": true,
+    "httpx": true,
+    "requests": true
+  },
+  "credential_presence_only": {
+    "OPENAI_API_KEY": false,
+    "HYPERBOLIC_API_KEY": false,
+    "TOGETHER_API_KEY": false,
+    "ANTHROPIC_API_KEY": false,
+    "GOOGLE_API_KEY": false
+  },
+  "configured_references": [
+    {
+      "file": "scripts/classification_inference.py",
+      "line": 514,
+      "reference": "Qwen/Qwen2.5-0.5B-Instruct"
+    },
+    {
+      "file": "scripts/classification_inference.py",
+      "line": 520,
+      "reference": "Qwen/Qwen2.5-1.5B-Instruct"
+    },
+    {
+      "file": "scripts/classification_inference.py",
+      "line": 526,
+      "reference": "Qwen/Qwen2.5-3B-Instruct"
+    },
+    {
+      "file": "scripts/classification_inference.py",
+      "line": 532,
+      "reference": "Qwen/Qwen2.5-7B-Instruct-Turbo"
+    },
+    {
+      "file": "scripts/classification_inference.py",
+      "line": 537,
+      "reference": "Qwen/Qwen2.5-72B-Instruct-Turbo"
+    },
+    {
+      "file": "scripts/free_form_inference.py",
+      "line": 381,
+      "reference": "Qwen/Qwen2.5-0.5B-Instruct"
+    },
+    {
+      "file": "scripts/free_form_inference.py",
+      "line": 387,
+      "reference": "Qwen/Qwen2.5-1.5B-Instruct"
+    },
+    {
+      "file": "scripts/free_form_inference.py",
+      "line": 393,
+      "reference": "Qwen/Qwen2.5-3B-Instruct"
+    },
+    {
+      "file": "scripts/free_form_inference.py",
+      "line": 399,
+      "reference": "Qwen/Qwen2.5-7B-Instruct-Turbo"
+    },
+    {
+      "file": "scripts/free_form_inference.py",
+      "line": 404,
+      "reference": "Qwen/Qwen2.5-72B-Instruct-Turbo"
+    },
+    {
+      "file": "scripts/classification.py",
+      "line": 80,
+      "reference": "Qwen/Qwen2.5-0.5B-Instruct"
+    },
+    {
+      "file": "scripts/classification.py",
+      "line": 86,
+      "reference": "Qwen/Qwen2.5-1.5B-Instruct"
+    },
+    {
+      "file": "scripts/classification.py",
+      "line": 92,
+      "reference": "Qwen/Qwen2.5-3B-Instruct"
+    },
+    {
+      "file": "scripts/classification.py",
+      "line": 98,
+      "reference": "Qwen/Qwen2.5-7B-Instruct-Turbo"
+    },
+    {
+      "file": "scripts/classification.py",
+      "line": 99,
+      "reference": "Qwen/Qwen2.5-7B-Instruct"
+    },
+    {
+      "file": "scripts/classification.py",
+      "line": 104,
+      "reference": "Qwen/Qwen2.5-72B-Instruct-Turbo"
+    },
+    {
+      "file": "scripts/classification.py",
+      "line": 105,
+      "reference": "Qwen/Qwen2.5-72B-Instruct"
+    },
+    {
+      "file": "scripts/code_math.py",
+      "line": 32,
+      "reference": "Qwen2.5-Math-1.5B-Ins"
+    },
+    {
+      "file": "scripts/code_math.py",
+      "line": 35,
+      "reference": "Qwen2.5-Coder-1.5B-Ins"
+    },
+    {
+      "file": "scripts/code_math.py",
+      "line": 38,
+      "reference": "Qwen2.5-Coder-7B-Ins"
+    },
+    {
+      "file": "scripts/code_math.py",
+      "line": 41,
+      "reference": "Qwen2.5-Math-7B-Ins"
+    },
+    {
+      "file": "scripts/free_form.py",
+      "line": 92,
+      "reference": "Qwen/Qwen2.5-0.5B-Instruct"
+    },
+    {
+      "file": "scripts/free_form.py",
+      "line": 98,
+      "reference": "Qwen/Qwen2.5-1.5B-Instruct"
+    },
+    {
+      "file": "scripts/free_form.py",
+      "line": 104,
+      "reference": "Qwen/Qwen2.5-3B-Instruct"
+    },
+    {
+      "file": "scripts/free_form.py",
+      "line": 110,
+      "reference": "Qwen/Qwen2.5-7B-Instruct-Turbo"
+    },
+    {
+      "file": "scripts/free_form.py",
+      "line": 111,
+      "reference": "Qwen/Qwen2.5-7B-Instruct"
+    },
+    {
+      "file": "scripts/free_form.py",
+      "line": 116,
+      "reference": "Qwen/Qwen2.5-72B-Instruct-Turbo"
+    },
+    {
+      "file": "scripts/free_form.py",
+      "line": 117,
+      "reference": "Qwen/Qwen2.5-72B-Instruct"
+    },
+    {
+      "file": "scripts/other/minerva.py",
+      "line": 11,
+      "reference": "Qwen__Qwen2.5-Coder-1.5B-Instruct"
+    },
+    {
+      "file": "scripts/other/minerva.py",
+      "line": 12,
+      "reference": "Qwen__Qwen2.5-Coder-7B-Instruct"
+    },
+    {
+      "file": "scripts/other/minerva.py",
+      "line": 13,
+      "reference": "Qwen__Qwen2.5-Math-1.5B-Instruct"
+    },
+    {
+      "file": "scripts/other/minerva.py",
+      "line": 14,
+      "reference": "Qwen__Qwen2.5-Math-7B-Instruct"
+    },
+    {
+      "file": "scripts/other/minerva.py",
+      "line": 20,
+      "reference": "Qwen/Qwen2.5-7B-Instruct"
+    },
+    {
+      "file": "scripts/other/livecodebench.py",
+      "line": 10,
+      "reference": "Qwen2.5-Coder-Ins-1.5B"
+    },
+    {
+      "file": "scripts/other/livecodebench.py",
+      "line": 11,
+      "reference": "Qwen2.5-Coder-Ins-7B"
+    },
+    {
+      "file": "scripts/other/livecodebench.py",
+      "line": 12,
+      "reference": "Qwen2.5-Math-Ins-1.5B"
+    },
+    {
+      "file": "scripts/other/livecodebench.py",
+      "line": 13,
+      "reference": "Qwen2.5-Math-Ins-7B"
+    },
+    {
+      "file": "scripts/other/livecodebench.py",
+      "line": 16,
+      "reference": "Qwen/Qwen2.5-7B-Instruct"
+    },
+    {
+      "file": "src/selection/api.py",
+      "line": 178,
+      "reference": "https://api.hyperbolic.xyz/v1"
+    },
+    {
+      "file": "src/selection/api.py",
+      "line": 189,
+      "reference": "https://api.hyperbolic.xyz/v1"
+    }
+  ],
+  "path_checks": [
+    {
+      "environment_name": "HF_HOME",
+      "set": false,
+      "exists": null
+    },
+    {
+      "environment_name": "HF_HUB_CACHE",
+      "set": false,
+      "exists": null
+    },
+    {
+      "environment_name": "TRANSFORMERS_CACHE",
+      "set": false,
+      "exists": null
+    },
+    {
+      "environment_name": "SHIP_MODEL_PATH",
+      "set": false,
+      "exists": null
+    },
+    {
+      "environment_name": "SHORE_MODEL_PATH",
+      "set": false,
+      "exists": null
+    },
+    {
+      "environment_name": "MODEL_PATH",
+      "set": false,
+      "exists": null
+    }
+  ],
+  "endpoint_probes": 2,
+  "deployment_template": {
+    "status": "DRAFT_NOT_READY",
+    "ship": {
+      "suggested_model": "Qwen/Qwen2.5-1.5B-Instruct",
+      "local_path_or_endpoint": null,
+      "revision_or_sha256": null,
+      "quantization": null,
+      "framework_version": null,
+      "device": null
+    },
+    "shore": {
+      "suggested_model": "Qwen/Qwen2.5-7B-Instruct",
+      "local_path_or_endpoint": null,
+      "revision_or_sha256": null,
+      "quantization": null,
+      "framework_version": null,
+      "device": null,
+      "concurrency": null
+    },
+    "cloud": {
+      "provider": null,
+      "endpoint": null,
+      "model": null,
+      "version": null,
+      "credential_environment_name_only": null,
+      "collection_date": null,
+      "rates_and_currency": null
+    },
+    "generation": {
+      "max_output_tokens": 512,
+      "temperature": 0,
+      "seed": 20260923,
+      "retry_count": 0,
+      "chat_template_versions": null,
+      "determinism_limitations": null,
+      "warmup_protocol": null
+    },
+    "cost_accounting": {
+      "fee_weight": 0.5,
+      "transfer_weight": 0.5,
+      "energy_weight": 0,
+      "fee_reference_F0": null,
+      "transfer_reference_V0": null,
+      "reference_fit_split": "development fitting only for pilot; formal training only later",
+      "control_cost_model": null
+    },
+    "environment": {
+      "role_simulation_or_actual_deployment": null,
+      "link_trace_source": null,
+      "sampling_interval_s": null,
+      "queue_protocol": null,
+      "independent_vs_sequential_timing": null
+    },
+    "authorization": {
+      "paid_calls_approved": false,
+      "pilot_call_limit": null,
+      "pilot_fee_limit": null
+    }
+  },
+  "other_environment": {
+    "executable": "/home/guoqiuyuan/miniconda3/envs/vive/bin/python",
+    "exit_status": 0,
+    "discovery": {
+      "python": "3.10.20 (main, Jun 11 2026, 15:17:37) [GCC 14.3.0]",
+      "modules": {
+        "langchain_openai": false,
+        "langchain_anthropic": false,
+        "langchain_together": false,
+        "langchain_google_genai": false,
+        "langchain_core": false,
+        "langchain_huggingface": false,
+        "openai": true,
+        "torch": true,
+        "transformers": true,
+        "httpx": true,
+        "requests": true
+      }
+    }
+  },
+  "endpoint_environment_presence_only": {
+    "SHIP_ENDPOINT": false,
+    "SHORE_ENDPOINT": false,
+    "CLOUD_ENDPOINT": false,
+    "OPENAI_BASE_URL": false,
+    "SHIP_BASE_URL": false,
+    "SHORE_BASE_URL": false,
+    "CLOUD_BASE_URL": false
+  },
+  "listening_port_check": {
+    "exit_status": 0,
+    "scope": "Only conventional inference ports; listening is not model readiness",
+    "ports": [
+      11434
+    ]
+  },
+  "endpoint_probe_scope": "read-only GET of local tags and compatible model list; no generation",
+  "external_endpoint_probes": 0
+}

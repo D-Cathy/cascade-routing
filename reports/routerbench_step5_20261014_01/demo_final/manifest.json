@@ -1,0 +1,28 @@
+{
+  "mode": "synthetic_unit_integration_demo",
+  "source_groups": 12,
+  "fit_groups": 8,
+  "query_groups": 4,
+  "negative_targets": 4,
+  "supported_queries": 4,
+  "formal_D_G_used": false,
+  "routerbench_eval_reused": false,
+  "risk_guarantee": false,
+  "model_calls": 0,
+  "limitations": [
+    "fixture scorer, synthetic labels and resources only",
+    "no planner or proxy-state mapping",
+    "fixed engineering distance threshold, not D_V quantile",
+    "reduced nine-dimensional features, no task embedding",
+    "Gaussian engineering kernel, not verified paper Eq 3.12",
+    "post-environment held fixed in fixture",
+    "no formal trained scorer or dynamics experiment"
+  ],
+  "artifact_sha256": {
+    "retrieval_config.json": "4946b5b58aa8f3c2497b89c74709815a455822108d3c88cd97604a44737f8e40",
+    "gain_models.joblib": "6c9e08ce2c3119311165e0eeba3dd702bc0c5d36792effc9deed06ca9d4a44b5",
+    "queries.jsonl": "80dc28b40583baa58ebec0ca9b364557dbceaa412509f5b11cd0eeeb6cc8c5fd",
+    "library.jsonl": "4d667a8b046e1e7c12bf0e5293fa233742d8e29ae828174c372279045c02af3f",
+    "private/training_transitions.jsonl": "803adbc041ed7c7532002855d2bc098f1120f9453ed5bfe1123aaa17ed310128"
+  }
+}

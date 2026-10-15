@@ -1,0 +1,179 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cascade Routing · 可视化阅读版</title><meta name="source-path" content="/home/guoqiuyuan/LLMresearch/cascade-routing/reports/framework_reading_20261012_01/FRAMEWORK_GUIDE.md"><meta name="source-sha256" content="36f287287c0ce73759c0d223377d8257a1b56b52652a25346836ebca37131532"><meta name="generated-at" content="2026-10-12T12:34:29.984025+00:00"><style>
+:root{--ink:#203432;--muted:#5b706d;--teal:#17675f;--line:#d8e3df;--paper:#fffefa;--wash:#f1f5f1}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--wash);color:var(--ink);font:18px/1.85 "Noto Sans CJK SC","Microsoft YaHei","PingFang SC",sans-serif}a{color:var(--teal);text-underline-offset:4px}aside{position:fixed;left:0;top:0;bottom:0;width:270px;padding:30px 24px;background:#e6eeea;overflow:auto;font-size:14px;line-height:1.6}aside strong{display:block;font-size:20px;margin-bottom:18px}aside a{display:block;text-decoration:none;padding:7px 0}aside a:hover{text-decoration:underline}main{max-width:1190px;margin-left:270px;padding:48px 64px 90px;background:var(--paper);min-height:100vh}header{border-bottom:2px solid var(--teal);padding-bottom:30px;margin-bottom:40px}h1{font-size:40px;line-height:1.35;letter-spacing:-1px;margin:10px 0 18px}h2{font-size:28px;line-height:1.5;margin:48px 0 22px;border-bottom:1px solid var(--line);padding-bottom:12px}h3{font-size:21px;margin:30px 0 10px}p{margin:14px 0}section{margin-bottom:48px}.eyebrow{font-size:13px;font-weight:700;color:var(--teal);letter-spacing:2px}.lead{font-size:21px}.meta{font-size:12px;color:var(--muted);overflow-wrap:anywhere}.roles{display:grid;grid-template-columns:1fr 1fr;gap:16px}.roles>div{padding:22px;background:#edf4ef;border:1px solid var(--line);border-radius:12px}.roles span{color:var(--teal);font-size:14px}.roles h3{margin:6px 0}.roles p{font-size:17px}.note{background:#fff4dc;border-left:4px solid #ba8730;padding:18px 22px;margin:24px 0;font-size:17px}.equation{font-family:"STIX Two Math","Cambria Math","DejaVu Serif",serif;font-size:23px;line-height:2;background:#eaf3ef;padding:22px 28px;border-radius:10px;margin:24px 0;overflow-x:auto}.words{font:20px/1.9 inherit;display:flex;gap:12px;flex-wrap:wrap}.math{font-family:"Cambria Math","DejaVu Serif",serif;white-space:nowrap}.math sub,.equation sub{font-size:.68em}table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.8;margin:24px 0;table-layout:auto}th,td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;overflow-wrap:anywhere}th{background:#e6efea;color:#234f49}tr:nth-child(even){background:#f7f8f3}.winner{background:#dcf0e5!important;font-weight:600}code{font:0.86em/1.7 "DejaVu Sans Mono",monospace;background:#eef1ec;padding:2px 5px;border-radius:4px;overflow-wrap:anywhere}pre{padding:22px;background:#edf1ec;border:1px solid var(--line);border-radius:10px;overflow:auto;white-space:pre-wrap;word-break:break-word;font-size:14px}pre code{background:none;padding:0}.step{border:1px solid var(--line);padding:26px 30px;margin:20px 0;border-radius:12px}.badge{font-size:14px;color:var(--teal);font-weight:700}.step h3{margin-top:12px}details{padding:20px 24px;background:#f0f3e9;border:1px solid var(--line);border-radius:8px}summary{cursor:pointer;font-weight:700}.flow{max-width:720px;margin:32px auto;text-align:center}.node{border:1px solid #94b5a8;background:#eaf4ed;border-radius:10px;padding:16px;font-weight:600}.node small{display:block;font-size:14px;line-height:1.8;font-weight:400;margin-top:8px}.arrow{display:block;font-size:26px;color:var(--teal);line-height:1.7}.loop{border:2px dashed #7ca995;border-radius:14px;padding:20px}.loop>strong{display:block;margin-bottom:16px}.branches{display:grid;grid-template-columns:1fr 1fr;gap:14px}.evaluation{background:#fff1d8;border-color:#c4a26a}li{padding:4px 0}footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}button{font:inherit}.print-link{display:inline-block;margin-right:16px}#full-report{border-top:3px solid var(--teal);padding-top:20px}
+@media(max-width:1050px){aside{position:static;width:auto;max-height:none}aside a{display:inline-block;margin-right:16px}aside .chapters{display:none}main{margin-left:0;padding:30px 24px;max-width:none}h1{font-size:32px}}@media(max-width:600px){body{font-size:17px}.roles,.branches{grid-template-columns:1fr}th,td{padding:9px 7px;font-size:13px}.equation{font-size:19px;padding:18px}.step{padding:20px 15px}h2{font-size:24px}}
+@media print{@page{size:A4;margin:17mm 14mm}body{background:white;font-size:11pt;line-height:1.7}aside,.print-link{display:none}main{margin:0;padding:0;max-width:none}h1{font-size:27pt}h2{font-size:19pt;break-after:avoid}h3{font-size:14pt;break-after:avoid}p,li{orphans:3;widows:3}table{font-size:9pt}thead{display:table-header-group}tr,.node,.roles>div{break-inside:avoid}pre{font-size:8pt}.equation{font-size:16pt;padding:12px}.note{font-size:10pt}a{color:inherit;text-decoration:none}.meta{font-size:8pt}.eyebrow{font-size:9pt}details{display:block}details>summary{display:none}.step{padding:16px}.flow{break-inside:avoid}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style></head><body>
+<aside><strong>Cascade Routing<br>框架阅读指南</strong><a href="#map">① 四个角色</a><a href="#math-guide">② 看懂公式</a><a href="#walkthrough">③ 分步计算</a><a href="#full-report">④ 原报告全文</a><div class="chapters"><a href="#1-先看清仓库的两层职责">1. 先看清仓库的两层职责</a><a href="#2-原论文的核心在模型集合之间做路由">2. 原论文的核心：在“模型集合”之间做路由</a><a href="#3-原代码的接口与数据流">3. 原代码的接口与数据流</a><a href="#4-深入核心函数它每轮做了什么">4. 深入核心函数：它每轮做了什么</a><a href="#5-估计器层通用算法怎样理解不同任务">5. 估计器层：通用算法怎样理解不同任务</a><a href="#6-用一条实际运行的教学轨迹理解它">6. 用一条实际运行的教学轨迹理解它</a><a href="#7-船岸云本地框架谁负责执行谁能看到什么">7. 船岸云本地框架：谁负责执行，谁能看到什么</a><a href="#8-当前-cascaderouteradapter-到底实现了什么">8. 当前 CascadeRouterAdapter 到底实现了什么</a><a href="#9-单条采集与评分链的定位">9. 单条采集与评分链的定位</a><a href="#10-与-papersv5-方法的对应关系">10. 与 papers/v5 方法的对应关系</a><a href="#11-现有验证与解释边界">11. 现有验证与解释边界</a><a href="#12-推荐的源码学习顺序">12. 推荐的源码学习顺序</a></div></aside>
+<main><header><p class="eyebrow">论文 × 代码 · 中文可视化阅读版</p><h1>Cascade Routing<br>代码框架是怎样运转的？</h1><p class="lead">从整体框架，到公式含义，再到一次完整的模型选择。</p><p>本页可以离线阅读。建议先读前三部分，再按目录进入完整报告。</p><p><a class="print-link" href="FRAMEWORK_GUIDE.pdf">下载 / 打开 PDF 版</a><a href="../framework_reading_20261012_01/FRAMEWORK_GUIDE.md">查看原始 Markdown</a></p><div class="meta">来源：/home/guoqiuyuan/LLMresearch/cascade-routing/reports/framework_reading_20261012_01/FRAMEWORK_GUIDE.md<br>SHA256：36f287287c0ce73759c0d223377d8257a1b56b52652a25346836ebca37131532<br>生成时间：2026-10-12T12:34:29.984025+00:00 · 内容依据 2026-10-12 阅读报告</div></header>
+<section id="map"><p class="eyebrow">先建立整体印象</p><h2>四个角色，一条闭环</h2>
+<p>可以把系统理解为：先预测，再做决定，再执行，最后评价。原论文主要解决前两个环节；本地工程还管理执行约束、资源和事后评分。</p>
+<div class="roles"><div><span>01</span><h3>估计器</h3><p>“每个模型可能答得多好？要花多少资源？”</p><code>quality / cost computer</code></div><div><span>02</span><h3>选择算法</h3><p>“下一步调用谁？还是现在停止？”</p><code>CascadeRouter</code></div><div><span>03</span><h3>执行器</h3><p>检查动作，发起调用，保留时间和费用。</p><code>UnifiedExecutor</code></div><div><span>04</span><h3>终局评估</h3><p>答案固定之后，再用独立标签判断是否达标。</p><code>evaluate_terminal</code></div></div>
+<div class="note">控制器可以读取已经返回的回答；不能读取真实质量标签、未调用模型的答案或未来资源。这里的“预测质量”与事后评分是两种信息。</div></section>
+<section id="math-guide"><p class="eyebrow">公式翻译成中文</p><h2>先记住一句话：质量收益 − 成本惩罚</h2>
+<div class="equation words"><span>方案得分</span><b>=</b><span>预测质量</span><b>−</b><span>成本重视程度 × 预测成本</span></div>
+<div class="equation">τ<sub>i</sub>(x) = q̂<sub>i</sub>(x) − λ · ĉ<sub>i</sub>(x)</div>
+<table><thead><tr><th>符号</th><th>怎么读</th><th>实际含义</th></tr></thead><tbody>
+<tr><td>x / i</td><td>问题 / 模型编号</td><td>正在处理哪个问题、考虑哪个模型</td></tr>
+<tr><td>q̂ / ĉ</td><td>预测质量 / 预测成本</td><td>上方的小帽子表示估计值，并非已知真实结果</td></tr>
+<tr><td>λ</td><td>lambda，成本权重</td><td>把成本换成可与质量比较的惩罚；数值越大越节省</td></tr>
+<tr><td>τ</td><td>tau，方案得分</td><td>用于比较方案，越高越优；并不是成功概率</td></tr>
+<tr><td>S / H</td><td>候选模型集合 / 已调用集合</td><td>候选方案必须包含已调用模型，即 H ⊆ S</td></tr>
+<tr><td>j / λ<sub>j</sub></td><td>当前阶段 / 该阶段的权重</td><td>调用后进入下一阶段，可以使用不同成本权重</td></tr>
+<tr><td>B / γ</td><td>平均成本预算 / 混合概率</td><td>本类 γ 是并列最优时选择较贵方案的概率</td></tr>
+</tbody></table>
+<h3>“超模型”就是一组候选模型</h3><p>例如 S = {船端，岸端}：方案成本是两个模型成本之和，方案质量是“从两份答案中选最好”的预测价值。当前轮只调用其中一个尚未运行的模型，拿到回答后重新决策。</p>
+<div class="equation">集合成本 = 各模型预测成本相加<br>集合质量 = “取最高质量”之后，再求平均<br>集合得分 = 集合质量 − 当前阶段成本权重 × 集合成本</div>
+<h3>为什么“先取最大值，再平均”顺序不能交换？</h3><p>下面是解释计算顺序的假想例子，两个情形各占一半：</p>
+<table><thead><tr><th>假想情形</th><th>模型 A</th><th>模型 B</th><th>该情形的最大值</th></tr></thead><tbody><tr><td>情形 1</td><td>0.90</td><td>0.50</td><td>0.90</td></tr><tr><td>情形 2</td><td>0.50</td><td>0.90</td><td>0.90</td></tr></tbody></table>
+<p><strong>先取最大值，再平均：</strong>(0.90 + 0.90) ÷ 2 = <strong>0.90</strong>。<br><strong>先对每个模型平均，再取最大值：</strong>max(0.70, 0.70) = <strong>0.70</strong>。</p>
+<div class="note">这解释的是预测分布中的互补价值，不表示在线可以偷看真实质量。实际输出仍由已返回答案的质量预测决定；本地均值适配器没有协方差，集合质量退化为预测均值中的最大值。</div>
+<details open><summary>γ 的公式如何理解？点击看一个预算例子</summary><p>假设并列最优的便宜方案平均成本为 1，较贵方案为 3，目标平均预算 B = 1.5。选择较贵方案的概率 γ = (1.5 − 1) ÷ (3 − 1) = 0.25。</p><p>这样混合的平均成本为 0.75 × 1 + 0.25 × 3 = 1.5。clip(..., 0, 1) 表示把计算结果限制在 0 到 1 之间。这个解释要求两个成本不同；相同时不能直接做除法，代码另行处理。</p><p>它用于并列最优方案的预算混合，不是任意随机调用模型，也不是每条请求的硬预算保证。</p></details></section>
+<section id="walkthrough"><p class="eyebrow">把公式真正算一遍</p><h2>船端 → 岸端 → 停止</h2><p>以下沿用已运行的合成教学轨迹：λ = 0.5，γ = 0，无协方差；船／岸／云预测成本为 0.10／0.40／1.00。没有调用真实模型。</p>
+<article class="step"><span class="badge">第 0 轮 · 没有回答</span><h3>先调用船端</h3><p>船端：0.70 − 0.5 × 0.10 = <strong>0.65</strong><br>岸端：0.85 − 0.5 × 0.40 = <strong>0.65</strong><br>云端：0.90 − 0.5 × 1.00 = <strong>0.40</strong></p><p>船端与岸端并列；γ = 0 时选择便宜方案，所以先调用船端。包含多个模型的集合也没有更高得分。</p></article>
+<article class="step"><span class="badge">第 1 轮 · 船端已回答</span><h3>新反馈让船端质量预测降至 0.40</h3><table><thead><tr><th>候选集合</th><th>代入公式</th><th>得分</th></tr></thead><tbody><tr><td>仅船端（停止）</td><td>0.40 − 0.5 × 0.10</td><td>0.35</td></tr><tr class="winner"><td>船端 + 岸端</td><td>0.85 − 0.5 × (0.10 + 0.40)</td><td>0.60 ← 最优</td></tr><tr><td>船端 + 云端</td><td>0.90 − 0.5 × (0.10 + 1.00)</td><td>0.35</td></tr><tr><td>船端 + 岸端 + 云端</td><td>0.90 − 0.5 × 1.50</td><td>0.15</td></tr></tbody></table><p>最优集合含有尚未调用的岸端，于是下一步调用岸端。船端已花成本仍保留在集合中。</p></article>
+<article class="step"><span class="badge">第 2 轮 · 船端、岸端已回答</span><h3>新增云端的收益不足以抵消成本</h3><p>停止：0.86 − 0.5 × 0.50 = <strong>0.61</strong><br>加云端：0.90 − 0.5 × 1.50 = <strong>0.15</strong></p><p>继续调用的得分更低，因此停止。随后 <code>select_answer()</code> 在已返回答案中选择岸端答案。</p></article>
+<div class="note">“停止调用”与“选择已有答案”是两个步骤。当前固定均值回放中六条任务都直接调用云端，不能将此教学轨迹当成该回放的实验结果。</div></section>
+<section id="full-report"><p class="eyebrow">完整内容 · 逐章对照源码</p><h2>原报告全文阅读版</h2><p>以下保留原报告的全部章节、表格、代码与验证边界。公式已转换为浏览器可直接显示的符号，流程图已重绘；源码链接打开对应文件，原行号仍可在 Markdown 中查阅。</p></section><h1 id="cascade-routing论文与本地代码框架解读">Cascade Routing：论文与本地代码框架解读</h1>
+<p>日期：2026-10-12。范围：阅读原 Cascade Routing 论文及本地算法、估计器、实验入口、船岸云适配、统一执行与采集评分代码，并执行已有测试和小规模合成演示。未修改算法源码，未调用真实模型，未运行大型实验。</p>
+<h2 id="1-先看清仓库的两层职责">1. 先看清仓库的两层职责</h2>
+<p>本地项目包含原论文的通用算法库，以及后来增加的船岸云研究工程框架。理解它的关键是分清：<strong>估计器预测各模型的质量与成本，选择算法决定下一步调用或停止，执行器负责实际动作和记账，评估器在终止后判定服务是否成功。</strong></p>
+<table><thead><tr><th>层</th><th>主要文件</th><th>解决的问题</th></tr></thead><tbody><tr><td>通用接口</td><td><code>base_algorithm.py</code>、<code>base_computer.py</code></td><td>统一选择算法和估计器的调用形式</td></tr><tr><td>原论文决策核心</td><td><code>router.py</code>、<code>baseline_cascader.py</code>、<code>cascade_router.py</code></td><td>一次路由、阈值级联、超模型级联路由</td></tr><tr><td>质量与成本估计</td><td><code>quality_computer.py</code>、<code>cost_computer.py</code>、任务专用估计器</td><td>根据问题和已返回答案预测质量、成本及不确定性</td></tr><tr><td>超模型统计与参数搜索</td><td><code>statistics.py</code>、<code>lambda_strategy.py</code></td><td>估计集合最优答案质量，选择质量—成本折中参数</td></tr><tr><td>原实验组织</td><td><code>scripts/</code>、<code>utils.py</code>、<code>notebooks/</code></td><td>数据转换、拟合、缓存回放、预算扫描、曲线汇总</td></tr><tr><td>本地数据与状态接口</td><td><code>schema.py</code>、<code>replay_data.py</code></td><td>定义在线可见状态与独立评估数据，检查来源分组和缺失值</td></tr><tr><td>船岸云策略适配</td><td><code>cascade_adapter.py</code>、<code>policies.py</code></td><td>将原核心接入受限动作协议及统一执行器</td></tr><tr><td>执行与终局评价</td><td><code>executor.py</code>、<code>metrics.py</code></td><td>动作守卫、时间费用累计、失败并集、未知结果</td></tr><tr><td>小规模离线入口</td><td><code>replay.py</code></td><td>拟合开发均值，运行五种策略，输出轨迹与汇总</td></tr><tr><td>单条采集和评分</td><td><code>single_task.py</code>、<code>live_backend.py</code>、<code>http_once_worker.py</code></td><td>单次 HTTP、持久化尝试账本、双人评分与独立评价</td></tr></tbody></table>
+<p>这里的文件名都位于 <code>src/selection/</code>，特殊目录除外。角色为 ship／shore／cloud 的模型名称，不等于已经配置了相应 Qwen 权重或真实部署设备。</p>
+<h2 id="2-原论文的核心在模型集合之间做路由">2. 原论文的核心：在“模型集合”之间做路由</h2>
+<p>论文为 Jasper Dekoninck、Maximilian Baader、Martin Vechev 的 <em>A Unified Approach to Routing and Cascading for LLMs</em>，ICML 2025，PMLR 267:12987–13010。<a href="https://proceedings.mlr.press/v267/dekoninck25a.html">官方页面</a>。已将官方 PDF 下载到 <a href="../framework_reading_20261012_01/cascade_routing_icml2025.pdf">本目录</a>，并提取为 <a href="../framework_reading_20261012_01/cascade_routing_icml2025.txt">文本</a>。本次重点阅读 §§2–4 的决策定义、Algorithm 1–3、§5 和附录 D 的估计器设计，并与代码对应；不声称完成附录所有证明的独立数学验证。</p>
+<h3 id="21-routing一次选一个模型">2.1 Routing：一次选一个模型</h3>
+<p>对输入问题 <span class="math">x</span>，估计各模型质量 <span class="math">q̂<sub>i</sub>(x)</span> 与成本 <span class="math">ĉ<sub>i</sub>(x)</span>，比较：</p>
+<div class="equation" role="math">τ<sub>i</sub>(x) = q̂<sub>i</sub>(x) − λ · ĉ<sub>i</sub>(x)</div>
+<p><code>Router._predict_model()</code> 选择该值最大的模型。<span class="math">λ</span> 越大，越重视成本。论文约束的是请求分布上的<strong>平均成本预算</strong>，不是每请求必不超预算。对应：论文 §2、Algorithm 1；<a href="../../src/selection/router.py">router.py</a>。</p>
+<h3 id="22-cascading固定顺序中的停止或继续">2.2 Cascading：固定顺序中的停止或继续</h3>
+<p>普通阈值级联依次运行模型，在当前答案的质量预测足够高时停止。<code>BaselineCascader</code> 对应这种 thresholding baseline：第一步固定第一个模型，后续比较当前模型质量与 <code>1 - lambda_</code>，最终选择已运行序列中最后一个模型。</p>
+<p>论文还提出更强的固定顺序级联：比较继续到不同后续位置的集合价值，而不只看当前答案门槛。它在代码中由 <code>CascadeRouter(cascade=True)</code> 实现，枚举固定前缀并强制紧邻继续。两者都属于 cascading，但决策机制不同。对应：论文 §3、Algorithm 2；<a href="../../src/selection/baseline_cascader.py">baseline_cascader.py</a>、<a href="../../src/selection/cascade_router.py">cascade_router.py</a>。</p>
+<h3 id="23-cascade-routing允许初始选模跳过模型和答案后再选">2.3 Cascade Routing：允许初始选模、跳过模型和答案后再选</h3>
+<p>原方法把一组候选模型称为 supermodel，可译为“超模型”。<strong>它是一个模型集合及其答案选择规则，不是把权重合并成新模型，也不做答案文本融合。</strong></p>
+<p>对集合 <span class="math">S</span>，论文估计：</p>
+<div class="equation" role="math">q̂<sub>S</sub> = E[max<sub>i ∈ S</sub> q̃<sub>i</sub>]<br>ĉ<sub>S</sub> = ∑<sub>i ∈ S</sub> ĉ<sub>i</sub><br>τ<sub>S</sub> = q̂<sub>S</sub> − λ<sub>j</sub> · ĉ<sub>S</sub></div>
+<p><span class="math">q̃</span> 表示估计不确定性下的质量量。当前已经调用的模型集合为 <span class="math">H</span>，则比较的集合须包含 <span class="math">H</span>。如果最优集合没有新增模型，就停止；如果包含尚未运行的模型，就执行一个新增模型，再用实际回答更新估计。</p>
+<p>三个模型初始最多有七个非空集合：<code>{ship}</code>、<code>{shore}</code>、<code>{cloud}</code>、<code>{ship,shore}</code>、<code>{ship,cloud}</code>、<code>{shore,cloud}</code>、<code>{ship,shore,cloud}</code>。已调用船端后，只比较包含船端的集合。开启向上顺序约束后，一旦跳过某低层模型，之后不能再回头调用它。</p>
+<p>对应：论文 §4、Algorithm 3；<a href="../../src/selection/cascade_router.py">cascade_router.py</a>。理论上的一般框架允许更灵活的模型序列，论文也给出先运行一个模型、再运行另一个较小模型的例子；本地船岸云协议明确限制严格向上，两者的动作空间不同。</p>
+<p>原文的最优性结论针对其定义的估计目标、成本约束和相应假设，不意味着预测器一定正确、真实服务绝对最优或具有服务失败概率保证。</p>
+<h2 id="3-原代码的接口与数据流">3. 原代码的接口与数据流</h2>
+<h3 id="31-三个数据数组">3.1 三个数据数组</h3>
+<p>以 N 条问题、M 个模型为例：</p>
+<pre><code class="language-python">questions       # 长度 N，元素可为字符串或任务专用表示
+model_answers   # N × M，未调用位置为 None
+qualities       # N × M，估计器输出各模型的预测质量
+costs           # N × M，估计器输出各模型的预测成本
+sigma           # 每问题一个 M × M 协方差矩阵，或 None</code></pre>
+<p><code>model_answers</code> 是最重要的信息边界。例如 <code>[ship_answer, None, None]</code> 只暴露船端回答，岸端和云端仍不可见。已有回答既用于评价该答案，也可以为未调用模型的预测提供反馈。</p>
+<p>这些不是原始质量标签矩阵。训练或评估使用的 <code>ground_truth_qualities</code> 与在线预测值分开。原实验中的特殊 GroundTruth 估计器是噪声诊断设定，不应直接迁入真实路由器作为可观测输入。</p>
+<h3 id="32-两类-fit-的职责不同">3.2 两类 fit 的职责不同</h3>
+<pre><code class="language-python">quality_computer.fit(estimator_questions, all_answers, quality_labels)
+cost_computer.fit(estimator_questions, all_answers, observed_costs)
+
+router = CascadeRouter(quality_computer, cost_computer, models,
+                       max_expected_cost=target_budget)
+router.fit(tuning_questions, tuning_answers,
+           ground_truth_qualities=tuning_labels,
+           ground_truth_costs=tuning_costs)</code></pre>
+<p>前两次 <code>fit</code> 学习预测器；<code>CascadeRouter.fit()</code> 调整各阶段 <span class="math">λ<sub>j</sub></span> 和并列最优方案的混合参数 <span class="math">γ</span>。<strong>路由器的 fit 不会自动替你训练质量估计器。</strong> <code>trigger_training(True)</code> 主要改变估计器的缓存／运行模式，也不等价于拟合预测器。<a href="../../src/selection/utils.py">utils.py</a>、<a href="../../src/selection/cascade_router.py">cascade_router.py</a>。</p>
+<p>原实验一般把训练数据前段用于估计器，后段用于策略参数搜索；RouterBench 的 GroundTruth 噪声实验另有特殊路径。这个“参数拟合”不应与船岸云论文中的独立失败风险校准混为一谈。</p>
+<h3 id="33-在线循环由调用方完成">3.3 在线循环由调用方完成</h3>
+<pre><code class="language-python">answers = [None] * len(models)
+while True:
+    next_model = router.predict([question], [answers])[0]
+    if next_model is None:
+        break
+    answers[models.index(next_model)] = invoke(next_model, question)
+
+chosen_model = router.select_answer([question], [answers])[0]
+chosen_answer = answers[models.index(chosen_model)]</code></pre>
+<p><code>predict()</code> 返回的是下一模型名称或 <code>None</code>，本身不发 LLM 请求。<code>select_answer()</code> 返回最终答案所属的模型名称，调用方再取真实回答。代码不是一个调用 <code>CascadeRouter</code> 就自动管理全部模型服务的端到端应用。</p>
+<p>原实验 <a href="../../src/selection/utils.py">utils.prediction()</a> 实现上述循环，但 <code>invoke</code> 实际是从缓存 <code>actual_answers[i][model_index]</code> 取答案；质量标签在完成选答后用于计分。它是离线评估，不是模型现场生成。</p>
+<h2 id="4-深入核心函数它每轮做了什么">4. 深入核心函数：它每轮做了什么</h2>
+<p>入口 <a href="../../src/selection/cascade_router.py">CascadeRouter.predict()</a> 先调用质量和成本估计器，按已返回答案数确定阶段 <span class="math">j</span>，选择当前阶段的 <span class="math">λ<sub>j</sub></span>，再进入 <code>_predict_model()</code>。</p>
+<p>该函数的主要逻辑是：</p>
+<ol><li>收集非 <code>None</code> 的已运行模型，作为所有候选集合的共同基础。</li><li>用 <code>models_to_evaluate</code> 逐轮扩展未运行模型组合。</li><li>对每个集合调用 <code>predict_supermodels()</code>，获得集合质量估计，再累加集合成本。</li><li>计算 <code>quality_supermodel - lambda_ * cost_supermodel</code>，保留最优方案及并列项。</li><li>若开启 <code>do_speedup</code>，按负边际收益检查剪掉部分扩展；<code>max_depth</code> 和 <code>top_k_keep</code> 限制搜索规模。</li><li>在并列最优集合中，依照 <span class="math">γ</span> 选择便宜或昂贵的方案。该随机化用于预算边界，不是随机挑选任意模型。</li><li>最优集合没有新模型则返回 <code>None</code>；否则返回其中一个待运行模型，本轮只执行它。</li></ol>
+<p>在 <code>CascadeRouter</code> 内，<span class="math">γ</span> 是并列时选择较昂贵方案的概率，其拟合形式为：</p>
+<div class="equation" role="math">γ = clip((B − C<sub>cheap</sub>) / (C<sub>expensive</sub> − C<sub>cheap</sub>), 0, 1)</div>
+<p>论文 Algorithm 1 对混合权重使用的方向与这个类不完全相同，不能不看定义就直接照搬变量含义；应以各实现中的分支和公式对应解释。</p>
+<p>已有模型的预测成本也出现在候选集合总成本中。在同一轮、同一历史下，它们属于候选间共同的已付出部分；重要区别来自新增模型成本。实际请求记账仍需由调用方或执行器保存，预测成本不能覆盖真实已发生费用。</p>
+<h3 id="41-不确定性为何重要">4.1 不确定性为何重要</h3>
+<p><a href="../../src/selection/quality_computer.py">BaseQualityComputer.predict_supermodels()</a> 调用 <a href="../../src/selection/statistics.py">compute_expected_max()</a>：</p>
+<ul><li>没有协方差时，退化为模型预测均值中的最大值。</li><li>有协方差时，代码使用 Sobol 样本、正态变换，以及独立或相关质量采样，近似估计最大值的期望。</li><li>同一集合的模型预测存在相关性时，多个模型的互补价值与完全独立时不同。</li></ul>
+<p><span class="math">E[max Q<sub>i</sub>]</span> 通常不等于 <span class="math">max E[Q<sub>i</sub>]</span>。如果把不确定性全部设为 <code>None</code>，集合价值的表达能力会明显改变。这是理解本地均值适配较弱的重要原因。</p>
+<h3 id="42-停止与最终选答是两件事">4.2 停止与最终选答是两件事</h3>
+<p><code>predict()</code> 解决“是否值得继续花钱”；<a href="../../src/selection/cascade_router.py">select_answer()</a> 解决“已有的哪个回答更好”。后者只对实际返回的答案重新预测质量，选择预测分最高者，空历史返回 <code>None</code>。</p>
+<p>因此，最后一个被调用的模型不必是最终输出模型。<code>BaselineCascader</code> 则采用最后一个已运行模型，两种选答规则不可混用。</p>
+<h2 id="5-估计器层通用算法怎样理解不同任务">5. 估计器层：通用算法怎样理解不同任务</h2>
+<p>原选择核心不限定答案必须是普通字符串。各任务把输入和输出转成自己的表示，再实现相同 <code>predict()</code> 接口。</p>
+<table><thead><tr><th>任务类型</th><th>主要文件</th><th>已读到的特征／机制</th></tr></thead><tbody><tr><td>分类／选择题</td><td><code>classification.py</code></td><td>选项概率、熵、最高概率、模型答案一致性、JS 散度、附加问题特征；默认逻辑回归</td></tr><tr><td>自由生成</td><td><code>open_form.py</code></td><td>继承分类估计框架，改造问题、置信度和答案一致性特征；成本估计结合 token 费率及输出长度</td></tr><tr><td>代码／数学</td><td><code>code_math.py</code></td><td>任务来源、难度等问题特征，以及解析答案后的反馈；成本回归</td></tr><tr><td>SWE-Bench</td><td><code>swebench.py</code></td><td>问题与仓库特征、执行反馈／测试信息；时延成本估计</td></tr><tr><td>噪声诊断</td><td><code>quality_computer.py</code>、<code>cost_computer.py</code> 的 GroundTruth 类</td><td>在真实值上加噪声以分析估计质量的影响，仅对应明确的实验设定</td></tr></tbody></table>
+<p><a href="../../src/selection/classification.py">ClassificationQualityComputer.prepare_data()</a> 将完整训练输出按“哪些模型已运行”的不同子集遮蔽，再为目标模型生成学习样本；<code>fit()</code> 按目标模型和可见模型子集分别训练预测器。<code>predict()</code> 根据当前非空答案集合选择相应预测器及协方差。</p>
+<p>这样，初始没有回答时是 ex-ante 预测；调用后可利用回答反馈进行 post-hoc 预测。<strong>级联的价值依赖调用后是否获得足够有用的新信息。</strong> 如果生成后预测完全不变，系统虽然还能继续调用，决策却缺乏基于答案内容调整的依据。</p>
+<p>原 SWE-Bench 部分使用评估测试信息作为良好 post-hoc 估计场景，RouterBench 部分使用带噪声的真实质量信号。本地研究若使用这些机制，必须明确哪些信息部署时真的能获得；不能把受控诊断结果直接当作真实船舰服务能力。</p>
+<h2 id="6-用一条实际运行的教学轨迹理解它">6. 用一条实际运行的教学轨迹理解它</h2>
+<p>本次新增 <a href="../framework_reading_20261012_01/trace_native_router.py">trace_native_router.py</a>，只构造合成质量预测和合成返回文本，直接调用原 <code>CascadeRouter</code>，不开启 LLM 推理。参数手动设定 <span class="math">λ = 0.5</span>、<span class="math">γ = 0</span>、无协方差，用于展示控制流程；它不是拟合模型或论文实验。</p>
+<table><thead><tr><th>轮次</th><th>已返回答案</th><th>预测质量：船／岸／云</th><th>下一动作</th></tr></thead><tbody><tr><td>0</td><td>全空</td><td>0.70／0.85／0.90</td><td>调船端</td></tr><tr><td>1</td><td>船端回答</td><td>0.40／0.85／0.90</td><td>调岸端</td></tr><tr><td>2</td><td>船端、岸端回答</td><td>0.40／0.86／0.90</td><td>停止；最终选岸端</td></tr></tbody></table>
+<p>模型预测成本为 0.10／0.40／1.00。初始船端得分 <span class="math">0.70-0.5 × 0.10=0.65</span>，岸端也为 0.65，并列时当前配置选择便宜集合，先运行船端。</p>
+<p>船端返回后其质量预测降至 0.40，保留船端并增加岸端的集合得分为 <span class="math">0.85-0.5 × (0.10+0.40)=0.60</span>，高于只保留船端的 0.35，因此继续运行岸端。岸端返回后，已有集合的得分为 <span class="math">0.86-0.5 × 0.50=0.61</span>，增加云端后为 <span class="math">0.90-0.5 × 1.50=0.15</span>，所以停止。</p>
+<p>原始运行结果见 <a href="../framework_reading_20261012_01/native_trace.json">native_trace.json</a>。这里特意展示“调用后改变预测”，与当前固定均值回放形成对照。</p>
+<h2 id="7-船岸云本地框架谁负责执行谁能看到什么">7. 船岸云本地框架：谁负责执行，谁能看到什么</h2>
+<div class="flow" aria-label="本地框架数据流">
+<div class="node">任务与服务要求<small>加载 replay 数据 · 检查来源分组</small></div><b class="arrow">↓</b>
+<div class="node">dev_fit 拟合工程均值适配器</div><b class="arrow">↓</b>
+<div class="loop"><strong>UnifiedExecutor 的决策循环</strong><div class="node">构造 ObservableState<small>仅包含已发生的调用与可观测信息</small></div><b class="arrow">↓</b>
+<div class="node">策略 decide / 原 CascadeRouter</div><b class="arrow">↓</b>
+<div class="branches"><div class="node">CALL<small>权限 · 严格向上 · 单次尝试检查<br>→ OfflineModel / LiveModel<br>→ 记录结果、时间、费用<br>↶ 更新状态，再次决策</small></div>
+<div class="node">ACCEPT / FAIL<small>终止循环<br>固定最终答案</small></div></div></div><b class="arrow">↓</b>
+<div class="node evaluation">evaluate_terminal<small>此时才读取独立质量与有效性标签<br>→ 输出轨迹与 summary</small></div></div>
+<p>此图表示本地接口逻辑。现有 <code>replay</code> 入口使用 <code>OfflineModel</code>；<code>single_task.collect</code> 使用 <code>LiveModel</code> 进行三个独立固定模型请求，并未把图中的动态路由直接接入该采集入口。</p>
+<h3 id="71-状态与隐藏标签分开">7.1 状态与隐藏标签分开</h3>
+<p><a href="../../src/selection/schema.py">schema.py</a> 的 <code>ObservableState</code> 含原始问题、固定证据、可调用模型、已尝试与成功／失败／无效回答、剩余时间预算、预测质量及当前环境。</p>
+<p><a href="../../src/selection/executor.py">UnifiedExecutor._make_state()</a> 从已经发生的调用记录构造状态；真实质量、未调用答案不会复制进去。即使回放进程拥有所有缓存输出，也只有执行到相应模型时才暴露该回答。最终选择器也只能从已调用且在线检查成功的回答中选择。</p>
+<p><code>ModelStatus.SUCCESS</code> 表示输出通过在线有效性检查，不等于质量已经达到门槛。<code>FAILED</code> 表示尝试失败，<code>INVALID</code> 表示调用发生但输出无效，<code>UNATTEMPTED</code> 表示未调用。这些状态影响重试限制和费用账本，必须区分。</p>
+<h3 id="72-执行器统一管理动作与资源">7.2 执行器统一管理动作与资源</h3>
+<p><a href="../../src/selection/executor.py">UnifiedExecutor.execute()</a> 每轮构造状态、运行策略、计入控制开销、检查动作，再调用模型。失败和无效结果仍加入尝试历史并保留资源。发生资源未知时停止进一步花费，未知值不被写成零。</p>
+<p><code>_validate_call()</code> 强制权限、未尝试和严格向上顺序。模型接口只读取同一原始 <code>question</code> 与 <code>evidence</code>，不接收前模型答案。</p>
+<p>回放模式用输入的延迟和费用累计；真实后端必须使用 <code>execution_timing=&quot;wall_clock&quot;</code> 与 <code>decision_timing=&quot;measured&quot;</code>，用完整请求的单调时钟差计总时间，分项只作诊断，避免重复叠加。</p>
+<p>但当前执行器尚不包含船岸云论文完整的预测上界动作筛选、保守停止门和多目标规划机制。代码中的 ACCEPT 表示终止并返回已选答案，<strong>不自动表示真实服务达标</strong>，须由终局评估判断。</p>
+<h3 id="73-终局评估是失败并集缺失值保留未知">7.3 终局评估是失败并集，缺失值保留未知</h3>
+<p><a href="../../src/selection/metrics.py">metrics.evaluate_terminal()</a> 在选答已固定后读取标签，检查质量、时间、预算和有效答案；不会重新调用模型或根据标签改选答案。</p>
+<p>如果已知任一条件失败，结果就是失败；如果尚无已知失败但必要信息缺失，则结果不确定。<code>aggregate()</code> 以全部请求为分母，存在未知结局时不伪造完整失败率，而是报告确定失败下界与可能失败上界。这些上下界是缺失信息范围，不是统计置信区间。</p>
+<h2 id="8-当前-cascaderouteradapter-到底实现了什么">8. 当前 CascadeRouterAdapter 到底实现了什么</h2>
+<p><a href="../../src/selection/cascade_adapter.py">cascade_adapter.py</a> 保留原 <code>CascadeRouter.fit/predict/select_answer</code> 调用链，外面增加严格向上、权限、失败占次数等适配。失败或无效尝试用非空哨兵表示，并赋极低预测质量，防止原代码把它当成尚未运行或最终好答案。</p>
+<p>但估计器是 <code>DevelopmentMeanQuality</code> 和 <code>DevelopmentMeanCost</code>：只在 <code>dev_fit</code> 上计算每模型均值，在线对所有任务基本返回同一组预测；质量没有协方差，<span class="math">λ</span> 固定为零，不做参数搜索，只按拟合数据计算 <span class="math">γ</span>。适配器也显式拒绝其他估计器类型，尚不能直接换入任务专用估计器便宣称适配完成。</p>
+<p>本次运行的配置给出：</p>
+<pre><code class="language-text">quality_means = [0.55, 0.78, 0.93]
+cost_means    = [1.00, 2.00, 3.00]
+lambdas      = [0, 0, 0]
+gamma        = 1/3</code></pre>
+<p>六条 <code>dev_eval</code> 任务都直接调用云端；两条成功、另有无效输出、资源超限以及标签／资源未知等诊断结果。这说明原核心已接通执行器和评估，但示例未体现任务感知或回答质量感知的动态升级。它不能作为 v5 论文中强序贯基线或完整方法的性能复现。</p>
+<p><code>fixed_cascade_fallback</code> 同样只耗尽固定顺序、返回最后有效答案，是明确命名的替代规则；它尚不是论文中带训练评分器的固定阈值级联。</p>
+<h2 id="9-单条采集与评分链的定位">9. 单条采集与评分链的定位</h2>
+<p>入口 <a href="../../src/selection/single_task.py">single_task.py</a> 的流程为：</p>
+<pre><code class="language-text">validate 本地校验
+  → collect 分别执行船、岸、云三个固定单模型请求
+  → 保存原始输出与匿名评分卡
+  → 双人评分及分歧裁定
+  → evaluate 合并评估标签并重新计算终局指标</code></pre>
+<p><code>collect</code> 是采集三模型数据，不是一条动态级联轨迹。每次独立调用均复用 <code>UnifiedExecutor</code>，以保证接口和记账一致；三个独立延迟不能直接拼成真实序贯网络轨迹。</p>
+<p>真实后端的调用链为：</p>
+<pre><code class="language-text">UnifiedExecutor
+  → LiveModel.call_with_context
+  → AttemptLedger.reserve（SQLite 持久化唯一尝试）
+  → SingleHTTPTransport.send
+  → http_once_worker.send_once（单次标准库 POST）
+  → 解析、检查、记账并保存结果</code></pre>
+<p>PENDING 和已完成尝试都阻止同任务、同模型自动重发。worker 被本地超时终止，不意味着远端生成或费用已经取消。当前费用仅按 provider token fee 推导，不是 v5 的费用—传输归一化开销。</p>
+<p>原 <code>APIQuery</code> 则是 LangChain／供应商 SDK 适配层，有多层重试路径；本地新后端避免走这条链。当前环境 <code>APIQuery</code> 的可选导入是否成功，应直接检查具体依赖，不能因为 <code>import selection</code> 成功就认为所有子模块都可用，因为 <code>__init__.py</code> 会捕获部分导入异常。</p>
+<h2 id="10-与-papersv5-方法的对应关系">10. 与 papers/v5 方法的对应关系</h2>
+<table><thead><tr><th>v5 所需机制</th><th>当前本地代码状态</th></tr></thead><tbody><tr><td>原始问题和证据固定、每模型至多尝试一次、向上可跳级</td><td>执行器、状态与适配器已实现相应工程约束</td></tr><tr><td>实际时间／费用账本、失败调用记账、标签与决策分离</td><td>已有实现与诊断测试</td></tr><tr><td>原 Cascade Routing 的受限接入</td><td>核心接通，估计器仍为开发均值变体</td></tr><tr><td>MiniLM＋PCA＋梯度提升质量与达标概率预测</td><td>当前这条本地船岸云路径尚未实现</td></tr><tr><td>条件升级收益模型与收益增强近邻</td><td>尚未实现</td></tr><tr><td>答案—资源联合轨迹采样</td><td>尚未实现</td></tr><tr><td>四维非支配前沿、压缩、多步滚动规划</td><td>尚未实现；原超模型搜索不是该规划器</td></tr><tr><td>共享上述预测器的单步贪心对照</td><td>尚未完成；原 <code>greedy=True</code> 不能直接等同</td></tr><tr><td>完整冻结控制器的独立风险校准</td><td>尚未实现；回放输出明确 <code>risk_guarantee=false</code></td></tr><tr><td>v5 的领域数据、真实完整实验与可复现部署记录</td><td>现有合成演示和源码不能验证这些结果</td></tr></tbody></table>
+<p><strong>原论文中的正态质量采样与 v5 中的历史结果—资源联合采样属于不同机制。</strong> 原算法搜索模型集合的期望最大质量和成本；v5 规划器还要对未来可观测状态、资源消耗及失败概率作递推。复用执行框架有意义，但不能简单把 <code>CascadeRouter</code> 改名为完整规划器。</p>
+<p>另有一处文档陈旧信息：<code>replay.py</code> 生成的 <code>manifest.not_implemented</code> 仍包含 <code>live_no_retry_backend</code>，但仓库实际上已有 <code>live_backend.py</code>、worker 和测试。它反映回放清单未随新后端同步，不能据此判断整个仓库没有该后端。本次仅记录这一问题，未修改运行源码。</p>
+<h2 id="11-现有验证与解释边界">11. 现有验证与解释边界</h2>
+<p>实际运行结果如下，命令和退出状态见 <a href="../framework_reading_20261012_01/commands.json">commands.json</a>：</p>
+<table><thead><tr><th>操作</th><th>结果</th></tr></thead><tbody><tr><td>沙箱内现有 pytest 全套</td><td>74 passed、7 errors；7 项在本机 HTTP fixture 建立 socket 时被权限限制</td></tr><tr><td>允许本机 socket 后全套 pytest</td><td>81 passed，退出 0，4.65 秒</td></tr><tr><td><code>selection.replay --validate-only</code></td><td>退出 0；10 任务、30 调用记录、30 标签记录</td></tr><tr><td>小规模离线回放</td><td>退出 0；4 个拟合任务、6 个评价任务、5 策略，共 30 条评价轨迹</td></tr><tr><td>原核心教学轨迹</td><td>退出 0；3 次决策，2 个合成答案槽填充，最终岸端；无真实生成</td></tr></tbody></table>
+<p>测试和回放日志保存在本目录；<a href="../framework_reading_20261012_01/tests_full.xml">tests_full.xml</a> 为最终测试统计。81 项主要验证本地接口、失败资源处理、数据隔离、单次尝试、模拟 HTTP 和评分闭环，并不覆盖原论文的全部任务估计器、预算搜索、无序选择与所有消融配置。因此测试通过只证明这些已测试的软件行为，不证明论文性能或风险达标。</p>
+<p>阅读中还注意到原核心无序选择分支使用 <code>best_models[model]</code>，而本函数通常只维护 <code>best_models[&#x27;all&#x27;]</code>；该分支值得单独审计。当前船岸云路径固定 <code>force_order=True</code>，本次未修改也未验收一般无序配置。不要把受限路径的测试通过推广到所有构造参数。</p>
+<h2 id="12-推荐的源码学习顺序">12. 推荐的源码学习顺序</h2>
+<ol><li><a href="../../src/selection/base_algorithm.py">base_algorithm.py</a> 与 <a href="../../src/selection/base_computer.py">base_computer.py</a>：先看 fit／predict／select_answer 的职责。</li><li><a href="../../src/selection/router.py">router.py</a>：理解最简单的质量减成本打分。</li><li><a href="../../src/selection/quality_computer.py">quality_computer.py</a> 与 <a href="../../src/selection/statistics.py">statistics.py</a>：理解超模型和不确定性。</li><li><a href="../../src/selection/cascade_router.py">cascade_router.py</a>：按 predict → _predict_model → select_answer → fit 顺序读。</li><li><a href="../../src/selection/classification.py">classification.py</a>：理解生成前后信息如何进入预测器。</li><li><a href="../../src/selection/utils.py">utils.py</a>：理解原实验的估计器拟合、预算搜索和缓存评估。</li><li><a href="../../src/selection/executor.py">executor.py</a> 与 <a href="../../src/selection/cascade_adapter.py">cascade_adapter.py</a>：理解船岸云如何接入原算法。</li><li><a href="../../src/selection/replay.py">replay.py</a>、<a href="../../src/selection/metrics.py">metrics.py</a>：结合本目录轨迹查看决策与事后评价的分界。</li><li><a href="../../src/selection/single_task.py">single_task.py</a> 与 <a href="../../src/selection/live_backend.py">live_backend.py</a>：最后看真实调用接口和数据采集。</li></ol>
+<p>这条学习顺序先掌握模型选择的数学逻辑，再读任务特征和执行约束，可避免一开始陷入各数据集脚本、API 封装或旧实验配置。</p><footer>由 render-html skill 的 Markdown 解析器与本目录 build_reader.py 生成。新增中文说明和教学算例用于辅助理解；原报告的验证结果与实现边界保留。单文件 HTML，无 CDN、无脚本、无需联网。</footer></main></body></html>

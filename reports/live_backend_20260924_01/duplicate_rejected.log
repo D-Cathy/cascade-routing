@@ -1,0 +1,17 @@
+COMMAND: PYTHONPATH=src /home/guoqiuyuan/miniconda3/bin/python -m selection.single_task collect --mock --task /home/guoqiuyuan/LLMresearch/cascade-routing/examples/single_task/mock_task.json --deployment /home/guoqiuyuan/LLMresearch/cascade-routing/reports/live_backend_20260924_01/mock_deployment.json --output /home/guoqiuyuan/LLMresearch/cascade-routing/reports/live_backend_20260924_01/forbidden_duplicate
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/guoqiuyuan/LLMresearch/cascade-routing/src/selection/single_task.py", line 198, in <module>
+    if __name__=="__main__":main()
+                            ~~~~^^
+  File "/home/guoqiuyuan/LLMresearch/cascade-routing/src/selection/single_task.py", line 195, in main
+    print(collect(args.task,args.deployment,args.output,args.mock))
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/guoqiuyuan/LLMresearch/cascade-routing/src/selection/single_task.py", line 67, in collect
+    if any(ledger.contains(task["task_id"],n) for n in NAMES):raise ValueError("Task has reserved/completed attempts; recover artifacts from ledger, do not resend")
+                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Task has reserved/completed attempts; recover artifacts from ledger, do not resend
+
+EXIT_STATUS=1
+EXPECTED_EXIT_STATUS=1

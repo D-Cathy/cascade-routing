@@ -1,0 +1,12 @@
+{
+  "fit_tasks": 15,
+  "fit_pairs": 45,
+  "eval_tasks": 5,
+  "eval_pairs": 15,
+  "quality_mae": 0.4732462962702202,
+  "proxy_brier": 0.41865177636289175,
+  "training_mean_baseline_mae": 0.47333333333333344,
+  "service_probability_available": false,
+  "formal_result": false,
+  "model_calls": 0
+}

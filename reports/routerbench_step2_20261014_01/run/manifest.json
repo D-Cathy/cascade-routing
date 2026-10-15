@@ -1,0 +1,106 @@
+{
+  "config": {
+    "schema_version": 1,
+    "purpose": "engineering_simulation_only",
+    "dataset": "../data/routerbench_dev20_20261014",
+    "seed": 20261014,
+    "deadline_s": 12.0,
+    "budget": 1.5,
+    "quality_threshold": 0.8,
+    "decision_overhead_s": 0.01,
+    "decision_cost": 0.001,
+    "call_timeout_s": 15.0,
+    "failure_detection_s": 0.5,
+    "cancellation_s": 0.1,
+    "fee_reference": 1.0,
+    "byte_reference": 10000.0,
+    "fee_weight": 0.5,
+    "models": {
+      "ship": {
+        "base_compute_s": 0.3,
+        "seconds_per_output_byte": 0.002,
+        "queue_max_s": 0.1,
+        "fee_per_compute_s": 0.04
+      },
+      "shore": {
+        "base_compute_s": 0.2,
+        "seconds_per_output_byte": 0.001,
+        "queue_max_s": 0.3,
+        "fee_per_compute_s": 0.1
+      },
+      "cloud": {
+        "base_compute_s": 0.2,
+        "seconds_per_output_byte": 0.0005,
+        "queue_max_s": 0.5,
+        "fee_per_compute_s": 0.25
+      }
+    },
+    "regimes": {
+      "normal": [
+        {
+          "at_s": 0.0,
+          "bandwidth_mbps": 1.0,
+          "one_way_latency_s": 0.03
+        }
+      ],
+      "restricted": [
+        {
+          "at_s": 0.0,
+          "bandwidth_mbps": 0.2,
+          "one_way_latency_s": 0.15
+        }
+      ],
+      "interrupted": [
+        {
+          "at_s": 0.0,
+          "bandwidth_mbps": 1.0,
+          "one_way_latency_s": 0.03
+        },
+        {
+          "at_s": 1.0,
+          "bandwidth_mbps": 0.0,
+          "one_way_latency_s": 0.03
+        },
+        {
+          "at_s": 8.0,
+          "bandwidth_mbps": 1.0,
+          "one_way_latency_s": 0.03
+        }
+      ]
+    }
+  },
+  "tasks": 20,
+  "traces": 240,
+  "input_sha256": {
+    "/home/guoqiuyuan/LLMresearch/cascade-routing/configs/routerbench_simulation.json": "837e28b28ecfe0826ddccd4452462de51d9f9a78bda85dba96c60bf71584290a",
+    "/home/guoqiuyuan/LLMresearch/cascade-routing/data/routerbench_dev20_20261014/manifest.json": "b55ad65e2a7ac0026d52feb7704fee15d5e749c431c9eba68c89aed131fbad6b",
+    "/home/guoqiuyuan/LLMresearch/cascade-routing/data/routerbench_dev20_20261014/tasks.jsonl": "1023f1ac0151b82a253bf8ca54004ed0290aa7046bcb922a0cba21e3022c531d",
+    "/home/guoqiuyuan/LLMresearch/cascade-routing/data/routerbench_dev20_20261014/calls.jsonl": "74027d8ffa7d2fd74d69ba9fa74578e2b5c61795a317704d5c5e7efc2652d268",
+    "/home/guoqiuyuan/LLMresearch/cascade-routing/data/routerbench_dev20_20261014/labels.jsonl": "54040406da41b9429d22ec5e1c2e2ae9ffdef05d9d9dfd16282375cc885ed5cb"
+  },
+  "code_sha256": {
+    "simulation_replay.py": "de73506faa43b526b3033cdabd195b0dec87fb2d62a6b2dd040a07fd4de7e452",
+    "resource_simulation.py": "c33c2f78b4d18652f807be0274069460ad6f002528fa67501fbafde9fc66a19b",
+    "executor.py": "7cb2eb28370859a14d4b38521f2ec064e4bc2ca68798b7e9cec14c8cdaea156b",
+    "policies.py": "c723d8bf0edc522a9552b6d006f6ceecf292daec1b498e09459a66f40c2325d8",
+    "metrics.py": "e6c49c95fa6ecfe8ec7b14e1ad06dd389f21e36db6c1ca5d0d5848e7807049e4"
+  },
+  "model_calls_executed": 0,
+  "risk_guarantee": false,
+  "formal_experiment": false,
+  "cost_unit": "simulated_normalized_fee_and_bytes",
+  "quality_source": "routerbench_proxy",
+  "validity_source": "missing_preserved",
+  "all_tasks_used_for": "engineering_smoke_test_not_heldout_performance",
+  "limitations": [
+    "No trained scorer or calibrated v5 planner; fallback cascade is not threshold baseline",
+    "Cache score retained only for completed unchanged answers; interrupted calls expose no answer",
+    "No verified v5 validity; full failure rate can remain null",
+    "Compute time modeled by UTF-8 answer byte count, not measured latency or actual tokens",
+    "Queue is task-role seeded exogenous delay, not an endogenous shared-server queue",
+    "Fee rates/reference scales are explicit engineering assumptions; original cache costs not charged",
+    "Link outage detected at communication; no mid-compute link cancellation",
+    "Per-call timeout plus cancellation; request deadline checked at decision boundaries, not hard cancellation",
+    "Actual local controller wall time recorded diagnostically, not added to simulated totals"
+  ]
+}

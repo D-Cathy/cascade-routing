@@ -1,0 +1,19 @@
+{
+  "code_hashes_match_validated_manifest": true,
+  "mock_call_records": 3,
+  "duplicate_created_no_output": true,
+  "live_default_ledger_created": false,
+  "original_baseline_hashes_match_previous_stage": true,
+  "real_generation_requests": 0,
+  "local_metadata_gets": 2,
+  "tests": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "81",
+    "time": "4.584",
+    "timestamp": "2026-09-24T14:28:15.159282+08:00",
+    "hostname": "GPU8"
+  }
+}

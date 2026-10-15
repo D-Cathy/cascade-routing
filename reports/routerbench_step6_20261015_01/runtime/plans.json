@@ -1,0 +1,1122 @@
+[
+  [
+    {
+      "action": "CALL:ship",
+      "vector": [
+        0.0,
+        2.0,
+        0.02,
+        0.0
+      ],
+      "continuation": {
+        "((), '0x1.8000000000000p+3', '0x1.8000000000000p+0', '0x0.0p+0', None, False, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:ship",
+        "((('ship', 'SUCCESS'),), '0x1.6000000000000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.4000000000000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 3,
+      "uncompressed_size": 3,
+      "unsupported_actions": 3,
+      "risk_guarantee": false
+    },
+    {
+      "action": "CALL:shore",
+      "vector": [
+        0.0,
+        1.0,
+        0.01,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'),), '0x1.5ff70f76c8000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ff70f76c8000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 2,
+      "uncompressed_size": 2,
+      "unsupported_actions": 2,
+      "risk_guarantee": false
+    },
+    {
+      "action": "ACCEPT",
+      "vector": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ff4b998f0000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('cloud',), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 1,
+      "uncompressed_size": 1,
+      "unsupported_actions": 1,
+      "risk_guarantee": false
+    }
+  ],
+  [
+    {
+      "action": "CALL:ship",
+      "vector": [
+        0.0,
+        2.0,
+        0.02,
+        0.0
+      ],
+      "continuation": {
+        "((), '0x1.8000000000000p+3', '0x1.8000000000000p+0', '0x0.0p+0', None, False, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:ship",
+        "((('ship', 'SUCCESS'),), '0x1.6000000000000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.4000000000000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 3,
+      "uncompressed_size": 3,
+      "unsupported_actions": 3,
+      "risk_guarantee": false
+    },
+    {
+      "action": "CALL:shore",
+      "vector": [
+        0.0,
+        1.0,
+        0.01,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'),), '0x1.5ffd36c820000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffd36c820000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 2,
+      "uncompressed_size": 2,
+      "unsupported_actions": 2,
+      "risk_guarantee": false
+    },
+    {
+      "action": "ACCEPT",
+      "vector": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffb3862a0000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('cloud',), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 1,
+      "uncompressed_size": 1,
+      "unsupported_actions": 1,
+      "risk_guarantee": false
+    }
+  ],
+  [
+    {
+      "action": "CALL:ship",
+      "vector": [
+        0.0,
+        2.0,
+        0.02,
+        0.0
+      ],
+      "continuation": {
+        "((), '0x1.8000000000000p+3', '0x1.8000000000000p+0', '0x0.0p+0', None, False, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:ship",
+        "((('ship', 'SUCCESS'),), '0x1.6000000000000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.4000000000000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 3,
+      "uncompressed_size": 3,
+      "unsupported_actions": 3,
+      "risk_guarantee": false
+    },
+    {
+      "action": "CALL:shore",
+      "vector": [
+        0.0,
+        1.0,
+        0.01,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'),), '0x1.5ffd5cbe08000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffd5cbe08000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 2,
+      "uncompressed_size": 2,
+      "unsupported_actions": 2,
+      "risk_guarantee": false
+    },
+    {
+      "action": "ACCEPT",
+      "vector": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffb53bea8000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('cloud',), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 1,
+      "uncompressed_size": 1,
+      "unsupported_actions": 1,
+      "risk_guarantee": false
+    }
+  ],
+  [
+    {
+      "action": "CALL:ship",
+      "vector": [
+        0.0,
+        2.0,
+        0.02,
+        0.0
+      ],
+      "continuation": {
+        "((), '0x1.8000000000000p+3', '0x1.8000000000000p+0', '0x0.0p+0', None, False, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:ship",
+        "((('ship', 'SUCCESS'),), '0x1.6000000000000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.4000000000000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 3,
+      "uncompressed_size": 3,
+      "unsupported_actions": 3,
+      "risk_guarantee": false
+    },
+    {
+      "action": "CALL:shore",
+      "vector": [
+        0.0,
+        1.0,
+        0.01,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'),), '0x1.5ffd59b860000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffd59b860000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 2,
+      "uncompressed_size": 2,
+      "unsupported_actions": 2,
+      "risk_guarantee": false
+    },
+    {
+      "action": "ACCEPT",
+      "vector": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffb546e30000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('cloud',), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 1,
+      "uncompressed_size": 1,
+      "unsupported_actions": 1,
+      "risk_guarantee": false
+    }
+  ],
+  [
+    {
+      "action": "CALL:ship",
+      "vector": [
+        0.0,
+        2.0,
+        0.02,
+        0.0
+      ],
+      "continuation": {
+        "((), '0x1.8000000000000p+3', '0x1.8000000000000p+0', '0x0.0p+0', None, False, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:ship",
+        "((('ship', 'SUCCESS'),), '0x1.6000000000000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.4000000000000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 3,
+      "uncompressed_size": 3,
+      "unsupported_actions": 3,
+      "risk_guarantee": false
+    },
+    {
+      "action": "CALL:shore",
+      "vector": [
+        0.0,
+        1.0,
+        0.01,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'),), '0x1.5ffd4c59d8000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffd4c59d8000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 2,
+      "uncompressed_size": 2,
+      "unsupported_actions": 2,
+      "risk_guarantee": false
+    },
+    {
+      "action": "ACCEPT",
+      "vector": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffb50be60000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('cloud',), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 1,
+      "uncompressed_size": 1,
+      "unsupported_actions": 1,
+      "risk_guarantee": false
+    }
+  ],
+  [
+    {
+      "action": "CALL:ship",
+      "vector": [
+        0.0,
+        2.0,
+        0.02,
+        0.0
+      ],
+      "continuation": {
+        "((), '0x1.8000000000000p+3', '0x1.8000000000000p+0', '0x0.0p+0', None, False, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:ship",
+        "((('ship', 'SUCCESS'),), '0x1.6000000000000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.4000000000000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 3,
+      "uncompressed_size": 3,
+      "unsupported_actions": 3,
+      "risk_guarantee": false
+    },
+    {
+      "action": "CALL:shore",
+      "vector": [
+        0.0,
+        1.0,
+        0.01,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'),), '0x1.5ffd65bb08000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffd65bb08000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 2,
+      "uncompressed_size": 2,
+      "unsupported_actions": 2,
+      "risk_guarantee": false
+    },
+    {
+      "action": "ACCEPT",
+      "vector": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffb5d6210000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('cloud',), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 1,
+      "uncompressed_size": 1,
+      "unsupported_actions": 1,
+      "risk_guarantee": false
+    }
+  ],
+  [
+    {
+      "action": "CALL:ship",
+      "vector": [
+        0.0,
+        2.0,
+        0.02,
+        0.0
+      ],
+      "continuation": {
+        "((), '0x1.8000000000000p+3', '0x1.8000000000000p+0', '0x0.0p+0', None, False, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:ship",
+        "((('ship', 'SUCCESS'),), '0x1.6000000000000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.4000000000000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 3,
+      "uncompressed_size": 3,
+      "unsupported_actions": 3,
+      "risk_guarantee": false
+    },
+    {
+      "action": "CALL:shore",
+      "vector": [
+        0.0,
+        1.0,
+        0.01,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'),), '0x1.5ffd606a10000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffd606a10000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 2,
+      "uncompressed_size": 2,
+      "unsupported_actions": 2,
+      "risk_guarantee": false
+    },
+    {
+      "action": "ACCEPT",
+      "vector": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffb669330000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('cloud',), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 1,
+      "uncompressed_size": 1,
+      "unsupported_actions": 1,
+      "risk_guarantee": false
+    }
+  ],
+  [
+    {
+      "action": "CALL:ship",
+      "vector": [
+        0.0,
+        2.0,
+        0.02,
+        0.0
+      ],
+      "continuation": {
+        "((), '0x1.8000000000000p+3', '0x1.8000000000000p+0', '0x0.0p+0', None, False, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:ship",
+        "((('ship', 'SUCCESS'),), '0x1.6000000000000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.4000000000000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 3,
+      "uncompressed_size": 3,
+      "unsupported_actions": 3,
+      "risk_guarantee": false
+    },
+    {
+      "action": "CALL:shore",
+      "vector": [
+        0.0,
+        1.0,
+        0.01,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'),), '0x1.5ffd598090000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffd598090000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 2,
+      "uncompressed_size": 2,
+      "unsupported_actions": 2,
+      "risk_guarantee": false
+    },
+    {
+      "action": "ACCEPT",
+      "vector": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffb3065b0000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('cloud',), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 1,
+      "uncompressed_size": 1,
+      "unsupported_actions": 1,
+      "risk_guarantee": false
+    }
+  ],
+  [
+    {
+      "action": "CALL:ship",
+      "vector": [
+        0.0,
+        2.0,
+        0.02,
+        0.0
+      ],
+      "continuation": {
+        "((), '0x1.8000000000000p+3', '0x1.8000000000000p+0', '0x0.0p+0', None, False, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:ship",
+        "((('ship', 'SUCCESS'),), '0x1.6000000000000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.4000000000000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 3,
+      "uncompressed_size": 3,
+      "unsupported_actions": 3,
+      "risk_guarantee": false
+    },
+    {
+      "action": "CALL:shore",
+      "vector": [
+        0.0,
+        1.0,
+        0.01,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'),), '0x1.5ffd571838000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffd571838000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 2,
+      "uncompressed_size": 2,
+      "unsupported_actions": 2,
+      "risk_guarantee": false
+    },
+    {
+      "action": "ACCEPT",
+      "vector": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffae9c710000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('cloud',), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 1,
+      "uncompressed_size": 1,
+      "unsupported_actions": 1,
+      "risk_guarantee": false
+    }
+  ],
+  [
+    {
+      "action": "CALL:ship",
+      "vector": [
+        0.0,
+        2.0,
+        0.02,
+        0.0
+      ],
+      "continuation": {
+        "((), '0x1.8000000000000p+3', '0x1.8000000000000p+0', '0x0.0p+0', None, False, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:ship",
+        "((('ship', 'SUCCESS'),), '0x1.6000000000000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.4000000000000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 3,
+      "uncompressed_size": 3,
+      "unsupported_actions": 3,
+      "risk_guarantee": false
+    },
+    {
+      "action": "CALL:shore",
+      "vector": [
+        0.0,
+        1.0,
+        0.01,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'),), '0x1.5ffd56ba48000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffd56ba48000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 2,
+      "uncompressed_size": 2,
+      "unsupported_actions": 2,
+      "risk_guarantee": false
+    },
+    {
+      "action": "ACCEPT",
+      "vector": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffb138d90000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('cloud',), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 1,
+      "uncompressed_size": 1,
+      "unsupported_actions": 1,
+      "risk_guarantee": false
+    }
+  ],
+  [
+    {
+      "action": "CALL:ship",
+      "vector": [
+        0.0,
+        2.0,
+        0.02,
+        0.0
+      ],
+      "continuation": {
+        "((), '0x1.8000000000000p+3', '0x1.8000000000000p+0', '0x0.0p+0', None, False, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:ship",
+        "((('ship', 'SUCCESS'),), '0x1.6000000000000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.4000000000000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 3,
+      "uncompressed_size": 3,
+      "unsupported_actions": 3,
+      "risk_guarantee": false
+    },
+    {
+      "action": "CALL:shore",
+      "vector": [
+        0.0,
+        1.0,
+        0.01,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'),), '0x1.5ffd61af68000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffd61af68000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 2,
+      "uncompressed_size": 2,
+      "unsupported_actions": 2,
+      "risk_guarantee": false
+    },
+    {
+      "action": "ACCEPT",
+      "vector": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffb454b10000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('cloud',), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 1,
+      "uncompressed_size": 1,
+      "unsupported_actions": 1,
+      "risk_guarantee": false
+    }
+  ],
+  [
+    {
+      "action": "CALL:ship",
+      "vector": [
+        0.0,
+        2.0,
+        0.02,
+        0.0
+      ],
+      "continuation": {
+        "((), '0x1.8000000000000p+3', '0x1.8000000000000p+0', '0x0.0p+0', None, False, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:ship",
+        "((('ship', 'SUCCESS'),), '0x1.6000000000000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.4000000000000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 3,
+      "uncompressed_size": 3,
+      "unsupported_actions": 3,
+      "risk_guarantee": false
+    },
+    {
+      "action": "CALL:shore",
+      "vector": [
+        0.0,
+        1.0,
+        0.01,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'),), '0x1.5ffd753dc0000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffd753dc0000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 2,
+      "uncompressed_size": 2,
+      "unsupported_actions": 2,
+      "risk_guarantee": false
+    },
+    {
+      "action": "ACCEPT",
+      "vector": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffb794fa0000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('cloud',), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 1,
+      "uncompressed_size": 1,
+      "unsupported_actions": 1,
+      "risk_guarantee": false
+    }
+  ],
+  [
+    {
+      "action": "CALL:ship",
+      "vector": [
+        0.0,
+        2.0,
+        0.02,
+        0.0
+      ],
+      "continuation": {
+        "((), '0x1.8000000000000p+3', '0x1.8000000000000p+0', '0x0.0p+0', None, False, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:ship",
+        "((('ship', 'SUCCESS'),), '0x1.6000000000000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.4000000000000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 3,
+      "uncompressed_size": 3,
+      "unsupported_actions": 3,
+      "risk_guarantee": false
+    },
+    {
+      "action": "CALL:shore",
+      "vector": [
+        0.0,
+        1.0,
+        0.01,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'),), '0x1.5ffd82fac8000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffd82fac8000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 2,
+      "uncompressed_size": 2,
+      "unsupported_actions": 2,
+      "risk_guarantee": false
+    },
+    {
+      "action": "ACCEPT",
+      "vector": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffb691d58000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('cloud',), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 1,
+      "uncompressed_size": 1,
+      "unsupported_actions": 1,
+      "risk_guarantee": false
+    }
+  ],
+  [
+    {
+      "action": "CALL:ship",
+      "vector": [
+        0.0,
+        2.0,
+        0.02,
+        0.0
+      ],
+      "continuation": {
+        "((), '0x1.8000000000000p+3', '0x1.8000000000000p+0', '0x0.0p+0', None, False, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:ship",
+        "((('ship', 'SUCCESS'),), '0x1.6000000000000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.4000000000000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 3,
+      "uncompressed_size": 3,
+      "unsupported_actions": 3,
+      "risk_guarantee": false
+    },
+    {
+      "action": "CALL:shore",
+      "vector": [
+        0.0,
+        1.0,
+        0.01,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'),), '0x1.5ffd802cf8000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffd802cf8000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 2,
+      "uncompressed_size": 2,
+      "unsupported_actions": 2,
+      "risk_guarantee": false
+    },
+    {
+      "action": "ACCEPT",
+      "vector": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffaad4f78000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('cloud',), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 1,
+      "uncompressed_size": 1,
+      "unsupported_actions": 1,
+      "risk_guarantee": false
+    }
+  ],
+  [
+    {
+      "action": "CALL:ship",
+      "vector": [
+        0.0,
+        2.0,
+        0.02,
+        0.0
+      ],
+      "continuation": {
+        "((), '0x1.8000000000000p+3', '0x1.8000000000000p+0', '0x0.0p+0', None, False, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:ship",
+        "((('ship', 'SUCCESS'),), '0x1.6000000000000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.4000000000000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 3,
+      "uncompressed_size": 3,
+      "unsupported_actions": 3,
+      "risk_guarantee": false
+    },
+    {
+      "action": "CALL:shore",
+      "vector": [
+        0.0,
+        1.0,
+        0.01,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'),), '0x1.5ffd669d10000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffd669d10000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 2,
+      "uncompressed_size": 2,
+      "unsupported_actions": 2,
+      "risk_guarantee": false
+    },
+    {
+      "action": "ACCEPT",
+      "vector": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffb738bc0000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('cloud',), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 1,
+      "uncompressed_size": 1,
+      "unsupported_actions": 1,
+      "risk_guarantee": false
+    }
+  ],
+  [
+    {
+      "action": "CALL:ship",
+      "vector": [
+        0.0,
+        2.0,
+        0.02,
+        0.0
+      ],
+      "continuation": {
+        "((), '0x1.8000000000000p+3', '0x1.8000000000000p+0', '0x0.0p+0', None, False, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:ship",
+        "((('ship', 'SUCCESS'),), '0x1.6000000000000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.4000000000000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 3,
+      "uncompressed_size": 3,
+      "unsupported_actions": 3,
+      "risk_guarantee": false
+    },
+    {
+      "action": "CALL:shore",
+      "vector": [
+        0.0,
+        1.0,
+        0.01,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'),), '0x1.5ffd78e690000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffd78e690000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 2,
+      "uncompressed_size": 2,
+      "unsupported_actions": 2,
+      "risk_guarantee": false
+    },
+    {
+      "action": "ACCEPT",
+      "vector": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffb6c7410000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('cloud',), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 1,
+      "uncompressed_size": 1,
+      "unsupported_actions": 1,
+      "risk_guarantee": false
+    }
+  ],
+  [
+    {
+      "action": "CALL:ship",
+      "vector": [
+        0.0,
+        2.0,
+        0.02,
+        0.0
+      ],
+      "continuation": {
+        "((), '0x1.8000000000000p+3', '0x1.8000000000000p+0', '0x0.0p+0', None, False, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:ship",
+        "((('ship', 'SUCCESS'),), '0x1.6000000000000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.4000000000000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 3,
+      "uncompressed_size": 3,
+      "unsupported_actions": 3,
+      "risk_guarantee": false
+    },
+    {
+      "action": "CALL:shore",
+      "vector": [
+        0.0,
+        1.0,
+        0.01,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'),), '0x1.5ffd63b718000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffd63b718000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 2,
+      "uncompressed_size": 2,
+      "unsupported_actions": 2,
+      "risk_guarantee": false
+    },
+    {
+      "action": "ACCEPT",
+      "vector": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffb3b61c8000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('cloud',), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 1,
+      "uncompressed_size": 1,
+      "unsupported_actions": 1,
+      "risk_guarantee": false
+    }
+  ],
+  [
+    {
+      "action": "CALL:ship",
+      "vector": [
+        0.0,
+        2.0,
+        0.02,
+        0.0
+      ],
+      "continuation": {
+        "((), '0x1.8000000000000p+3', '0x1.8000000000000p+0', '0x0.0p+0', None, False, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:ship",
+        "((('ship', 'SUCCESS'),), '0x1.6000000000000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.4000000000000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 3,
+      "uncompressed_size": 3,
+      "unsupported_actions": 3,
+      "risk_guarantee": false
+    },
+    {
+      "action": "CALL:shore",
+      "vector": [
+        0.0,
+        1.0,
+        0.01,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'),), '0x1.5ffd38eb30000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffd38eb30000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 2,
+      "uncompressed_size": 2,
+      "unsupported_actions": 2,
+      "risk_guarantee": false
+    },
+    {
+      "action": "ACCEPT",
+      "vector": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffb2f6848000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('cloud',), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 1,
+      "uncompressed_size": 1,
+      "unsupported_actions": 1,
+      "risk_guarantee": false
+    }
+  ],
+  [
+    {
+      "action": "CALL:ship",
+      "vector": [
+        0.0,
+        2.0,
+        0.02,
+        0.0
+      ],
+      "continuation": {
+        "((), '0x1.8000000000000p+3', '0x1.8000000000000p+0', '0x0.0p+0', None, False, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:ship",
+        "((('ship', 'SUCCESS'),), '0x1.6000000000000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.4000000000000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 3,
+      "uncompressed_size": 3,
+      "unsupported_actions": 3,
+      "risk_guarantee": false
+    },
+    {
+      "action": "CALL:shore",
+      "vector": [
+        0.0,
+        1.0,
+        0.01,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'),), '0x1.5ffd7610b8000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffd7610b8000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 2,
+      "uncompressed_size": 2,
+      "unsupported_actions": 2,
+      "risk_guarantee": false
+    },
+    {
+      "action": "ACCEPT",
+      "vector": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffb688678000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('cloud',), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 1,
+      "uncompressed_size": 1,
+      "unsupported_actions": 1,
+      "risk_guarantee": false
+    }
+  ],
+  [
+    {
+      "action": "CALL:ship",
+      "vector": [
+        0.0,
+        2.0,
+        0.02,
+        0.0
+      ],
+      "continuation": {
+        "((), '0x1.8000000000000p+3', '0x1.8000000000000p+0', '0x0.0p+0', None, False, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:ship",
+        "((('ship', 'SUCCESS'),), '0x1.6000000000000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.4000000000000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('ship', 'shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 3,
+      "uncompressed_size": 3,
+      "unsupported_actions": 3,
+      "risk_guarantee": false
+    },
+    {
+      "action": "CALL:shore",
+      "vector": [
+        0.0,
+        1.0,
+        0.01,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'),), '0x1.5ffd2042a8000p+3', '0x1.7d70a3d70a3d7p+0', '0x1.0000000000000p-1', '0x1.0000000000000p-1', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "CALL:shore",
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffd2042a8000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('shore', 'cloud'), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 2,
+      "uncompressed_size": 2,
+      "unsupported_actions": 2,
+      "risk_guarantee": false
+    },
+    {
+      "action": "ACCEPT",
+      "vector": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "continuation": {
+        "((('ship', 'SUCCESS'), ('shore', 'SUCCESS')), '0x1.3ffb0c6b20000p+3', '0x1.7ae147ae147aep+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0', True, ('cloud',), '0x1.0000000000000p+0')": "ACCEPT"
+      },
+      "reason": "predicted_frontier",
+      "frontier_size": 1,
+      "uncompressed_size": 1,
+      "unsupported_actions": 1,
+      "risk_guarantee": false
+    }
+  ]
+]

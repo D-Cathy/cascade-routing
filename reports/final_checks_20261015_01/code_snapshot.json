@@ -1,0 +1,9 @@
+{
+  "src/selection/v5/calibration.py": "a7e261d5f38c791fdfbd6c2dee9d1932b674330d5410109bd023415df495e74a",
+  "src/selection/v5/final_checks.py": "7bba0d9eb5db1931a6116eb459dc2c59f4c7d6ef5f6e7f1693486fdfed58e65b",
+  "tests/test_v5_calibration.py": "e612172afd14e83c7c5fb535292f50cae6febaa0b6077c527bbc78803921f985",
+  "docs/v5_final_checks.md": "96b36c1d8fbe3c7591a9a361ff44226cf98e182c877996bcca2fc66ac238ec0c",
+  "PROGRESS.md": "9daabf0e43be95f6cb6d8350f9b6040d3e2b4e9d5177f3cb72aa27daecea567c",
+  "PROGRESS.html": "04d195efbae334d45d147db769c86fe3d98d9de048377c65ff09dfbb82f3a383",
+  "HANDOFF.md": "cdb40c7b41bd9e89f6c917845bfa3aa15660312aa0d0b819daefd1e9d1a86eb7"
+}

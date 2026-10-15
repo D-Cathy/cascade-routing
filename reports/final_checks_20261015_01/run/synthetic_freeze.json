@@ -1,0 +1,119 @@
+{
+  "payload": {
+    "version": 1,
+    "policies": {
+      "fixture_policy": {
+        "path": "/home/guoqiuyuan/LLMresearch/cascade-routing/reports/final_checks_20261015_01/run/synthetic_policy.json",
+        "sha256": "9cd0716de511f7a5f7725ca9753f82f558e2ec483840cee32da5d131418bb476"
+      }
+    },
+    "units": [
+      {
+        "unit_id": "synthetic-0",
+        "source_group_id": "fixture-0",
+        "split": "D_C"
+      },
+      {
+        "unit_id": "synthetic-1",
+        "source_group_id": "fixture-1",
+        "split": "D_C"
+      },
+      {
+        "unit_id": "synthetic-2",
+        "source_group_id": "fixture-2",
+        "split": "D_C"
+      },
+      {
+        "unit_id": "synthetic-3",
+        "source_group_id": "fixture-3",
+        "split": "D_C"
+      },
+      {
+        "unit_id": "synthetic-4",
+        "source_group_id": "fixture-4",
+        "split": "D_C"
+      },
+      {
+        "unit_id": "synthetic-5",
+        "source_group_id": "fixture-5",
+        "split": "D_C"
+      },
+      {
+        "unit_id": "synthetic-6",
+        "source_group_id": "fixture-6",
+        "split": "D_C"
+      },
+      {
+        "unit_id": "synthetic-7",
+        "source_group_id": "fixture-7",
+        "split": "D_C"
+      },
+      {
+        "unit_id": "synthetic-8",
+        "source_group_id": "fixture-8",
+        "split": "D_C"
+      },
+      {
+        "unit_id": "synthetic-9",
+        "source_group_id": "fixture-9",
+        "split": "D_C"
+      },
+      {
+        "unit_id": "synthetic-10",
+        "source_group_id": "fixture-10",
+        "split": "D_C"
+      },
+      {
+        "unit_id": "synthetic-11",
+        "source_group_id": "fixture-11",
+        "split": "D_C"
+      },
+      {
+        "unit_id": "synthetic-12",
+        "source_group_id": "fixture-12",
+        "split": "D_C"
+      },
+      {
+        "unit_id": "synthetic-13",
+        "source_group_id": "fixture-13",
+        "split": "D_C"
+      },
+      {
+        "unit_id": "synthetic-14",
+        "source_group_id": "fixture-14",
+        "split": "D_C"
+      },
+      {
+        "unit_id": "synthetic-15",
+        "source_group_id": "fixture-15",
+        "split": "D_C"
+      },
+      {
+        "unit_id": "synthetic-16",
+        "source_group_id": "fixture-16",
+        "split": "D_C"
+      },
+      {
+        "unit_id": "synthetic-17",
+        "source_group_id": "fixture-17",
+        "split": "D_C"
+      },
+      {
+        "unit_id": "synthetic-18",
+        "source_group_id": "fixture-18",
+        "split": "D_C"
+      },
+      {
+        "unit_id": "synthetic-19",
+        "source_group_id": "fixture-19",
+        "split": "D_C"
+      }
+    ],
+    "alpha": 0.1,
+    "delta": 0.05,
+    "H": 1,
+    "independence_certified": false,
+    "purpose": "reference_bound_only"
+  },
+  "payload_sha256": "d702e449559bd1d80344393e77a1674c568984c3a62a88d5bf23b755d31961c8"
+}
