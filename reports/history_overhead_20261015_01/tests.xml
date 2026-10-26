@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="7" failures="0" skipped="0" tests="179" time="4.822" timestamp="2026-10-15T18:06:21.734823+08:00" hostname="GPU8"><testcase classname="tests.test_live_backend" name="test_mock_status_time_fee_no_retry[success-SUCCESS]" time="0.054" /><testcase classname="tests.test_live_backend" name="test_mock_status_time_fee_no_retry[failure-FAILED]" time="0.048" /><testcase classname="tests.test_live_backend" name="test_mock_status_time_fee_no_retry[invalid-INVALID]" time="0.052" /><testcase classname="tests.test_live_backend" name="test_mock_status_time_fee_no_retry[timeout-FAILED]" time="0.070" /><testcase classname="tests.test_live_backend" name="test_persistent_reservation_prevents_resend_after_restart" time="0.047" /><testcase classname="tests.test_live_backend" name="test_pending_attempt_never_retried" time="0.031" /><testcase classname="tests.test_live_backend" name="test_unique_reservation_under_concurrency" time="0.051" /><testcase classname="tests.test_live_backend" name="test_unknown_bill_and_known_partial_fee[unknown_cost-0]" time="0.052" /><testcase classname="tests.test_live_backend" name="test_unknown_bill_and_known_partial_fee[partial_cost-1e-05]" time="0.045" /><testcase classname="tests.test_live_backend" name="test_request_contains_no_history_or_labels" time="0.050" /><testcase classname="tests.test_live_backend" name="test_live_requires_wall_clock_and_stable_id" time="0.016" /><testcase classname="tests.test_live_backend" name="test_whole_wall_clock_not_component_sum" time="0.065" /><testcase classname="tests.test_live_backend" name="test_deadline_includes_control_before_dispatch" time="0.026" /><testcase classname="tests.test_live_backend" name="test_actual_http_worker_one_post_only[/ok-SUCCESS]" time="0.001"><error message="failed on setup with &quot;PermissionError: [Errno 1] Operation not permitted&quot;">@pytest.fixture
+    def local_server():
+        class Handler(BaseHTTPRequestHandler):
+            def do_POST(self):
+                self.server.count+=1
+                self.server.payloads.append(json.loads(self.rfile.read(int(self.headers["Content-Length"]))))
+                if self.path=="/disconnect":self.connection.close();return
+                if self.path=="/slow":time.sleep(.3)
+                status={"/error":500,"/limited":429,"/redirect":307}.get(self.path,200)
+                body={"choices":[{"message":{"content":'{"action":"a","condition":"c","deadline":"d"}'}}],"usage":{"prompt_tokens":10,"completion_tokens":5}}
+                if self.path in {"/error","/limited"}:body={"error":"DO_NOT_LOG_FAKE_SECRET","usage":{"prompt_tokens":10,"completion_tokens":5}}
+                raw=b"not JSON" if self.path=="/badjson" else json.dumps(body).encode()
+                try:
+                    self.send_response(status)
+                    if self.path=="/redirect":self.send_header("Location","/target")
+                    self.send_header("Content-Length",str(len(raw)));self.end_headers();self.wfile.write(raw)
+                except (BrokenPipeError,ConnectionResetError):pass
+            def log_message(self,*a):pass
+&gt;       server=ThreadingHTTPServer(("127.0.0.1",0),Handler);server.count=0;server.payloads=[];server.daemon_threads=True
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_live_backend.py:110: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../miniconda3/lib/python3.13/socketserver.py:453: in __init__
+    self.socket = socket.socket(self.address_family,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;socket.socket fd=-1, family=0, type=0, proto=0&gt;
+family = &lt;AddressFamily.AF_INET: 2&gt;, type = &lt;SocketKind.SOCK_STREAM: 1&gt;
+proto = 0, fileno = None
+
+    def __init__(self, family=-1, type=-1, proto=-1, fileno=None):
+        # For user code address family and type values are IntEnum members, but
+        # for the underlying _socket.socket they're just integers. The
+        # constructor of _socket.socket converts the given argument to an
+        # integer automatically.
+        if fileno is None:
+            if family == -1:
+                family = AF_INET
+            if type == -1:
+                type = SOCK_STREAM
+            if proto == -1:
+                proto = 0
+&gt;       _socket.socket.__init__(self, family, type, proto, fileno)
+E       PermissionError: [Errno 1] Operation not permitted
+
+../../miniconda3/lib/python3.13/socket.py:233: PermissionError</error></testcase><testcase classname="tests.test_live_backend" name="test_actual_http_worker_one_post_only[/error-FAILED]" time="0.002"><error message="failed on setup with &quot;PermissionError: [Errno 1] Operation not permitted&quot;">@pytest.fixture
+    def local_server():
+        class Handler(BaseHTTPRequestHandler):
+            def do_POST(self):
+                self.server.count+=1
+                self.server.payloads.append(json.loads(self.rfile.read(int(self.headers["Content-Length"]))))
+                if self.path=="/disconnect":self.connection.close();return
+                if self.path=="/slow":time.sleep(.3)
+                status={"/error":500,"/limited":429,"/redirect":307}.get(self.path,200)
+                body={"choices":[{"message":{"content":'{"action":"a","condition":"c","deadline":"d"}'}}],"usage":{"prompt_tokens":10,"completion_tokens":5}}
+                if self.path in {"/error","/limited"}:body={"error":"DO_NOT_LOG_FAKE_SECRET","usage":{"prompt_tokens":10,"completion_tokens":5}}
+                raw=b"not JSON" if self.path=="/badjson" else json.dumps(body).encode()
+                try:
+                    self.send_response(status)
+                    if self.path=="/redirect":self.send_header("Location","/target")
+                    self.send_header("Content-Length",str(len(raw)));self.end_headers();self.wfile.write(raw)
+                except (BrokenPipeError,ConnectionResetError):pass
+            def log_message(self,*a):pass
+&gt;       server=ThreadingHTTPServer(("127.0.0.1",0),Handler);server.count=0;server.payloads=[];server.daemon_threads=True
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_live_backend.py:110: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../miniconda3/lib/python3.13/socketserver.py:453: in __init__
+    self.socket = socket.socket(self.address_family,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;socket.socket fd=-1, family=0, type=0, proto=0&gt;
+family = &lt;AddressFamily.AF_INET: 2&gt;, type = &lt;SocketKind.SOCK_STREAM: 1&gt;
+proto = 0, fileno = None
+
+    def __init__(self, family=-1, type=-1, proto=-1, fileno=None):
+        # For user code address family and type values are IntEnum members, but
+        # for the underlying _socket.socket they're just integers. The
+        # constructor of _socket.socket converts the given argument to an
+        # integer automatically.
+        if fileno is None:
+            if family == -1:
+                family = AF_INET
+            if type == -1:
+                type = SOCK_STREAM
+            if proto == -1:
+                proto = 0
+&gt;       _socket.socket.__init__(self, family, type, proto, fileno)
+E       PermissionError: [Errno 1] Operation not permitted
+
+../../miniconda3/lib/python3.13/socket.py:233: PermissionError</error></testcase><testcase classname="tests.test_live_backend" name="test_actual_http_worker_one_post_only[/limited-FAILED]" time="0.001"><error message="failed on setup with &quot;PermissionError: [Errno 1] Operation not permitted&quot;">@pytest.fixture
+    def local_server():
+        class Handler(BaseHTTPRequestHandler):
+            def do_POST(self):
+                self.server.count+=1
+                self.server.payloads.append(json.loads(self.rfile.read(int(self.headers["Content-Length"]))))
+                if self.path=="/disconnect":self.connection.close();return
+                if self.path=="/slow":time.sleep(.3)
+                status={"/error":500,"/limited":429,"/redirect":307}.get(self.path,200)
+                body={"choices":[{"message":{"content":'{"action":"a","condition":"c","deadline":"d"}'}}],"usage":{"prompt_tokens":10,"completion_tokens":5}}
+                if self.path in {"/error","/limited"}:body={"error":"DO_NOT_LOG_FAKE_SECRET","usage":{"prompt_tokens":10,"completion_tokens":5}}
+                raw=b"not JSON" if self.path=="/badjson" else json.dumps(body).encode()
+                try:
+                    self.send_response(status)
+                    if self.path=="/redirect":self.send_header("Location","/target")
+                    self.send_header("Content-Length",str(len(raw)));self.end_headers();self.wfile.write(raw)
+                except (BrokenPipeError,ConnectionResetError):pass
+            def log_message(self,*a):pass
+&gt;       server=ThreadingHTTPServer(("127.0.0.1",0),Handler);server.count=0;server.payloads=[];server.daemon_threads=True
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_live_backend.py:110: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../miniconda3/lib/python3.13/socketserver.py:453: in __init__
+    self.socket = socket.socket(self.address_family,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;socket.socket fd=-1, family=0, type=0, proto=0&gt;
+family = &lt;AddressFamily.AF_INET: 2&gt;, type = &lt;SocketKind.SOCK_STREAM: 1&gt;
+proto = 0, fileno = None
+
+    def __init__(self, family=-1, type=-1, proto=-1, fileno=None):
+        # For user code address family and type values are IntEnum members, but
+        # for the underlying _socket.socket they're just integers. The
+        # constructor of _socket.socket converts the given argument to an
+        # integer automatically.
+        if fileno is None:
+            if family == -1:
+                family = AF_INET
+            if type == -1:
+                type = SOCK_STREAM
+            if proto == -1:
+                proto = 0
+&gt;       _socket.socket.__init__(self, family, type, proto, fileno)
+E       PermissionError: [Errno 1] Operation not permitted
+
+../../miniconda3/lib/python3.13/socket.py:233: PermissionError</error></testcase><testcase classname="tests.test_live_backend" name="test_actual_http_worker_one_post_only[/redirect-FAILED]" time="0.001"><error message="failed on setup with &quot;PermissionError: [Errno 1] Operation not permitted&quot;">@pytest.fixture
+    def local_server():
+        class Handler(BaseHTTPRequestHandler):
+            def do_POST(self):
+                self.server.count+=1
+                self.server.payloads.append(json.loads(self.rfile.read(int(self.headers["Content-Length"]))))
+                if self.path=="/disconnect":self.connection.close();return
+                if self.path=="/slow":time.sleep(.3)
+                status={"/error":500,"/limited":429,"/redirect":307}.get(self.path,200)
+                body={"choices":[{"message":{"content":'{"action":"a","condition":"c","deadline":"d"}'}}],"usage":{"prompt_tokens":10,"completion_tokens":5}}
+                if self.path in {"/error","/limited"}:body={"error":"DO_NOT_LOG_FAKE_SECRET","usage":{"prompt_tokens":10,"completion_tokens":5}}
+                raw=b"not JSON" if self.path=="/badjson" else json.dumps(body).encode()
+                try:
+                    self.send_response(status)
+                    if self.path=="/redirect":self.send_header("Location","/target")
+                    self.send_header("Content-Length",str(len(raw)));self.end_headers();self.wfile.write(raw)
+                except (BrokenPipeError,ConnectionResetError):pass
+            def log_message(self,*a):pass
+&gt;       server=ThreadingHTTPServer(("127.0.0.1",0),Handler);server.count=0;server.payloads=[];server.daemon_threads=True
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_live_backend.py:110: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../miniconda3/lib/python3.13/socketserver.py:453: in __init__
+    self.socket = socket.socket(self.address_family,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;socket.socket fd=-1, family=0, type=0, proto=0&gt;
+family = &lt;AddressFamily.AF_INET: 2&gt;, type = &lt;SocketKind.SOCK_STREAM: 1&gt;
+proto = 0, fileno = None
+
+    def __init__(self, family=-1, type=-1, proto=-1, fileno=None):
+        # For user code address family and type values are IntEnum members, but
+        # for the underlying _socket.socket they're just integers. The
+        # constructor of _socket.socket converts the given argument to an
+        # integer automatically.
+        if fileno is None:
+            if family == -1:
+                family = AF_INET
+            if type == -1:
+                type = SOCK_STREAM
+            if proto == -1:
+                proto = 0
+&gt;       _socket.socket.__init__(self, family, type, proto, fileno)
+E       PermissionError: [Errno 1] Operation not permitted
+
+../../miniconda3/lib/python3.13/socket.py:233: PermissionError</error></testcase><testcase classname="tests.test_live_backend" name="test_actual_http_worker_one_post_only[/disconnect-FAILED]" time="0.001"><error message="failed on setup with &quot;PermissionError: [Errno 1] Operation not permitted&quot;">@pytest.fixture
+    def local_server():
+        class Handler(BaseHTTPRequestHandler):
+            def do_POST(self):
+                self.server.count+=1
+                self.server.payloads.append(json.loads(self.rfile.read(int(self.headers["Content-Length"]))))
+                if self.path=="/disconnect":self.connection.close();return
+                if self.path=="/slow":time.sleep(.3)
+                status={"/error":500,"/limited":429,"/redirect":307}.get(self.path,200)
+                body={"choices":[{"message":{"content":'{"action":"a","condition":"c","deadline":"d"}'}}],"usage":{"prompt_tokens":10,"completion_tokens":5}}
+                if self.path in {"/error","/limited"}:body={"error":"DO_NOT_LOG_FAKE_SECRET","usage":{"prompt_tokens":10,"completion_tokens":5}}
+                raw=b"not JSON" if self.path=="/badjson" else json.dumps(body).encode()
+                try:
+                    self.send_response(status)
+                    if self.path=="/redirect":self.send_header("Location","/target")
+                    self.send_header("Content-Length",str(len(raw)));self.end_headers();self.wfile.write(raw)
+                except (BrokenPipeError,ConnectionResetError):pass
+            def log_message(self,*a):pass
+&gt;       server=ThreadingHTTPServer(("127.0.0.1",0),Handler);server.count=0;server.payloads=[];server.daemon_threads=True
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_live_backend.py:110: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../miniconda3/lib/python3.13/socketserver.py:453: in __init__
+    self.socket = socket.socket(self.address_family,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;socket.socket fd=-1, family=0, type=0, proto=0&gt;
+family = &lt;AddressFamily.AF_INET: 2&gt;, type = &lt;SocketKind.SOCK_STREAM: 1&gt;
+proto = 0, fileno = None
+
+    def __init__(self, family=-1, type=-1, proto=-1, fileno=None):
+        # For user code address family and type values are IntEnum members, but
+        # for the underlying _socket.socket they're just integers. The
+        # constructor of _socket.socket converts the given argument to an
+        # integer automatically.
+        if fileno is None:
+            if family == -1:
+                family = AF_INET
+            if type == -1:
+                type = SOCK_STREAM
+            if proto == -1:
+                proto = 0
+&gt;       _socket.socket.__init__(self, family, type, proto, fileno)
+E       PermissionError: [Errno 1] Operation not permitted
+
+../../miniconda3/lib/python3.13/socket.py:233: PermissionError</error></testcase><testcase classname="tests.test_live_backend" name="test_actual_http_worker_one_post_only[/badjson-INVALID]" time="0.001"><error message="failed on setup with &quot;PermissionError: [Errno 1] Operation not permitted&quot;">@pytest.fixture
+    def local_server():
+        class Handler(BaseHTTPRequestHandler):
+            def do_POST(self):
+                self.server.count+=1
+                self.server.payloads.append(json.loads(self.rfile.read(int(self.headers["Content-Length"]))))
+                if self.path=="/disconnect":self.connection.close();return
+                if self.path=="/slow":time.sleep(.3)
+                status={"/error":500,"/limited":429,"/redirect":307}.get(self.path,200)
+                body={"choices":[{"message":{"content":'{"action":"a","condition":"c","deadline":"d"}'}}],"usage":{"prompt_tokens":10,"completion_tokens":5}}
+                if self.path in {"/error","/limited"}:body={"error":"DO_NOT_LOG_FAKE_SECRET","usage":{"prompt_tokens":10,"completion_tokens":5}}
+                raw=b"not JSON" if self.path=="/badjson" else json.dumps(body).encode()
+                try:
+                    self.send_response(status)
+                    if self.path=="/redirect":self.send_header("Location","/target")
+                    self.send_header("Content-Length",str(len(raw)));self.end_headers();self.wfile.write(raw)
+                except (BrokenPipeError,ConnectionResetError):pass
+            def log_message(self,*a):pass
+&gt;       server=ThreadingHTTPServer(("127.0.0.1",0),Handler);server.count=0;server.payloads=[];server.daemon_threads=True
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_live_backend.py:110: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../miniconda3/lib/python3.13/socketserver.py:453: in __init__
+    self.socket = socket.socket(self.address_family,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;socket.socket fd=-1, family=0, type=0, proto=0&gt;
+family = &lt;AddressFamily.AF_INET: 2&gt;, type = &lt;SocketKind.SOCK_STREAM: 1&gt;
+proto = 0, fileno = None
+
+    def __init__(self, family=-1, type=-1, proto=-1, fileno=None):
+        # For user code address family and type values are IntEnum members, but
+        # for the underlying _socket.socket they're just integers. The
+        # constructor of _socket.socket converts the given argument to an
+        # integer automatically.
+        if fileno is None:
+            if family == -1:
+                family = AF_INET
+            if type == -1:
+                type = SOCK_STREAM
+            if proto == -1:
+                proto = 0
+&gt;       _socket.socket.__init__(self, family, type, proto, fileno)
+E       PermissionError: [Errno 1] Operation not permitted
+
+../../miniconda3/lib/python3.13/socket.py:233: PermissionError</error></testcase><testcase classname="tests.test_live_backend" name="test_actual_worker_timeout_no_background_local_retry" time="0.001"><error message="failed on setup with &quot;PermissionError: [Errno 1] Operation not permitted&quot;">@pytest.fixture
+    def local_server():
+        class Handler(BaseHTTPRequestHandler):
+            def do_POST(self):
+                self.server.count+=1
+                self.server.payloads.append(json.loads(self.rfile.read(int(self.headers["Content-Length"]))))
+                if self.path=="/disconnect":self.connection.close();return
+                if self.path=="/slow":time.sleep(.3)
+                status={"/error":500,"/limited":429,"/redirect":307}.get(self.path,200)
+                body={"choices":[{"message":{"content":'{"action":"a","condition":"c","deadline":"d"}'}}],"usage":{"prompt_tokens":10,"completion_tokens":5}}
+                if self.path in {"/error","/limited"}:body={"error":"DO_NOT_LOG_FAKE_SECRET","usage":{"prompt_tokens":10,"completion_tokens":5}}
+                raw=b"not JSON" if self.path=="/badjson" else json.dumps(body).encode()
+                try:
+                    self.send_response(status)
+                    if self.path=="/redirect":self.send_header("Location","/target")
+                    self.send_header("Content-Length",str(len(raw)));self.end_headers();self.wfile.write(raw)
+                except (BrokenPipeError,ConnectionResetError):pass
+            def log_message(self,*a):pass
+&gt;       server=ThreadingHTTPServer(("127.0.0.1",0),Handler);server.count=0;server.payloads=[];server.daemon_threads=True
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_live_backend.py:110: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../miniconda3/lib/python3.13/socketserver.py:453: in __init__
+    self.socket = socket.socket(self.address_family,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;socket.socket fd=-1, family=0, type=0, proto=0&gt;
+family = &lt;AddressFamily.AF_INET: 2&gt;, type = &lt;SocketKind.SOCK_STREAM: 1&gt;
+proto = 0, fileno = None
+
+    def __init__(self, family=-1, type=-1, proto=-1, fileno=None):
+        # For user code address family and type values are IntEnum members, but
+        # for the underlying _socket.socket they're just integers. The
+        # constructor of _socket.socket converts the given argument to an
+        # integer automatically.
+        if fileno is None:
+            if family == -1:
+                family = AF_INET
+            if type == -1:
+                type = SOCK_STREAM
+            if proto == -1:
+                proto = 0
+&gt;       _socket.socket.__init__(self, family, type, proto, fileno)
+E       PermissionError: [Errno 1] Operation not permitted
+
+../../miniconda3/lib/python3.13/socket.py:233: PermissionError</error></testcase><testcase classname="tests.test_live_backend" name="test_unsafe_endpoint_configuration_rejected[https://user:password@example.com/v1]" time="0.001" /><testcase classname="tests.test_live_backend" name="test_unsafe_endpoint_configuration_rejected[https://example.com/v1?key=secret]" time="0.001" /><testcase classname="tests.test_live_backend" name="test_unsafe_endpoint_configuration_rejected[ftp://example.com]" time="0.001" /><testcase classname="tests.test_live_backend" name="test_unsafe_endpoint_configuration_rejected[http://example.com/v1]" time="0.001" /><testcase classname="tests.test_live_backend" name="test_mock_collect_blind_grade_and_no_resend" time="0.138" /><testcase classname="tests.test_live_backend" name="test_collection_unknown_bill_stops_campaign" time="0.053" /><testcase classname="tests.test_live_backend" name="test_partial_or_conflicting_reviews_rejected" time="0.123" /><testcase classname="tests.test_live_backend" name="test_live_template_rejected_without_calls" time="0.004" /><testcase classname="tests.test_live_backend" name="test_journal_finish_failure_preserves_known_fee" time="0.034" /><testcase classname="tests.test_live_backend" name="test_campaign_fee_limit_stops_without_retry" time="0.061" /><testcase classname="tests.test_live_backend" name="test_veto_and_adjudication_are_evaluation_only" time="0.114" /><testcase classname="tests.test_replay" name="test_fixture_loads_and_splits" time="0.006" /><testcase classname="tests.test_replay" name="test_reject_bad_files[duplicate_task]" time="0.004" /><testcase classname="tests.test_replay" name="test_reject_bad_files[group_leakage]" time="0.004" /><testcase classname="tests.test_replay" name="test_reject_bad_files[negative_cost]" time="0.005" /><testcase classname="tests.test_replay" name="test_reject_bad_files[nan_latency]" time="0.004" /><testcase classname="tests.test_replay" name="test_reject_bad_files[false_provenance]" time="0.004" /><testcase classname="tests.test_replay" name="test_reject_bad_files[future_environment]" time="0.004" /><testcase classname="tests.test_replay" name="test_reject_bad_files[label_in_task]" time="0.004" /><testcase classname="tests.test_replay" name="test_reject_bad_files[duplicate_call]" time="0.005" /><testcase classname="tests.test_replay" name="test_reject_bad_files[invalid_quality]" time="0.004" /><testcase classname="tests.test_replay" name="test_reject_bad_files[missing_call]" time="0.005" /><testcase classname="tests.test_replay" name="test_reject_bad_files[empty_success]" time="0.004" /><testcase classname="tests.test_replay" name="test_reject_bad_files[unknown_model]" time="0.004" /><testcase classname="tests.test_replay" name="test_reject_bad_files[missing_quality_source]" time="0.005" /><testcase classname="tests.test_replay" name="test_reject_bad_files[duplicate_label]" time="0.006" /><testcase classname="tests.test_replay" name="test_batch_artifacts_and_missing_labels" time="0.080" /><testcase classname="tests.test_replay" name="test_seed_reproduces_semantics" time="0.087" /><testcase classname="tests.test_replay" name="test_eval_labels_cannot_affect_baseline_routes" time="0.077" /><testcase classname="tests.test_replay" name="test_unattempted_is_not_failure_or_free_response" time="0.009" /><testcase classname="tests.test_resource_simulation" name="test_piecewise_bandwidth_integration" time="0.001" /><testcase classname="tests.test_resource_simulation" name="test_outage_retains_partial_bytes" time="0.001" /><testcase classname="tests.test_resource_simulation" name="test_transfer_timeout" time="0.001" /><testcase classname="tests.test_resource_simulation" name="test_failure_detection_and_cancellation" time="0.001" /><testcase classname="tests.test_resource_simulation" name="test_local_unaffected_by_network" time="0.001" /><testcase classname="tests.test_resource_simulation" name="test_downlink_failure_keeps_compute_charge" time="0.001" /><testcase classname="tests.test_resource_simulation" name="test_timeout_partial_compute_and_no_raw_cost_charge" time="0.001" /><testcase classname="tests.test_resource_simulation" name="test_resource_conservation" time="0.001" /><testcase classname="tests.test_resource_simulation" name="test_executor_dynamic_clock_no_retry_and_public_state" time="0.003" /><testcase classname="tests.test_resource_simulation" name="test_shared_seed_and_original_input_only" time="0.001" /><testcase classname="tests.test_resource_simulation" name="test_simulator_not_accepted_as_live_backend" time="0.001" /><testcase classname="tests.test_routerbench_adapter" name="test_export_boundaries_and_all_wrong_retained" time="0.012" /><testcase classname="tests.test_routerbench_adapter" name="test_reproducible_and_no_overwrite" time="0.030" /><testcase classname="tests.test_routerbench_adapter" name="test_missing_values_not_zero" time="0.016" /><testcase classname="tests.test_routerbench_adapter" name="test_duplicate_id_rejected" time="0.002" /><testcase classname="tests.test_routerbench_adapter" name="test_cross_family_duplicate_prompt_rejected" time="0.004" /><testcase classname="tests.test_routerbench_adapter" name="test_bad_quality_rejected[nan]" time="0.001" /><testcase classname="tests.test_routerbench_adapter" name="test_bad_quality_rejected[inf]" time="0.001" /><testcase classname="tests.test_routerbench_adapter" name="test_bad_quality_rejected[-1]" time="0.001" /><testcase classname="tests.test_routerbench_adapter" name="test_bad_quality_rejected[1.1]" time="0.001" /><testcase classname="tests.test_routerbench_adapter" name="test_text_parsing_no_execution" time="0.001" /><testcase classname="tests.test_routerbench_adapter" name="test_checksum_tampering_rejected" time="0.014" /><testcase classname="tests.test_runtime_contracts" name="test_actual_execute_rejects_bad_actions[seq0]" time="0.001" /><testcase classname="tests.test_runtime_contracts" name="test_actual_execute_rejects_bad_actions[seq1]" time="0.001" /><testcase classname="tests.test_runtime_contracts" name="test_actual_execute_rejects_bad_actions[seq2]" time="0.001" /><testcase classname="tests.test_runtime_contracts" name="test_actual_execute_rejects_bad_actions[seq3]" time="0.001" /><testcase classname="tests.test_runtime_contracts" name="test_level_not_input_order_and_skip" time="0.002" /><testcase classname="tests.test_runtime_contracts" name="test_labels_cannot_change_decisions_or_answer" time="0.002" /><testcase classname="tests.test_runtime_contracts" name="test_policy_sees_only_called_answers_and_original_input" time="0.001" /><testcase classname="tests.test_runtime_contracts" name="test_exact_accounting_includes_terminal_decision" time="0.001" /><testcase classname="tests.test_runtime_contracts" name="test_failed_invalid_unavailable_and_unattempted" time="0.002" /><testcase classname="tests.test_runtime_contracts" name="test_all_failed_and_empty_accept" time="0.001" /><testcase classname="tests.test_runtime_contracts" name="test_union_low_quality_timeout_budget" time="0.002" /><testcase classname="tests.test_runtime_contracts" name="test_decision_timeout_before_any_call" time="0.001" /><testcase classname="tests.test_runtime_contracts" name="test_missing_is_not_zero[quality]" time="0.001" /><testcase classname="tests.test_runtime_contracts" name="test_missing_is_not_zero[latency]" time="0.001" /><testcase classname="tests.test_runtime_contracts" name="test_missing_is_not_zero[cost]" time="0.001" /><testcase classname="tests.test_runtime_contracts" name="test_exception_no_retry_unknown_bill" time="0.001" /><testcase classname="tests.test_runtime_contracts" name="test_original_empty_guard_never_predicts" time="0.000" /><testcase classname="tests.test_runtime_contracts" name="test_original_adapter_runs_predict_and_select" time="0.005" /><testcase classname="tests.test_runtime_contracts" name="test_original_adapter_failed_history_and_permissions" time="0.008" /><testcase classname="tests.test_runtime_contracts" name="test_original_adapter_initially_calls_even_when_best_is_first" time="0.005" /><testcase classname="tests.test_runtime_contracts" name="test_exact_resource_boundary_and_measured_control" time="0.001" /><testcase classname="tests.test_runtime_contracts" name="test_unavailable_initial_model_is_not_attempted" time="0.001" /><testcase classname="tests.test_runtime_contracts" name="test_original_adapter_continues_after_failed_attempt" time="0.004" /><testcase classname="tests.test_runtime_contracts" name="test_invalid_replay_keeps_null_answer" time="0.001" /><testcase classname="tests.test_unified_runtime" name="test_successful_accept_stops" time="0.002" /><testcase classname="tests.test_unified_runtime" name="test_failed_call_counts_and_prevents_retry" time="0.001" /><testcase classname="tests.test_unified_runtime" name="test_downward_or_unknown_call_forbidden" time="0.001" /><testcase classname="tests.test_unified_runtime" name="test_no_valid_answer_ends_safely" time="0.001" /><testcase classname="tests.test_unified_runtime" name="test_controller_does_not_get_hidden_labels" time="0.001" /><testcase classname="tests.test_unified_runtime" name="test_select_answer_safe_for_empty_history" time="0.001" /><testcase classname="tests.test_unified_runtime" name="test_summary_metrics_are_consistent" time="0.002" /><testcase classname="tests.test_v5_calibration" name="test_zero_failure_closed_form" time="0.005" /><testcase classname="tests.test_v5_calibration" name="test_all_failure_bound" time="0.000" /><testcase classname="tests.test_v5_calibration" name="test_multiple_candidates_conservative" time="0.003" /><testcase classname="tests.test_v5_calibration" name="test_small_sample_does_not_pass" time="0.003" /><testcase classname="tests.test_v5_calibration" name="test_unknown_blocks_calibration" time="0.003" /><testcase classname="tests.test_v5_calibration" name="test_missing_rows_rejected" time="0.003" /><testcase classname="tests.test_v5_calibration" name="test_duplicate_units_rejected" time="0.003" /><testcase classname="tests.test_v5_calibration" name="test_test_set_rejected" time="0.003" /><testcase classname="tests.test_v5_calibration" name="test_artifact_change_rejected" time="0.003" /><testcase classname="tests.test_v5_calibration" name="test_manifest_change_rejected" time="0.003" /><testcase classname="tests.test_v5_calibration" name="test_group_repetition_rejected" time="0.001" /><testcase classname="tests.test_v5_calibration" name="test_unfrozen_candidate_rejected" time="0.002" /><testcase classname="tests.test_v5_library_capacity" name="test_capacity_rejects_instead_of_silently_changing_policy" time="0.002" /><testcase classname="tests.test_v5_library_capacity" name="test_invalid_capacity[0-max_records]" time="0.001" /><testcase classname="tests.test_v5_library_capacity" name="test_invalid_capacity[0-max_payload_bytes]" time="0.001" /><testcase classname="tests.test_v5_library_capacity" name="test_invalid_capacity[-1-max_records]" time="0.001" /><testcase classname="tests.test_v5_library_capacity" name="test_invalid_capacity[-1-max_payload_bytes]" time="0.001" /><testcase classname="tests.test_v5_library_capacity" name="test_invalid_capacity[True-max_records]" time="0.001" /><testcase classname="tests.test_v5_library_capacity" name="test_invalid_capacity[True-max_payload_bytes]" time="0.001" /><testcase classname="tests.test_v5_library_capacity" name="test_invalid_capacity[1.5-max_records]" time="0.001" /><testcase classname="tests.test_v5_library_capacity" name="test_invalid_capacity[1.5-max_payload_bytes]" time="0.001" /><testcase classname="tests.test_v5_library_capacity" name="test_index_matches_scalar_distances_and_group_selection" time="0.003" /><testcase classname="tests.test_v5_planner" name="test_direct_cloud_and_vector" time="0.001" /><testcase classname="tests.test_v5_planner" name="test_accept_without_future_calls" time="0.001" /><testcase classname="tests.test_v5_planner" name="test_unknown_probability_no_false_accept" time="0.001" /><testcase classname="tests.test_v5_planner" name="test_failed_model_cannot_retry" time="0.001" /><testcase classname="tests.test_v5_planner" name="test_weighted_branches_hand_calculation" time="0.001" /><testcase classname="tests.test_v5_planner" name="test_duplicate_observations_shared_continuation" time="0.001" /><testcase classname="tests.test_v5_planner" name="test_ledger_mismatch_rejected" time="0.001" /><testcase classname="tests.test_v5_planner" name="test_weight_error_rejected" time="0.001" /><testcase classname="tests.test_v5_planner" name="test_dominated_removed" time="0.001" /><testcase classname="tests.test_v5_planner" name="test_timeout_fallback" time="0.004" /><testcase classname="tests.test_v5_planner" name="test_two_step_better_than_direct" time="0.001" /><testcase classname="tests.test_v5_planner" name="test_zero_budget_no_free_call" time="0.000" /><testcase classname="tests.test_v5_planner" name="test_permissions_and_state_identity" time="0.000" /><testcase classname="tests.test_v5_planner" name="test_grid_cap_retains_real_vector" time="0.001" /><testcase classname="tests.test_v5_planner_policy" name="test_real_feedback_replanning_and_time_ledger" time="0.001" /><testcase classname="tests.test_v5_planner_policy" name="test_labels_do_not_change_actions" time="0.002" /><testcase classname="tests.test_v5_planner_policy" name="test_unknown_service_probability_not_replaced_with_proxy" time="0.000" /><testcase classname="tests.test_v5_planner_policy" name="test_joint_bridge_hides_donor_identity" time="0.000" /><testcase classname="tests.test_v5_planner_policy" name="test_joint_bridge_rejects_unsupported_mapping" time="0.000" /><testcase classname="tests.test_v5_scorers" name="test_feature_label_injection_rejected" time="0.000" /><testcase classname="tests.test_v5_scorers" name="test_transform_does_not_refit" time="0.025" /><testcase classname="tests.test_v5_scorers" name="test_frozen_refit_rejected" time="0.136" /><testcase classname="tests.test_v5_scorers" name="test_probability_not_service_probability" time="0.090" /><testcase classname="tests.test_v5_scorers" name="test_single_class_explicit_fallback[0]" time="0.059" /><testcase classname="tests.test_v5_scorers" name="test_single_class_explicit_fallback[1]" time="0.058" /><testcase classname="tests.test_v5_scorers" name="test_empty_answer_zero" time="0.088" /><testcase classname="tests.test_v5_scorers" name="test_roundtrip_and_hash" time="0.159" /><testcase classname="tests.test_v5_scorers" name="test_no_uncalled_answer" time="0.073" /><testcase classname="tests.test_v5_scorers" name="test_selector_keeps_best_and_stable_tie" time="0.001" /><testcase classname="tests.test_v5_scorers" name="test_invalid_targets" time="0.001" /><testcase classname="tests.test_v5_splits" name="test_strict_label_boundary" time="0.001" /><testcase classname="tests.test_v5_splits" name="test_public_whitelist_and_copy" time="0.001" /><testcase classname="tests.test_v5_splits" name="test_exact_normalization_cross_source" time="0.001" /><testcase classname="tests.test_v5_splits" name="test_shot_variants_link_by_sample" time="0.001" /><testcase classname="tests.test_v5_splits" name="test_template_transitive_source_union" time="0.001" /><testcase classname="tests.test_v5_splits" name="test_near_duplicates_grouped" time="0.001" /><testcase classname="tests.test_v5_splits" name="test_existing_cross_partition_duplicates_rejected" time="0.001" /><testcase classname="tests.test_v5_splits" name="test_development_and_relatives_never_recycled" time="0.001" /><testcase classname="tests.test_v5_splits" name="test_six_way_whole_group_deterministic_allocation" time="0.001" /><testcase classname="tests.test_v5_splits" name="test_infeasible_counts_reported_not_split_group" time="0.001" /><testcase classname="tests.test_v5_splits" name="test_training_stage_excludes_calibration_and_test" time="0.001" /><testcase classname="tests.test_v5_splits" name="test_unknown_fields_and_duplicate_id" time="0.001" /><testcase classname="tests.test_v5_transitions" name="test_signed_retained_gain_not_oracle" time="0.001" /><testcase classname="tests.test_v5_transitions" name="test_missing_reference_rejected" time="0.001" /><testcase classname="tests.test_v5_transitions" name="test_public_export_strips_targets" time="0.001" /><testcase classname="tests.test_v5_transitions" name="test_nested_hidden_label_rejected" time="0.001" /><testcase classname="tests.test_v5_transitions" name="test_group_uniqueness_and_insufficient_support" time="0.002" /><testcase classname="tests.test_v5_transitions" name="test_exact_history_filter" time="0.001" /><testcase classname="tests.test_v5_transitions" name="test_distance_rejection" time="0.001" /><testcase classname="tests.test_v5_transitions" name="test_joint_sampling_correlation_and_weights" time="0.003" /><testcase classname="tests.test_v5_transitions" name="test_gain_mask_negative_and_frozen" time="0.046" /><testcase classname="tests.test_v5_transitions" name="test_illegal_downward_transition_rejected" time="0.001" /><testcase classname="tests.test_v5_transitions" name="test_builder_uses_predicted_selector_and_labels_only_for_target" time="0.001" /><testcase classname="tests.test_v5_transitions" name="test_unknown_resources_not_zero" time="0.001" /></testsuite></testsuites>

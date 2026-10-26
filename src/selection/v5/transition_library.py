@@ -36,17 +36,31 @@ def validate_record(r):
     number(o['environment']['bandwidth_mbps'],'bandwidth')
 
 class JointTransitionLibrary:
-    def __init__(self,rows,kappa=1.0,min_groups=5,max_groups=20,max_distance=3.0):
+    def __init__(self,rows,kappa=1.0,min_groups=5,max_groups=20,max_distance=3.0,
+                 max_records=10000,max_payload_bytes=32*1024*1024):
         if not rows:raise ValueError('Empty library')
+        if type(max_records) is not int or max_records<=0:raise ValueError('Invalid record capacity')
+        if type(max_payload_bytes) is not int or max_payload_bytes<=0:raise ValueError('Invalid payload capacity')
+        if len(rows)>max_records:raise ValueError('Library record capacity exceeded; rebuild offline before calibration')
         if type(min_groups) is not int or type(max_groups) is not int or not 1<=min_groups<=max_groups:raise ValueError('Invalid group limits')
         number(kappa,'kappa');number(max_distance,'max_distance')
         for r in rows:validate_record(r)
+        payload_bytes=sum(len(json.dumps(r,sort_keys=True,ensure_ascii=False,allow_nan=False).encode('utf-8'))+1 for r in rows)
+        if payload_bytes>max_payload_bytes:raise ValueError('Library payload capacity exceeded; rebuild offline before calibration')
         if len({r['record_id'] for r in rows})!=len(rows):raise ValueError('Duplicate record ID')
         self.rows=deepcopy(rows);self.kappa=kappa;self.min_groups=min_groups;self.max_groups=max_groups;self.max_distance=max_distance
         self.dimension=len(rows[0]['features'])
         if any(len(r['features'])!=self.dimension for r in rows):raise ValueError('Feature dimension mismatch')
         base=np.asarray([r['features'] for r in rows]);g=np.asarray([r['gains'] for r in rows])
         self.base_scale=np.maximum(np.std(base,axis=0),1e-6);self.gain_scale=np.maximum(np.std(g,axis=0),1e-6)
+        self._buckets={}
+        for index,record in enumerate(self.rows):
+            key=(record['action'],tuple(tuple(item) for item in record['history']))
+            self._buckets.setdefault(key,[]).append(index)
+        self._vectors=np.column_stack((base/self.base_scale,self.kappa*g/self.gain_scale))
+        self.storage_stats={'records':len(rows),'payload_bytes':payload_bytes,
+            'index_array_bytes':self._vectors.nbytes,'buckets':len(self._buckets),
+            'max_records':max_records,'max_payload_bytes':max_payload_bytes}
 
     def neighbors(self,query,exclude_group=None):
         fields(query,['action','history','features','gains'])
@@ -54,11 +68,14 @@ class JointTransitionLibrary:
         validate_record(probe)
         if len(query['features'])!=self.dimension:raise ValueError('Feature dimension mismatch')
         candidates=[]
-        for r in self.rows:
-            if r['action']!=query['action'] or r['history']!=query['history'] or r['source_group_id']==exclude_group:continue
-            x=(np.array(r['features'])-query['features'])/self.base_scale
-            g=(np.array(r['gains'])-query['gains'])/self.gain_scale
-            distance=float(np.linalg.norm(np.r_[x,self.kappa*g]))
+        key=(query['action'],tuple(tuple(item) for item in query['history']))
+        indices=self._buckets.get(key,[])
+        probe_vector=np.r_[np.array(query['features'])/self.base_scale,self.kappa*np.array(query['gains'])/self.gain_scale]
+        distances=np.linalg.norm(self._vectors[indices]-probe_vector,axis=1)
+        for index,distance in zip(indices,distances):
+            r=self.rows[index]
+            if r['source_group_id']==exclude_group:continue
+            distance=float(distance)
             candidates.append((distance,r['record_id'],r))
         unique=[];seen=set()
         for dist,rid,r in sorted(candidates,key=lambda x:(x[0],x[1])):

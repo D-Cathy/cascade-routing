@@ -1,5 +1,12 @@
 # 项目交接（2026-09-24，GPU8）
 
+## 2026-10-15：老师关于历史库与开销的反馈
+
+- 修改v5/transition_library.py：默认10000条、32 MiB JSON载荷上限，超限构造拒绝，要求校准前离线重建；按动作/有序历史分桶并向量化精确距离。保持来源去重/支持拒绝/联合抽样。库无自动在线追加，全文本和标签不入库；没有清理AttemptLedger。
+- 新增10测试，全量沙箱172 passed/7 socket errors；获准本机HTTP fixture后179 passed（5.87s），退出0。定向22 passed。真实模型调用0。
+- 新增scripts/benchmark_transition_overhead.py，100/1000/10000条合成微基准，完整证据和实际命令在reports/history_overhead_20261015_01/REPORT.md；万条抽样p50 10.17ms、p95 103.74ms，不能忽视尾部抖动或当作完整规划耗时。
+- docs/v5_history_overhead.md说明摘要/离线档案/审计账本边界、容量不是RSS限制、日志尚无TTL、冻结后换库须重新校准、完整控制计时与净费用摊销。未改论文，尚未证明节省不会被抵消；正式容量消融和控制器实测继续待办。更新PROGRESS并重建HTML。
+
 先读AGENTS.md、本文、docs/single_task_loop.md及父目录论文的方法/实验设计。最近验收：[单条后端报告](reports/live_backend_20260924_01/ACCEPTANCE.md)；前阶段：[回放验收](reports/recovery_20260923_01/ACCEPTANCE.md)。
 
 ## 当前状态
@@ -154,3 +161,9 @@ reports/live_backend_20260924_01/ 下：
 - 本轮仅版本管理准备，pytest运行0项、模型调用0次。命令与限制见 reports/github_upload_20261015_01/STATUS.md。
 
 - 上传完成续记：用户确认已创建仓库后，`git push -u origin main` 退出0，main已跟踪origin/main；仓库 https://github.com/D-Cathy/cascade-routing 。本轮未运行测试或模型调用。
+
+## 2026-10-26：框架核查与 GitHub 同步
+
+- fetch确认远端最新仍为2026-10-15的eb893ec，上传前本地/远端提交一致；历史库容量限制、向量化检索及配套测试/文档尚未提交，本轮纳入更新。
+- 本轮全量179 passed（8.93秒），退出0；沙箱初次172 passed/7 socket权限错误，允许本机HTTP fixture后全部通过。报告reports/github_review_20261026_01/REPORT.md及日志/XML保存证据。
+- 代码已具备开发工程闭环，正式数据五分区、完整论文基线及真实风险校准仍未完成；未调用模型或付费API。

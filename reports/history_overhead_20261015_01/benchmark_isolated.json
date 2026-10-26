@@ -1,0 +1,43 @@
+{
+  "synthetic": true,
+  "model_calls": 0,
+  "results": [
+    {
+      "records": 100,
+      "payload_bytes": 28070,
+      "index_array_bytes": 4000,
+      "buckets": 1,
+      "max_records": 10000,
+      "max_payload_bytes": 33554432,
+      "build_s": 0.024343769997358322,
+      "traced_build_peak_bytes": 181388,
+      "sample_p50_s": 0.0010138334473595023,
+      "sample_p95_s": 0.001741882594069466
+    },
+    {
+      "records": 1000,
+      "payload_bytes": 283670,
+      "index_array_bytes": 40000,
+      "buckets": 1,
+      "max_records": 10000,
+      "max_payload_bytes": 33554432,
+      "build_s": 0.24124441400635988,
+      "traced_build_peak_bytes": 1561324,
+      "sample_p50_s": 0.001664927985984832,
+      "sample_p95_s": 0.0016879907983820886
+    },
+    {
+      "records": 10000,
+      "payload_bytes": 2866670,
+      "index_array_bytes": 400000,
+      "buckets": 1,
+      "max_records": 10000,
+      "max_payload_bytes": 33554432,
+      "build_s": 2.6276584450388327,
+      "traced_build_peak_bytes": 15412092,
+      "sample_p50_s": 0.010165942483581603,
+      "sample_p95_s": 0.10374065572977997
+    }
+  ],
+  "limitations": "Payload is JSON bytes, not RSS. Build peak excludes input allocation. Timings cover retrieval and sampling only, not full controller. No monetary or energy savings measured."
+}
